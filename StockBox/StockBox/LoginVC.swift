@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  StockBox
 //
-//  Created by Jared Sobol on 10/24/17.
+//  Created by Stockbox team on 10/24/17.
 //  Copyright © 2017 Appmaker. All rights reserved.
 //
 
