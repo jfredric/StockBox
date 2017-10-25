@@ -34,8 +34,12 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzT-VE-rCz" userLabel="Rating" customClass="RatingControl" customModule="StockBox" customModuleProvider="target">
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hzT-VE-rCz" userLabel="Rating" customClass="RatingControl" customModule="StockBox" customModuleProvider="target">
                         <rect key="frame" x="116" y="37" width="100" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gbg-Li-hIN"/>
+                            <constraint firstAttribute="width" constant="100" id="m1K-3b-ged"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                 <size key="value" width="20" height="20"/>
@@ -43,14 +47,22 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
                         </userDefinedRuntimeAttributes>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-tc-hBP" userLabel="Price Label">
+                        <rect key="frame" x="116" y="65" width="49.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="C6E-ks-zE9" firstAttribute="top" secondItem="nRK-R0-02I" secondAttribute="top" id="07g-aU-3gz"/>
                     <constraint firstItem="hzT-VE-rCz" firstAttribute="leading" secondItem="C6E-ks-zE9" secondAttribute="leading" id="EOV-aW-r9Z"/>
+                    <constraint firstItem="qcl-tc-hBP" firstAttribute="leading" secondItem="C6E-ks-zE9" secondAttribute="leading" id="IUp-J2-RLU"/>
                     <constraint firstItem="nRK-R0-02I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="K1J-On-JdT"/>
                     <constraint firstAttribute="trailingMargin" secondItem="C6E-ks-zE9" secondAttribute="trailing" id="KeM-sd-1Jg"/>
                     <constraint firstItem="C6E-ks-zE9" firstAttribute="leading" secondItem="nRK-R0-02I" secondAttribute="trailing" constant="8" id="TZl-1K-44j"/>
                     <constraint firstAttribute="bottom" secondItem="nRK-R0-02I" secondAttribute="bottom" constant="8" id="dBZ-52-Nae"/>
+                    <constraint firstItem="qcl-tc-hBP" firstAttribute="top" secondItem="hzT-VE-rCz" secondAttribute="bottom" constant="8" id="ldN-bN-udd"/>
                     <constraint firstItem="nRK-R0-02I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qBb-lp-404"/>
                     <constraint firstItem="hzT-VE-rCz" firstAttribute="top" secondItem="C6E-ks-zE9" secondAttribute="bottom" constant="8" id="uIg-nc-KQw"/>
                 </constraints>
