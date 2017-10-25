@@ -22,6 +22,9 @@
 		BFFBD3731F9FDC14008A8C7F /* StockBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD3721F9FDC14008A8C7F /* StockBoxUITests.swift */; };
 		BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */; };
 		D1E038ACAB45FC34C79DAB57 /* Pods_StockBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */; };
+		EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF364BF51FA053AD00D9E881 /* RatingControl.swift */; };
+		EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6688751FA0223C0003C569 /* ProductTVCell.swift */; };
+		EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF6688761FA0223C0003C569 /* ProductTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,19 @@
 			remoteInfo = StockBox;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EF364C081FA0D5BA00D9E881 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		365FF74062302CCF20716820 /* Pods-StockBoxUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBoxUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBoxUITests/Pods-StockBoxUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,6 +85,9 @@
 		BFFBD3721F9FDC14008A8C7F /* StockBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockBoxUITests.swift; sourceTree = "<group>"; };
 		BFFBD3741F9FDC14008A8C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF364BF51FA053AD00D9E881 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		EF6688751FA0223C0003C569 /* ProductTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTVCell.swift; sourceTree = "<group>"; };
+		EF6688761FA0223C0003C569 /* ProductTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,12 +166,13 @@
 		BFFBD34E1F9FDC14008A8C7F /* StockBox */ = {
 			isa = PBXGroup;
 			children = (
+				EF6688741FA020510003C569 /* Controllers */,
+				EF6688731FA020100003C569 /* Views */,
 				BFFBD34F1F9FDC14008A8C7F /* AppDelegate.swift */,
 				BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */,
 				BFE785821FA036810015C930 /* SignUpVC.swift */,
 				BFFBD3531F9FDC14008A8C7F /* Main.storyboard */,
 				BFFBD3591F9FDC14008A8C7F /* Assets.xcassets */,
-				BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */,
 				BFFBD35E1F9FDC14008A8C7F /* Info.plist */,
 				BFFBD3561F9FDC14008A8C7F /* StockBox.xcdatamodeld */,
 				BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */,
@@ -180,6 +200,26 @@
 			path = StockBoxUITests;
 			sourceTree = "<group>";
 		};
+		EF6688731FA020100003C569 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF6688761FA0223C0003C569 /* ProductTVCell.xib */,
+				BFFBD3531F9FDC14008A8C7F /* Main.storyboard */,
+				BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EF6688741FA020510003C569 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */,
+				EF6688751FA0223C0003C569 /* ProductTVCell.swift */,
+				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +233,7 @@
 				BFFBD34A1F9FDC14008A8C7F /* Resources */,
 				192DFB2663EFA61DAC3D0A14 /* [CP] Embed Pods Frameworks */,
 				D7185F7E756468D6BE3F192F /* [CP] Copy Pods Resources */,
+				EF364C081FA0D5BA00D9E881 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -298,6 +339,7 @@
 			files = (
 				BFFBD35D1F9FDC14008A8C7F /* LaunchScreen.storyboard in Resources */,
 				BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */,
+				EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */,
 				BFFBD35A1F9FDC14008A8C7F /* Assets.xcassets in Resources */,
 				BFFBD3551F9FDC14008A8C7F /* Main.storyboard in Resources */,
 			);
@@ -483,6 +525,8 @@
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
 				BFFBD3521F9FDC14008A8C7F /* LoginVC.swift in Sources */,
 				BFE785831FA036810015C930 /* SignUpVC.swift in Sources */,
+				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
+				EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */,
 				BFFBD3501F9FDC14008A8C7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

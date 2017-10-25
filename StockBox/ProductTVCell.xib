@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="155" id="KGk-i7-Jjw" customClass="ProductTVCell" customModule="StockBox" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nRK-R0-02I">
+                        <rect key="frame" x="8" y="8" width="100" height="100"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="3Qv-JZ-TPh"/>
+                            <constraint firstAttribute="width" constant="100" id="PIO-O8-mBa"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6E-ks-zE9">
+                        <rect key="frame" x="116" y="8" width="196" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hzT-VE-rCz" userLabel="Rating" customClass="RatingControl" customModule="StockBox" customModuleProvider="target">
+                        <rect key="frame" x="116" y="37" width="100" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="gbg-Li-hIN"/>
+                            <constraint firstAttribute="width" constant="100" id="m1K-3b-ged"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                <size key="value" width="20" height="20"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="editable" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-tc-hBP" userLabel="Price Label">
+                        <rect key="frame" x="116" y="65" width="49.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="C6E-ks-zE9" firstAttribute="top" secondItem="nRK-R0-02I" secondAttribute="top" id="07g-aU-3gz"/>
+                    <constraint firstItem="hzT-VE-rCz" firstAttribute="leading" secondItem="C6E-ks-zE9" secondAttribute="leading" id="EOV-aW-r9Z"/>
+                    <constraint firstItem="qcl-tc-hBP" firstAttribute="leading" secondItem="C6E-ks-zE9" secondAttribute="leading" id="IUp-J2-RLU"/>
+                    <constraint firstItem="nRK-R0-02I" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="K1J-On-JdT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="C6E-ks-zE9" secondAttribute="trailing" id="KeM-sd-1Jg"/>
+                    <constraint firstItem="C6E-ks-zE9" firstAttribute="leading" secondItem="nRK-R0-02I" secondAttribute="trailing" constant="8" id="TZl-1K-44j"/>
+                    <constraint firstAttribute="bottom" secondItem="nRK-R0-02I" secondAttribute="bottom" constant="8" id="dBZ-52-Nae"/>
+                    <constraint firstItem="qcl-tc-hBP" firstAttribute="top" secondItem="hzT-VE-rCz" secondAttribute="bottom" constant="8" id="ldN-bN-udd"/>
+                    <constraint firstItem="nRK-R0-02I" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="qBb-lp-404"/>
+                    <constraint firstItem="hzT-VE-rCz" firstAttribute="top" secondItem="C6E-ks-zE9" secondAttribute="bottom" constant="8" id="uIg-nc-KQw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="136" y="90"/>
+        </tableViewCell>
+    </objects>
+</document>
