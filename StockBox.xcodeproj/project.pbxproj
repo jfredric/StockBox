@@ -141,6 +141,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		BF455D5A1FA16C5E00F6C032 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BFE785801FA029BB0015C930 /* Utility.swift */,
+				BFE785841FA0DAC00015C930 /* Reachability.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BF455D5B1FA16C8C00F6C032 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BFFBD3431F9FDC14008A8C7F = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +182,8 @@
 		BFFBD34E1F9FDC14008A8C7F /* StockBox */ = {
 			isa = PBXGroup;
 			children = (
+				BF455D5B1FA16C8C00F6C032 /* Model */,
+				BF455D5A1FA16C5E00F6C032 /* Utilities */,
 				EF6688741FA020510003C569 /* Controllers */,
 				EF6688731FA020100003C569 /* Views */,
 				BFFBD34F1F9FDC14008A8C7F /* AppDelegate.swift */,
@@ -174,8 +192,6 @@
 				BFFBD35E1F9FDC14008A8C7F /* Info.plist */,
 				BFFBD3561F9FDC14008A8C7F /* StockBox.xcdatamodeld */,
 				BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */,
-				BFE785801FA029BB0015C930 /* Utility.swift */,
-				BFE785841FA0DAC00015C930 /* Reachability.swift */,
 			);
 			path = StockBox;
 			sourceTree = "<group>";
