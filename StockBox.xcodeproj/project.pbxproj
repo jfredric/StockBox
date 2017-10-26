@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		3899BA3A777030EB0EDF2990 /* Pods_StockBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */; };
 		A306D75EDDD827E77A7F9957 /* Pods_StockBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */; };
+		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
 		BFE785811FA029BB0015C930 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785801FA029BB0015C930 /* Utility.swift */; };
 		BFE785831FA036810015C930 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785821FA036810015C930 /* SignUpVC.swift */; };
 		BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785841FA0DAC00015C930 /* Reachability.swift */; };
 		BFFBD3501F9FDC14008A8C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD34F1F9FDC14008A8C7F /* AppDelegate.swift */; };
-		BFFBD3521F9FDC14008A8C7F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */; };
 		BFFBD3551F9FDC14008A8C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3531F9FDC14008A8C7F /* Main.storyboard */; };
 		BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD3561F9FDC14008A8C7F /* StockBox.xcdatamodeld */; };
 		BFFBD35A1F9FDC14008A8C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3591F9FDC14008A8C7F /* Assets.xcassets */; };
@@ -67,12 +67,12 @@
 		6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976E540A03F35A2DC7CD016A /* Pods-StockBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBox/Pods-StockBox.release.xcconfig"; sourceTree = "<group>"; };
+		BF455D581FA15A4300F6C032 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BFE785801FA029BB0015C930 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BFE785821FA036810015C930 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BFE785841FA0DAC00015C930 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BFFBD34C1F9FDC14008A8C7F /* StockBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFBD34F1F9FDC14008A8C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BFFBD3541F9FDC14008A8C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFFBD3571F9FDC14008A8C7F /* StockBox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockBox.xcdatamodel; sourceTree = "<group>"; };
 		BFFBD3591F9FDC14008A8C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,8 +169,6 @@
 				EF6688741FA020510003C569 /* Controllers */,
 				EF6688731FA020100003C569 /* Views */,
 				BFFBD34F1F9FDC14008A8C7F /* AppDelegate.swift */,
-				BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */,
-				BFE785821FA036810015C930 /* SignUpVC.swift */,
 				BFFBD3531F9FDC14008A8C7F /* Main.storyboard */,
 				BFFBD3591F9FDC14008A8C7F /* Assets.xcassets */,
 				BFFBD35E1F9FDC14008A8C7F /* Info.plist */,
@@ -204,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				EF6688761FA0223C0003C569 /* ProductTVCell.xib */,
-				BFFBD3531F9FDC14008A8C7F /* Main.storyboard */,
 				BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -213,7 +210,8 @@
 		EF6688741FA020510003C569 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BFFBD3511F9FDC14008A8C7F /* LoginVC.swift */,
+				BF455D581FA15A4300F6C032 /* LoginVC.swift */,
+				BFE785821FA036810015C930 /* SignUpVC.swift */,
 				EF6688751FA0223C0003C569 /* ProductTVCell.swift */,
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
 			);
@@ -523,8 +521,8 @@
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
-				BFFBD3521F9FDC14008A8C7F /* LoginVC.swift in Sources */,
 				BFE785831FA036810015C930 /* SignUpVC.swift in Sources */,
+				BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */,
 				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
 				EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */,
 				BFFBD3501F9FDC14008A8C7F /* AppDelegate.swift in Sources */,
@@ -695,7 +693,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D2UCX5FZW;
+				DEVELOPMENT_TEAM = J69W6VP8JF;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -712,7 +710,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6D2UCX5FZW;
+				DEVELOPMENT_TEAM = J69W6VP8JF;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
