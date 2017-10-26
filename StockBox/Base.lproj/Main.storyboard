@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -322,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEX-F5-eOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="2543"/>
+            <point key="canvasLocation" x="158" y="2567"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FCO-Y4-O3Y">
@@ -350,14 +350,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reviews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmA-Xd-r3i">
-                                <rect key="frame" x="16" y="500" width="347" height="149"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.70993548630000003" green="0.84993392229999998" blue="0.93387609719999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tP-FD-twc">
                                 <rect key="frame" x="16" y="462" width="348" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -366,6 +358,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE4-w9-mKf">
+                                <rect key="frame" x="107" y="550" width="152" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="Reviews">
+                                    <color key="titleColor" red="1" green="0.79724121309999996" blue="0.42411116399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="4GP-bl-amw" kind="show" id="4uK-fl-vRc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="IHP-Q2-B5j"/>
@@ -373,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVf-SW-Y8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-668" y="2543"/>
+            <point key="canvasLocation" x="-838" y="3521"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kDD-vM-eRt">
@@ -411,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wb-1h-svZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="2967"/>
+            <point key="canvasLocation" x="260" y="3522"/>
         </scene>
         <!--Profile-->
         <scene sceneID="YKI-dM-ep1">
@@ -436,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dn4-i6-sSS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2788" y="2485"/>
+            <point key="canvasLocation" x="-1122" y="2567"/>
         </scene>
         <!--Orders-->
         <scene sceneID="eaE-kn-SLW">
@@ -518,7 +521,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZd-gg-gv7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="2289.8050974512744"/>
+            <point key="canvasLocation" x="1438" y="2603"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Qzv-xg-Uhx">
@@ -542,13 +545,13 @@
         <!--Product Reviews-->
         <scene sceneID="5s7-vn-liH">
             <objects>
-                <tableViewController id="4GP-bl-amw" sceneMemberID="viewController">
+                <tableViewController id="4GP-bl-amw" customClass="VendorProductReviewsTVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fPJ-EL-smP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3rQ-ki-bNC">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" id="3rQ-ki-bNC" customClass="VendorProductReviewsCell" customModule="StockBox" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3rQ-ki-bNC" id="bdb-2l-NTv">
@@ -566,7 +569,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZc-4a-aVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3218" y="2290"/>
+            <point key="canvasLocation" x="3105" y="3564"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OrM-uE-T1O">
@@ -584,7 +587,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bzn-Rf-h1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2098" y="2290"/>
+            <point key="canvasLocation" x="1681" y="3564"/>
         </scene>
         <!--Home-->
         <scene sceneID="Ldl-k0-bSw">
@@ -613,6 +616,7 @@
         <image name="menubtn" width="20" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4uK-fl-vRc"/>
         <segue reference="7D3-ml-c6V"/>
     </inferredMetricsTieBreakers>
 </document>
