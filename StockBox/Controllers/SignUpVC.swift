@@ -53,6 +53,7 @@ class SignUpVC: UIViewController {
                         self.present(authAlert, animated: true, completion: nil)
                         return
                     }
+                    self.performSegue(withIdentifier: "SignUpHomeSegue" , sender: nil)
                     print("Signed Up")
                 }
             }

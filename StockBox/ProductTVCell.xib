@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,6 +68,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productImage" destination="nRK-R0-02I" id="EtH-t7-PQh"/>
+                <outlet property="productPrice" destination="qcl-tc-hBP" id="boL-5i-CMe"/>
+                <outlet property="productTitle" destination="C6E-ks-zE9" id="x5V-fg-r7z"/>
+            </connections>
             <point key="canvasLocation" x="136" y="90"/>
         </tableViewCell>
     </objects>

@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,6 +96,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="6lB-7v-bSY" id="zSU-Iv-B2S"/>
                         <outlet property="passwordTextField" destination="Wnx-1R-8n1" id="oYg-8S-wQn"/>
+                        <segue destination="L9E-zl-bE5" kind="show" identifier="loginHomeSegue" id="AZM-Gu-0W3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -214,11 +215,77 @@
                         <outlet property="UserMerchantSegmentControl" destination="E89-JP-Fl5" id="1oQ-7n-gXZ"/>
                         <outlet property="emailTextField" destination="u9z-Rq-xhY" id="yGC-Y4-yD2"/>
                         <outlet property="passwordTextField" destination="cRQ-bS-EMq" id="xjm-Rj-SlX"/>
+                        <segue destination="L9E-zl-bE5" kind="show" identifier="SignUpHomeSegue" id="7D3-ml-c6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pv4-3O-v4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="841.52923538230891"/>
+        </scene>
+        <!--StockBox-->
+        <scene sceneID="OAY-qX-ETf">
+            <objects>
+                <viewController id="fsf-wB-RGM" customClass="HomeVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IUT-g3-mu4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductTVCell" rowHeight="135" id="1ym-zQ-SQk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="135"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1ym-zQ-SQk" id="q6H-4f-EJi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="134.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="StockBox" id="uYf-gy-08J">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menubtn" id="A04-ne-X7R"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" id="rFs-w8-FCR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="IUT-g3-mu4" id="hHJ-J1-7oj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuF-g1-acF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909.5999999999999" y="189.3553223388306"/>
+        </scene>
+        <!--favorites-->
+        <scene sceneID="wbn-B5-t7W">
+            <objects>
+                <viewController id="43M-Yw-C0a" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EBf-yr-pR4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="z86-VD-NQz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="favorites" image="heart_deselected_icon" id="DDq-99-yIb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XTt-cD-eku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="862"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="1Lz-XU-PNE">
+            <objects>
+                <tabBarController id="L9E-zl-bE5" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ssr-5p-PWB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="vsv-lU-IlY" kind="relationship" relationship="viewControllers" id="PZX-fl-5fb"/>
+                        <segue destination="43M-Yw-C0a" kind="relationship" relationship="viewControllers" id="zYA-XB-bWw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rft-RW-lTF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1125" y="530"/>
         </scene>
         <!--Inventory-->
         <scene sceneID="Lob-L8-dly">
@@ -519,5 +586,33 @@
             </objects>
             <point key="canvasLocation" x="2098" y="2290"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="Ldl-k0-bSw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vsv-lU-IlY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home_btn" id="Op9-NI-5aI"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BdE-uS-kVb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fsf-wB-RGM" kind="relationship" relationship="rootViewController" id="NXR-6h-vlp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGL-Jo-U7L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="190"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="cart" width="24" height="20"/>
+        <image name="heart_deselected_icon" width="22" height="20"/>
+        <image name="home_btn" width="24" height="28"/>
+        <image name="menubtn" width="20" height="14"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7D3-ml-c6V"/>
+    </inferredMetricsTieBreakers>
 </document>
