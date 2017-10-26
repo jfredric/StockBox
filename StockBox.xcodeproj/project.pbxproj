@@ -10,6 +10,7 @@
 		3899BA3A777030EB0EDF2990 /* Pods_StockBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */; };
 		A306D75EDDD827E77A7F9957 /* Pods_StockBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */; };
 		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
+		BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D5C1FA1954800F6C032 /* HomeVC.swift */; };
 		BFE785811FA029BB0015C930 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785801FA029BB0015C930 /* Utility.swift */; };
 		BFE785831FA036810015C930 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785821FA036810015C930 /* SignUpVC.swift */; };
 		BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785841FA0DAC00015C930 /* Reachability.swift */; };
@@ -68,6 +69,7 @@
 		70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976E540A03F35A2DC7CD016A /* Pods-StockBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBox/Pods-StockBox.release.xcconfig"; sourceTree = "<group>"; };
 		BF455D581FA15A4300F6C032 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		BF455D5C1FA1954800F6C032 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BFE785801FA029BB0015C930 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BFE785821FA036810015C930 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BFE785841FA0DAC00015C930 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				BFE785821FA036810015C930 /* SignUpVC.swift */,
 				EF6688751FA0223C0003C569 /* ProductTVCell.swift */,
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
+				BF455D5C1FA1954800F6C032 /* HomeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
+				BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */,
 				BFE785831FA036810015C930 /* SignUpVC.swift in Sources */,
 				BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */,
 				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
