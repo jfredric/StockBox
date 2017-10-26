@@ -14,6 +14,50 @@ func stringTrimmer(stringToTrim string: String?) -> String? {
     let trimmedString = string?.trimmingCharacters(in: .whitespacesAndNewlines)
     return trimmedString
 }
+
+// MARK: ALERTS
+
+// send user a message
+func messageAlert(title: String, message: String?, from: UIViewController?) {
+    
+    // Create the Alert Controller
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    // add the button actions - Left to right
+    //    OK Button
+    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+    
+    // Present the Alert
+    
+    (from ?? UIApplication.topViewController()!).present(alertController, animated: true, completion: nil)
+}
+
+// send user an error message
+func errorAlert(message: String?, from: UIViewController) {
+    // Create the Alert Controller
+    let alertController = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+    // add the button actions - Left to right
+    //    OK Button
+    alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+    
+    // Present the Alert
+    from.present(alertController, animated: true, completion: nil)
+}
+
+// send user an error message
+func fatalErrorAlert(message: String?, from: UIViewController) {
+    // Create the Alert Controller
+    let alertController = UIAlertController(title: "Fatal Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+    // add the button actions - Left to right
+    //    OK Button
+    let crashAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (alertAction) in
+        fatalError(message!)
+    }
+    alertController.addAction(crashAction)
+    
+    // Present the Alert
+    from.present(alertController, animated: true, completion: nil)
+}
+
 // sets up basic alerts
 func loginAuthAlertMaker(alertTitle: String, alertMessage: String) -> UIAlertController {
     let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
