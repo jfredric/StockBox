@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3899BA3A777030EB0EDF2990 /* Pods_StockBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */; };
 		65CAD66B1FA2C2F60067FEAE /* VendorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */; };
+		65CAD66D1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAD66C1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift */; };
 		A306D75EDDD827E77A7F9957 /* Pods_StockBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */; };
 		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
 		BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D5C1FA1954800F6C032 /* HomeVC.swift */; };
@@ -67,6 +68,7 @@
 		4FDC5FF88591107DE84D0C0F /* Pods-StockBoxUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBoxUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockBoxUITests/Pods-StockBoxUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorProfileVC.swift; sourceTree = "<group>"; };
+		65CAD66C1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorPhotosCollectionView.swift; sourceTree = "<group>"; };
 		6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976E540A03F35A2DC7CD016A /* Pods-StockBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBox/Pods-StockBox.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
 				BF455D5C1FA1954800F6C032 /* HomeVC.swift */,
 				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
+				65CAD66C1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
 				EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */,
 				BFFBD3501F9FDC14008A8C7F /* AppDelegate.swift in Sources */,
+				65CAD66D1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
