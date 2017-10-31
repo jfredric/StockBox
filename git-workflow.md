@@ -16,7 +16,7 @@ Commit changes when you have done all the following:
   * **git commit -m "change description"**
     * If you only made one change a single line description is fine.
     * If you touched multiple files, added or updated more than one feature, etc then you should be entering multiple lines in the description, with bullets/dashes. You do this by pressing enter without the closing ". Example:
-    ```
+    ```bash
     commandline useraname$ git commit -m "- change 1
     > - change 2
     > - change 3"
