@@ -14,14 +14,15 @@
   * **git checkout master**
 * pull recent changes from the remote
   * **git pull origin master**
-* switch back to you feature branch
+* if there are new changes to master
+  * switch back to you feature branch
   * **git checkout** ***branch-name***
   * **git merge master**
-* if there are any conflicts you will need to manually resolve them, looking for the ==== and <<<< in the conflicting files.
-  * do another **git merge master** and confirm there are no more conflicts.
-  * repeat as necessary
-* Test your code with the new changes.
-* if all is well switch back to master
+  * if there are any conflicts you will need to manually resolve them, looking for the ==== and <<<< in the conflicting files.
+    * do another **git merge master** and confirm there are no more conflicts.
+    * repeat as necessary
+    * Test your code with the new changes.
+  * if all is well switch back to master
     * **git checkout master**
 * merge the changes from your feature branch
   * **git merge** ***branch-name***

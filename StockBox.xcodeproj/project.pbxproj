@@ -27,6 +27,8 @@
 		EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF364BF51FA053AD00D9E881 /* RatingControl.swift */; };
 		EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6688751FA0223C0003C569 /* ProductTVCell.swift */; };
 		EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF6688761FA0223C0003C569 /* ProductTVCell.xib */; };
+		EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */; };
+		EFDFB35D1FA77A4F0075C648 /* ReviewTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		EF364BF51FA053AD00D9E881 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		EF6688751FA0223C0003C569 /* ProductTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTVCell.swift; sourceTree = "<group>"; };
 		EF6688761FA0223C0003C569 /* ProductTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCell.xib; sourceTree = "<group>"; };
+		EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
+		EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTVCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				EF6688761FA0223C0003C569 /* ProductTVCell.xib */,
+				EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */,
 				BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */,
 			);
 			name = Views;
@@ -236,6 +241,7 @@
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
 				BF455D5C1FA1954800F6C032 /* HomeVC.swift */,
 				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
+				EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				BFFBD35D1F9FDC14008A8C7F /* LaunchScreen.storyboard in Resources */,
 				BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */,
 				EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */,
+				EFDFB35D1FA77A4F0075C648 /* ReviewTVCell.xib in Resources */,
 				BFFBD35A1F9FDC14008A8C7F /* Assets.xcassets in Resources */,
 				BFFBD3551F9FDC14008A8C7F /* Main.storyboard in Resources */,
 			);
@@ -540,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */,
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
