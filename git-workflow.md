@@ -1,11 +1,13 @@
 # Git Workflow for StockBox
 
 ### Working and Tracking changes
-* if you have not created a new branch to work from then do so
+if you have not created a new branch to work from then do so
   * **git branch** ***new-branch-name***
-* switch to your branch
-  * **git checkout branch**
-* Commit changes when you have done all the following:
+
+switch to your branch
+  * **git checkout** ***branch***
+
+Commit changes when you have done all the following:
   * make your changes
   * compile successfully
   * run and test for correct behavior without crashing (or at least new crashes related to new changes)
