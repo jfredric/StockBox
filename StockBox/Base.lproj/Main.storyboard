@@ -48,6 +48,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cr-Sl-Rw4">
                                 <rect key="frame" x="117" y="257" width="38" height="30"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="68I-3J-Nag"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="GEe-6N-naa"/>
                                     <constraint firstAttribute="height" constant="30" id="GLV-dO-D0e"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
@@ -59,6 +61,8 @@
                                 <rect key="frame" x="196" y="257" width="55" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FKR-cF-Xyl"/>
+                                    <constraint firstAttribute="width" constant="55" id="VjL-nf-QNy"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="h7D-ds-uLW"/>
                                 </constraints>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -79,8 +83,6 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4cr-Sl-Rw4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="117" id="1yY-kE-o63"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SuD-9P-x97" secondAttribute="trailing" constant="124" id="4c0-t7-jgr"/>
                             <constraint firstItem="6lB-7v-bSY" firstAttribute="top" secondItem="FA1-Pm-9sZ" secondAttribute="bottom" constant="23" id="5uo-gR-D39"/>
                             <constraint firstItem="FA1-Pm-9sZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kbm-U6-uqa"/>
                             <constraint firstItem="SuD-9P-x97" firstAttribute="top" secondItem="Wnx-1R-8n1" secondAttribute="bottom" constant="8" id="UgG-uP-Rej"/>
@@ -89,6 +91,7 @@
                             <constraint firstItem="6lB-7v-bSY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fjF-pI-RsR"/>
                             <constraint firstItem="SuD-9P-x97" firstAttribute="leading" secondItem="4cr-Sl-Rw4" secondAttribute="trailing" constant="41" id="hpE-pa-74Y"/>
                             <constraint firstItem="4cr-Sl-Rw4" firstAttribute="top" secondItem="Wnx-1R-8n1" secondAttribute="bottom" constant="8" id="nRl-eX-KGL"/>
+                            <constraint firstItem="SuD-9P-x97" firstAttribute="trailing" secondItem="FA1-Pm-9sZ" secondAttribute="trailing" id="saz-f6-eyv"/>
                             <constraint firstItem="Wnx-1R-8n1" firstAttribute="top" secondItem="6lB-7v-bSY" secondAttribute="bottom" constant="18" id="urv-CY-9Kd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -111,8 +114,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhO-UI-ymS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="QX0-gX-6T7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZ2-KJ-qmB">
+                                            <rect key="frame" x="0.0" y="0.0" width="409" height="672"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="aEF-M5-l7Q">
+                                                <rect key="frame" x="0.0" y="0.0" width="409" height="672"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="light"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zn1-A6-D8M">
-                                <rect key="frame" x="33" y="57" width="310" height="553"/>
+                                <rect key="frame" x="33" y="133.5" width="310" height="400"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcG-h9-9jR">
                                         <rect key="frame" x="256" y="8" width="46" height="30"/>
@@ -199,12 +225,12 @@
                                     <constraint firstItem="SXM-Gc-0H9" firstAttribute="leading" secondItem="zn1-A6-D8M" secondAttribute="leading" constant="47" id="oNC-sv-w3y"/>
                                     <constraint firstItem="OcG-h9-9jR" firstAttribute="top" secondItem="zn1-A6-D8M" secondAttribute="top" constant="8" id="rOC-OY-6e9"/>
                                     <constraint firstAttribute="trailing" secondItem="cRQ-bS-EMq" secondAttribute="trailing" constant="45" id="t6h-t8-YTB"/>
-                                    <constraint firstAttribute="height" constant="553" id="xge-hN-SFS"/>
+                                    <constraint firstAttribute="height" constant="400" id="xge-hN-SFS"/>
                                     <constraint firstItem="cRQ-bS-EMq" firstAttribute="leading" secondItem="zn1-A6-D8M" secondAttribute="leading" constant="45" id="yyJ-Js-vMh"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.81437285958904104" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zn1-A6-D8M" firstAttribute="centerY" secondItem="a9e-uS-GPC" secondAttribute="centerY" id="C1T-kV-iLp"/>
                             <constraint firstItem="zn1-A6-D8M" firstAttribute="centerX" secondItem="a9e-uS-GPC" secondAttribute="centerX" id="uEn-i5-Fnh"/>
