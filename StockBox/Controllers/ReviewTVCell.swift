@@ -9,11 +9,9 @@
 import UIKit
 
 class ReviewTVCell: UITableViewCell {
-
     @IBOutlet weak var ratingControl: RatingControl!
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var reviewTextLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +22,5 @@ class ReviewTVCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

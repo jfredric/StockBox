@@ -13,6 +13,11 @@
 		A306D75EDDD827E77A7F9957 /* Pods_StockBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */; };
 		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
 		BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D5C1FA1954800F6C032 /* HomeVC.swift */; };
+		BF7565691FA9619C001BBADB /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7565681FA9619C001BBADB /* FavoritesVC.swift */; };
+		BF75656B1FA970CE001BBADB /* UsersProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75656A1FA970CE001BBADB /* UsersProductDetailVC.swift */; };
+		BF75656D1FA98135001BBADB /* UsersVenderDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75656C1FA98135001BBADB /* UsersVenderDetailVC.swift */; };
+		BF75656F1FA98882001BBADB /* UsersProductReviewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF75656E1FA98882001BBADB /* UsersProductReviewsVC.swift */; };
+		BF7B34E61FAA17B6008FCF7F /* UserLogOutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B34E51FAA17B6008FCF7F /* UserLogOutVC.swift */; };
 		BFE785811FA029BB0015C930 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785801FA029BB0015C930 /* Utility.swift */; };
 		BFE785831FA036810015C930 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785821FA036810015C930 /* SignUpVC.swift */; };
 		BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE785841FA0DAC00015C930 /* Reachability.swift */; };
@@ -83,6 +88,11 @@
 		976E540A03F35A2DC7CD016A /* Pods-StockBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBox/Pods-StockBox.release.xcconfig"; sourceTree = "<group>"; };
 		BF455D581FA15A4300F6C032 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BF455D5C1FA1954800F6C032 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		BF7565681FA9619C001BBADB /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		BF75656A1FA970CE001BBADB /* UsersProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProductDetailVC.swift; sourceTree = "<group>"; };
+		BF75656C1FA98135001BBADB /* UsersVenderDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVenderDetailVC.swift; sourceTree = "<group>"; };
+		BF75656E1FA98882001BBADB /* UsersProductReviewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersProductReviewsVC.swift; sourceTree = "<group>"; };
+		BF7B34E51FAA17B6008FCF7F /* UserLogOutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogOutVC.swift; sourceTree = "<group>"; };
 		BFE785801FA029BB0015C930 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		BFE785821FA036810015C930 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		BFE785841FA0DAC00015C930 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
@@ -266,6 +276,11 @@
 				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
 				65CAD66C1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift */,
 				EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */,
+				BF7565681FA9619C001BBADB /* FavoritesVC.swift */,
+				BF75656A1FA970CE001BBADB /* UsersProductDetailVC.swift */,
+				BF75656C1FA98135001BBADB /* UsersVenderDetailVC.swift */,
+				BF75656E1FA98882001BBADB /* UsersProductReviewsVC.swift */,
+				BF7B34E51FAA17B6008FCF7F /* UserLogOutVC.swift */,
 				EF593FAC1FAA17640056123E /* VendorCatalogTVC.swift */,
 			);
 			path = Controllers;
@@ -574,17 +589,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF75656D1FA98135001BBADB /* UsersVenderDetailVC.swift in Sources */,
+				BF75656B1FA970CE001BBADB /* UsersProductDetailVC.swift in Sources */,
 				EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */,
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
 				EFDFB3651FA8C5A50075C648 /* Address.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
+				BF75656F1FA98882001BBADB /* UsersProductReviewsVC.swift in Sources */,
 				EF593FAD1FAA17640056123E /* VendorCatalogTVC.swift in Sources */,
 				EF593FA91FA973F00056123E /* Product.swift in Sources */,
 				BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */,
 				BFE785831FA036810015C930 /* SignUpVC.swift in Sources */,
 				BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */,
 				65CAD66B1FA2C2F60067FEAE /* VendorProfileVC.swift in Sources */,
+				BF7565691FA9619C001BBADB /* FavoritesVC.swift in Sources */,
 				EF593FA71FA9739E0056123E /* Review.swift in Sources */,
 				EFDFB3631FA8C3440075C648 /* User.swift in Sources */,
 				EFDFB3671FA8E1D60075C648 /* AppDatabase.swift in Sources */,
@@ -593,7 +612,7 @@
 				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
 				EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */,
 				BFFBD3501F9FDC14008A8C7F /* AppDelegate.swift in Sources */,
-				65CAD66D1FA67D5B0067FEAE /* VendorPhotosCollectionView.swift in Sources */,
+				BF7B34E61FAA17B6008FCF7F /* UserLogOutVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
