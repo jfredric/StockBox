@@ -26,8 +26,8 @@ class UsersProductReviewsVC: UIViewController, UITableViewDataSource, UITableVie
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewTVCell-ID") as? ReviewTVCell else {
             fatalError("The World Is Ending")
         }
-        cell.customerNameLbl.text = "Kelly"
-        cell.reviewDescriptionLbl.text = "This product Rocks!!!!"
+        cell.publisherLabel.text = "Kelly"
+        cell.reviewTextLabel.text = "This product Rocks!!!!"
         return cell
     }
     @IBAction func cancelBtnPressed(_ sender: Any) {

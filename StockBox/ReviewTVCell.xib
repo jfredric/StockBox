@@ -19,8 +19,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QK1-Eg-nWV" userLabel="RatingControl" customClass="RatingControl" customModule="StockBox" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="100" height="20"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QK1-Eg-nWV" userLabel="RatingControl" customClass="RatingControl" customModule="StockBox" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="100" height="24.5"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                 <size key="value" width="20" height="20"/>
