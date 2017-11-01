@@ -9,7 +9,9 @@
 import UIKit
 
 class ReviewTVCell: UITableViewCell {
-
+    @IBOutlet weak var customerNameLbl: UILabel!
+    
+    @IBOutlet weak var reviewDescriptionLbl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
