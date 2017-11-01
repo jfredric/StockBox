@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import StockBox
+import Firebase
 
 class StockBoxTests: XCTestCase {
     

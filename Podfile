@@ -13,11 +13,17 @@ target 'StockBox' do
   target 'StockBoxTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Database'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
   end
 
   target 'StockBoxUITests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Firebase/Database'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
   end
 
 end

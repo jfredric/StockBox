@@ -7,6 +7,7 @@
 //
 
 import XCTest
+//import Firebase
 
 class StockBoxUITests: XCTestCase {
         
@@ -28,9 +29,15 @@ class StockBoxUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func navigateUserTabView() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let tabBarsQuery = XCUIApplication().tabBars
+        tabBarsQuery.buttons["Favorties"].tap()
+        tabBarsQuery.buttons["Profile"].tap()
+        tabBarsQuery.buttons["Home"].tap()
+        
     }
     
 }
