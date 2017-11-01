@@ -26,10 +26,17 @@
 		BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */; };
 		D1E038ACAB45FC34C79DAB57 /* Pods_StockBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */; };
 		EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF364BF51FA053AD00D9E881 /* RatingControl.swift */; };
+		EF593FA51FA973740056123E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF593FA41FA973740056123E /* Category.swift */; };
+		EF593FA71FA9739E0056123E /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF593FA61FA9739E0056123E /* Review.swift */; };
+		EF593FA91FA973F00056123E /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF593FA81FA973F00056123E /* Product.swift */; };
+		EF593FAD1FAA17640056123E /* VendorCatalogTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF593FAC1FAA17640056123E /* VendorCatalogTVC.swift */; };
 		EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6688751FA0223C0003C569 /* ProductTVCell.swift */; };
 		EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF6688761FA0223C0003C569 /* ProductTVCell.xib */; };
 		EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */; };
 		EFDFB35D1FA77A4F0075C648 /* ReviewTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */; };
+		EFDFB3631FA8C3440075C648 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFB3621FA8C3440075C648 /* User.swift */; };
+		EFDFB3651FA8C5A50075C648 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFB3641FA8C5A50075C648 /* Address.swift */; };
+		EFDFB3671FA8E1D60075C648 /* AppDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFDFB3661FA8E1D60075C648 /* AppDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,10 +101,17 @@
 		BFFBD3741F9FDC14008A8C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF364BF51FA053AD00D9E881 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		EF593FA41FA973740056123E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EF593FA61FA9739E0056123E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		EF593FA81FA973F00056123E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		EF593FAC1FAA17640056123E /* VendorCatalogTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCatalogTVC.swift; sourceTree = "<group>"; };
 		EF6688751FA0223C0003C569 /* ProductTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTVCell.swift; sourceTree = "<group>"; };
 		EF6688761FA0223C0003C569 /* ProductTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCell.xib; sourceTree = "<group>"; };
 		EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
 		EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTVCell.xib; sourceTree = "<group>"; };
+		EFDFB3621FA8C3440075C648 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EFDFB3641FA8C5A50075C648 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		EFDFB3661FA8E1D60075C648 /* AppDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +177,12 @@
 		BF455D5B1FA16C8C00F6C032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFDFB3621FA8C3440075C648 /* User.swift */,
+				EFDFB3641FA8C5A50075C648 /* Address.swift */,
+				EF593FA41FA973740056123E /* Category.swift */,
+				EF593FA61FA9739E0056123E /* Review.swift */,
+				EF593FA81FA973F00056123E /* Product.swift */,
+				EFDFB3661FA8E1D60075C648 /* AppDatabase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +265,7 @@
 				65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */,
 				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
 				EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */,
+				EF593FAC1FAA17640056123E /* VendorCatalogTVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -416,12 +437,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockBox/Pods-StockBox-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,12 +575,19 @@
 			files = (
 				EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */,
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
+				EFDFB3651FA8C5A50075C648 /* Address.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
+				EF593FAD1FAA17640056123E /* VendorCatalogTVC.swift in Sources */,
+				EF593FA91FA973F00056123E /* Product.swift in Sources */,
 				BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */,
 				BFE785831FA036810015C930 /* SignUpVC.swift in Sources */,
 				BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */,
 				65CAD66B1FA2C2F60067FEAE /* VendorProfileVC.swift in Sources */,
+				EF593FA71FA9739E0056123E /* Review.swift in Sources */,
+				EFDFB3631FA8C3440075C648 /* User.swift in Sources */,
+				EFDFB3671FA8E1D60075C648 /* AppDatabase.swift in Sources */,
+				EF593FA51FA973740056123E /* Category.swift in Sources */,
 				65DAEF581FA993D5005091B9 /* AddProductImageVC.swift in Sources */,
 				EF6688771FA0223C0003C569 /* ProductTVCell.swift in Sources */,
 				EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */,

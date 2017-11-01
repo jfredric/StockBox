@@ -12,6 +12,7 @@ class ProductTVCell: UITableViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productTitle: UILabel!
     @IBOutlet weak var productPrice: UILabel!
+    @IBOutlet weak var ratingControl: RatingControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
