@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DYk-Z1-oVc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -566,7 +566,59 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEX-F5-eOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="2603"/>
+            <point key="canvasLocation" x="-26" y="2603"/>
+        </scene>
+        <!--Vendor Catalog VC-->
+        <scene sceneID="fAg-fR-TaQ">
+            <objects>
+                <tableViewController id="MMC-y0-fwr" userLabel="Vendor Catalog VC" customClass="VendorCatalogTVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UnM-X4-6Gw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ra6-pt-sqw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ra6-pt-sqw" id="dZR-7n-Z5N">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MMC-y0-fwr" id="onY-ks-OeE"/>
+                            <outlet property="delegate" destination="MMC-y0-fwr" id="mff-rD-OCF"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Catalog" id="KQF-Tm-3ne">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Pdg-sw-4F1">
+                            <connections>
+                                <action selector="addBarButton:" destination="MMC-y0-fwr" id="HDp-lZ-tpf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICR-dZ-Eku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="2987"/>
+        </scene>
+        <!--Vendor Catalog Nav Controller-->
+        <scene sceneID="goP-8M-SkF">
+            <objects>
+                <navigationController title="Catelog Controller" id="l5r-3u-61F" userLabel="Vendor Catalog Nav Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cataglog" id="RVg-ib-OCs" userLabel="Tab Bar Item"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXH-vA-oIY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MMC-y0-fwr" kind="relationship" relationship="rootViewController" id="5bX-n1-uvl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xVq-FR-4Yv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2350" y="2237"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FCO-Y4-O3Y">
@@ -774,6 +826,7 @@
                         <segue destination="IKx-OS-Nvo" kind="relationship" relationship="viewControllers" id="bMy-mo-s9y"/>
                         <segue destination="dhq-Pa-ZNF" kind="relationship" relationship="viewControllers" id="IyV-Po-HtJ"/>
                         <segue destination="Jyf-AC-rQI" kind="relationship" relationship="viewControllers" id="3dm-JQ-LdS"/>
+                        <segue destination="l5r-3u-61F" kind="relationship" relationship="viewControllers" id="XbP-hQ-lN3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQz-ge-T9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

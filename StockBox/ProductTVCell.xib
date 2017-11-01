@@ -72,6 +72,7 @@
                 <outlet property="productImage" destination="nRK-R0-02I" id="EtH-t7-PQh"/>
                 <outlet property="productPrice" destination="qcl-tc-hBP" id="boL-5i-CMe"/>
                 <outlet property="productTitle" destination="C6E-ks-zE9" id="x5V-fg-r7z"/>
+                <outlet property="ratingControl" destination="hzT-VE-rCz" id="GhW-wu-Pw7"/>
             </connections>
             <point key="canvasLocation" x="136" y="90"/>
         </tableViewCell>
