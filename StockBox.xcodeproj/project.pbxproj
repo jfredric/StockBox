@@ -28,7 +28,7 @@
 		BFFBD35D1F9FDC14008A8C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */; };
 		BFFBD3681F9FDC14008A8C7F /* StockBoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD3671F9FDC14008A8C7F /* StockBoxTests.swift */; };
 		BFFBD3731F9FDC14008A8C7F /* StockBoxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBD3721F9FDC14008A8C7F /* StockBoxUITests.swift */; };
-		BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */; };
+		BFFBD3811F9FDF98008A8C7F /* GoogleService-Info-old.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFFBD3801F9FDF98008A8C7F /* GoogleService-Info-old.plist */; };
 		D1E038ACAB45FC34C79DAB57 /* Pods_StockBoxUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */; };
 		EF364C0A1FA0D68200D9E881 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF364BF51FA053AD00D9E881 /* RatingControl.swift */; };
 		EF593FA51FA973740056123E /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF593FA41FA973740056123E /* Category.swift */; };
@@ -109,12 +109,14 @@
 		BFFBD36E1F9FDC14008A8C7F /* StockBoxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockBoxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFBD3721F9FDC14008A8C7F /* StockBoxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockBoxUITests.swift; sourceTree = "<group>"; };
 		BFFBD3741F9FDC14008A8C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BFFBD3801F9FDF98008A8C7F /* GoogleService-Info-old.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-old.plist"; sourceTree = "<group>"; };
 		EF364BF51FA053AD00D9E881 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		EF593FA41FA973740056123E /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		EF593FA61FA9739E0056123E /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		EF593FA81FA973F00056123E /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		EF593FAC1FAA17640056123E /* VendorCatalogTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorCatalogTVC.swift; sourceTree = "<group>"; };
+		EF593FD31FAA84D20056123E /* GoogleService-Info-josh.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-josh.plist"; sourceTree = "<group>"; };
+		EF593FD41FAA84E50056123E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF6688751FA0223C0003C569 /* ProductTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTVCell.swift; sourceTree = "<group>"; };
 		EF6688761FA0223C0003C569 /* ProductTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTVCell.xib; sourceTree = "<group>"; };
 		EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTVCell.swift; sourceTree = "<group>"; };
@@ -231,7 +233,9 @@
 				BFFBD3591F9FDC14008A8C7F /* Assets.xcassets */,
 				BFFBD35E1F9FDC14008A8C7F /* Info.plist */,
 				BFFBD3561F9FDC14008A8C7F /* StockBox.xcdatamodeld */,
-				BFFBD3801F9FDF98008A8C7F /* GoogleService-Info.plist */,
+				EF593FD41FAA84E50056123E /* GoogleService-Info.plist */,
+				EF593FD31FAA84D20056123E /* GoogleService-Info-josh.plist */,
+				BFFBD3801F9FDF98008A8C7F /* GoogleService-Info-old.plist */,
 			);
 			path = StockBox;
 			sourceTree = "<group>";
@@ -403,7 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFFBD35D1F9FDC14008A8C7F /* LaunchScreen.storyboard in Resources */,
-				BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */,
+				BFFBD3811F9FDF98008A8C7F /* GoogleService-Info-old.plist in Resources */,
 				EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */,
 				EFDFB35D1FA77A4F0075C648 /* ReviewTVCell.xib in Resources */,
 				BFFBD35A1F9FDC14008A8C7F /* Assets.xcassets in Resources */,
@@ -803,7 +807,7 @@
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JaredSobol.StockBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easydoesit.stockbox.josh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -820,7 +824,7 @@
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.JaredSobol.StockBox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.easydoesit.stockbox.josh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
