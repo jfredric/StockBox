@@ -14,6 +14,9 @@ class ProductTVCell: UITableViewCell {
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var ratingControl: RatingControl!
     
+    static let reuseIdentifier = "ProductTVCell-ID"
+    static let xibName = "ProductTVCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
