@@ -17,9 +17,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
     var ref: DatabaseReference!
     
-    
-    
-    
+
     @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
@@ -29,7 +27,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        print(descriptionTextView.text)
+    
 
     }
 

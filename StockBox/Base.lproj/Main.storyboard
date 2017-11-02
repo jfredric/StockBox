@@ -550,7 +550,7 @@
                                 <rect key="frame" x="335" y="18" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="4tf-nS-GHS" kind="show" id="EvI-6A-y5I"/>
+                                    <segue destination="BQ6-cP-I0R" kind="show" id="kVT-t7-D80"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(xib file from customer view)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLJ-AL-Zuf">
@@ -569,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UEX-F5-eOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26" y="2603"/>
+            <point key="canvasLocation" x="86" y="2603"/>
         </scene>
         <!--Vendor Catalog VC-->
         <scene sceneID="fAg-fR-TaQ">
@@ -604,7 +604,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICR-dZ-Eku" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350" y="2987"/>
+            <point key="canvasLocation" x="3028" y="2986.9565217391305"/>
         </scene>
         <!--Vendor Catalog Nav Controller-->
         <scene sceneID="goP-8M-SkF">
@@ -680,13 +680,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="IHP-Q2-B5j"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NWi-fN-iv1"/>
                     <connections>
                         <outlet property="imageDisplayed" destination="TVo-rm-nEt" id="kEr-dE-CJ8"/>
+                        <outlet property="prodctPrice" destination="3tP-FD-twc" id="TEb-dT-LMz"/>
+                        <outlet property="productDescription" destination="x8z-zg-fMQ" id="6f4-tq-w7D"/>
+                        <outlet property="productTitle" destination="Xsu-P5-HaW" id="26h-tP-Cep"/>
+                        <outlet property="productTtile" destination="Xsu-P5-HaW" id="fpc-H1-OXj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jVf-SW-Y8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-954.39999999999998" y="3452.9235382308848"/>
+            <point key="canvasLocation" x="633" y="3493"/>
         </scene>
         <!--Orders-->
         <scene sceneID="YKI-dM-ep1">
@@ -821,43 +826,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQz-ge-T9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="930" y="1698"/>
-        </scene>
-        <!--Product Reviews-->
-        <scene sceneID="5s7-vn-liH">
-            <objects>
-                <tableViewController id="4GP-bl-amw" customClass="VendorProductReviewsTVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fPJ-EL-smP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="dataSource" destination="4GP-bl-amw" id="ZiW-wD-jfo"/>
-                            <outlet property="delegate" destination="4GP-bl-amw" id="T8K-Ou-6tv"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Product Reviews" id="QDQ-L7-EuZ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AZc-4a-aVp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1393" y="3453"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OrM-uE-T1O">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="koU-0O-gRw" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HA8-3D-Nwd">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4GP-bl-amw" kind="relationship" relationship="rootViewController" id="Twx-ND-cUk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bzn-Rf-h1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="66" y="3453"/>
         </scene>
         <!--Home-->
         <scene sceneID="Ldl-k0-bSw">
@@ -1233,6 +1201,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7f-nt-6i9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4612" y="584"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QcU-kT-41S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BQ6-cP-I0R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ds3-Y5-kst">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4tf-nS-GHS" kind="relationship" relationship="rootViewController" id="S9d-cB-9ZC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dQS-dI-pL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-454" y="3493"/>
         </scene>
     </scenes>
     <resources>
