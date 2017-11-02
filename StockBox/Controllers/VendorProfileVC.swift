@@ -8,12 +8,12 @@
 
 import UIKit
 
-class VendorProfileVC: UIViewController {
+class VendorProfileVC: UIViewController, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate  {
 
-    @IBAction func reviewsButton(_ sender: Any) {
-    }
-    @IBOutlet var vendorImage: UIImageView!
+    let picker = UIImagePickerController()
     
+    @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
     @IBOutlet var vendorEmailTextField: UITextField!
@@ -22,23 +22,47 @@ class VendorProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func vendorImagePress(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.allowsEditing = false
+            picker.sourceType = .camera
+            picker.cameraCaptureMode = .photo
+            picker.modalPresentationStyle = .fullScreen
+            present(picker,animated: true)
+        } else {
+            noCamera()
+        }
+    }
+    func noCamera(){
+        let alertVC = UIAlertController(
+            title: "No Camera",
+            message: "Sorry, this device cannot use the camera",
+            preferredStyle: .alert)
+        let okAction = UIAlertAction(
+            title: "Okay",
+            style:.default,
+            handler: nil)
+        alertVC.addAction(okAction)
+        present(
+            alertVC,
+            animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+//Delegates
+    private func imagePickerController(_ picker: UIImagePickerController,
+                                       didFinishPickingMediaWithInfo info: [String : AnyObject])
+    {
+        var  chosenImage = UIImage()
+        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        vendorImageBtn.contentMode = .scaleAspectFit
+        vendorImageBtn.imageView?.image = chosenImage
+        dismiss(animated:true)
     }
-    */
-
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
+    
 }

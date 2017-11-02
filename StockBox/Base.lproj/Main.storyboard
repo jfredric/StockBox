@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -776,10 +776,14 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lE-t1-GdT">
-                                <rect key="frame" x="16" y="68" width="155" height="172"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32F-3c-OUO">
+                                <rect key="frame" x="23" y="68" width="140" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button" image="quickadd"/>
+                                <connections>
+                                    <action selector="vendorImagePress:" destination="IKx-OS-Nvo" eventType="touchUpInside" id="EYh-fV-2KR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="4Hq-jE-1sM"/>
@@ -789,7 +793,7 @@
                         <outlet property="descriptionTextView" destination="Ig5-kY-gWC" id="9gh-J0-ebk"/>
                         <outlet property="storeNameTextField" destination="k8Q-jX-Kfh" id="sJ4-UP-Qd5"/>
                         <outlet property="vendorEmailTextField" destination="B7L-uE-5Si" id="NjR-Oz-rfS"/>
-                        <outlet property="vendorImage" destination="5lE-t1-GdT" id="KQ9-oU-Nu6"/>
+                        <outlet property="vendorImageBtn" destination="32F-3c-OUO" id="maL-wo-2DY"/>
                         <outlet property="vendorLocationTextField" destination="GBW-zM-jgC" id="4Au-AC-8Rq"/>
                         <outlet property="vendorPhoneNumTextField" destination="Roa-2E-GMU" id="fM5-E5-iC7"/>
                     </connections>
@@ -816,7 +820,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQz-ge-T9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="1696"/>
+            <point key="canvasLocation" x="930" y="1698"/>
         </scene>
         <!--Product Reviews-->
         <scene sceneID="5s7-vn-liH">
@@ -1236,8 +1240,8 @@
         <image name="heart_deselected_icon" width="22" height="20"/>
         <image name="home_btn" width="24" height="28"/>
         <image name="menubtn" width="20" height="14"/>
-        <image name="quickadd" width="200" height="200"/>
         <image name="profile_btn" width="28" height="28"/>
+        <image name="quickadd" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hIG-xH-ZRG"/>

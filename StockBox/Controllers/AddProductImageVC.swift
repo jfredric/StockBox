@@ -18,14 +18,15 @@ UINavigationControllerDelegate  {
     @IBAction func addPhotoButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false
-            picker.sourceType = UIImagePickerControllerSourceType.camera
+            picker.sourceType = .camera
             picker.cameraCaptureMode = .photo
             picker.modalPresentationStyle = .fullScreen
-            present(picker,animated: true,completion: nil)
+            present(picker,animated: true)
         } else {
             noCamera()
         }
     }
+    
     func noCamera(){
         let alertVC = UIAlertController(
             title: "No Camera",
@@ -41,6 +42,7 @@ UINavigationControllerDelegate  {
             animated: true,
             completion: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
@@ -54,10 +56,10 @@ UINavigationControllerDelegate  {
         chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageDisplayed.contentMode = .scaleAspectFit
         imageDisplayed.image = chosenImage
-        dismiss(animated:true, completion: nil)
+        dismiss(animated:true)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true)
     }
 }
 
