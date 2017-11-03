@@ -10,9 +10,8 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     var handle: AuthStateDidChangeListenerHandle?
-
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -20,6 +19,10 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set the TextField Delegates
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +40,20 @@ class LoginVC: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
+    // MARK: TEXTFIELD DELEGATE FUNCTIONS
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("return button pressed")
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        }
+        if textField == passwordTextField{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    // MARK: ACTION FUNCTIONS
     
     @IBAction func loginBtnPressed(_ sender: Any) {
         
