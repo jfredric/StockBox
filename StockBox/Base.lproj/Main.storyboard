@@ -187,6 +187,7 @@
                                 <state key="normal" title="logOut"/>
                                 <connections>
                                     <action selector="logInOutBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="MXJ-n8-gam"/>
+                                    <segue destination="L9E-zl-bE5" kind="show" identifier="signOutSegue" id="rwx-vN-zCA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -237,12 +238,11 @@
                         <outlet property="nameTextField" destination="PSL-cG-7Co" id="hh7-oi-5mR"/>
                         <outlet property="passwordTextField" destination="YGv-jQ-KHK" id="MQG-33-4R0"/>
                         <outlet property="shippingAddressTextField" destination="PTT-Bi-ku1" id="TCg-iy-dMg"/>
-                        <segue destination="vsv-lU-IlY" kind="show" identifier="signOutSegue" id="Yjn-SA-sjA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVA-0C-khY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="1975"/>
+            <point key="canvasLocation" x="2078" y="2104"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="OAY-qX-ETf">
@@ -614,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VMJ-o6-HVk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="1296"/>
+            <point key="canvasLocation" x="3297" y="1268"/>
         </scene>
         <!--CheckOut-->
         <scene sceneID="tP0-J2-pm1">
@@ -625,7 +625,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-VU-jov">
-                                <rect key="frame" x="0.0" y="111" width="375" height="362"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="313"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="qm8-Nf-HCZ">
@@ -639,7 +639,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJa-Ki-M2h">
-                                <rect key="frame" x="7" y="489" width="152" height="21"/>
+                                <rect key="frame" x="7" y="440" width="152" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="Wdy-5j-z0G"/>
                                     <constraint firstAttribute="height" constant="21" id="XIb-7U-ez2"/>
@@ -649,7 +649,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billing Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7nc-nx-ElP">
-                                <rect key="frame" x="7" y="533" width="152" height="21"/>
+                                <rect key="frame" x="7" y="484" width="152" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="wt2-Hw-nnC"/>
                                     <constraint firstAttribute="height" constant="21" id="xoR-Db-iwS"/>
@@ -659,19 +659,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLV-Ln-nML">
-                                <rect key="frame" x="217" y="480" width="142" height="30"/>
+                                <rect key="frame" x="217" y="431" width="142" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJc-1C-73m">
-                                <rect key="frame" x="217" y="524" width="142" height="30"/>
+                                <rect key="frame" x="217" y="475" width="142" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-lf-aGW">
-                                <rect key="frame" x="7" y="574" width="143" height="74"/>
+                                <rect key="frame" x="7" y="525" width="143" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="143" id="1bO-OQ-LvV"/>
                                     <constraint firstAttribute="height" constant="74" id="3ak-ab-S27"/>
@@ -701,13 +701,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tex:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUQ-sk-o8m">
-                                <rect key="frame" x="260" y="598" width="56" height="21"/>
+                                <rect key="frame" x="260" y="549" width="56" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTotal:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACY-Rh-490">
-                                <rect key="frame" x="260" y="574" width="56" height="21"/>
+                                <rect key="frame" x="260" y="525" width="56" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="obg-pb-4Sd"/>
                                 </constraints>
@@ -716,7 +716,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUM-aM-P1x">
-                                <rect key="frame" x="260" y="623" width="56" height="21"/>
+                                <rect key="frame" x="260" y="574" width="56" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZJk-vU-lKq"/>
                                 </constraints>
@@ -774,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OiJ-9Z-r17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2078" y="1261"/>
+            <point key="canvasLocation" x="2078" y="1296"/>
         </scene>
         <!--Users Product ReviewsVC-->
         <scene sceneID="zlh-Er-cww">
@@ -968,6 +968,5 @@
         <segue reference="rw0-hR-aws"/>
         <segue reference="M9C-oZ-52f"/>
         <segue reference="O4F-NG-y1l"/>
-        <segue reference="Yjn-SA-sjA"/>
     </inferredMetricsTieBreakers>
 </document>
