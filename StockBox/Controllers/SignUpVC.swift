@@ -14,7 +14,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var UserMerchantSegmentControl: UISegmentedControl!
-    
+
     var handle: AuthStateDidChangeListenerHandle?
 
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    
+
     override func viewDidLayoutSubviews() {
         emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
         emailTextField.layer.borderWidth = 2.0
@@ -38,31 +38,31 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         passwordTextField.layer.masksToBounds = true
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
                                                                      attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
-        
-        
+
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
+
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
+
     // MARK: TEXTFIELD DELEGATE FUNCTIONS
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("return button pressed")
         if textField == emailTextField {
@@ -73,9 +73,9 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
+
     // MARK: ACTION FUNCTIONS
-    
+
     @IBAction func signUpBtnPressed(_ sender: Any) {
         if ConnectionCheck.isConnectedToNetwork() {
             let unWrappedCleanedStrings = trimmedAndUnwrappedTextFieldInputs(email: emailTextField.text, password: passwordTextField.text)
@@ -96,7 +96,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
             self.present(internetConnectionAlert, animated: true, completion: nil)
         }
     }
-    
+
     //UTILITY FUNCS FOR SignUpVC
     //*************************
     //Checks in either field is empty and alerts with apporpriate response
@@ -120,7 +120,7 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         }
     }
 
-    
 
-    
+
+
 }

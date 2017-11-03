@@ -58,6 +58,8 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        productTitle.delegate = self
+        prodctPrice.delegate = self
         ref = Database.database().reference()
     }
 
@@ -74,6 +76,21 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }
+    
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+        if textField == productTitle {
+            prodctPrice.becomeFirstResponder()
+        }
+        if textField == productDescription{
+            textField.resignFirstResponder()
+        }
+        return true
+        }
+    
+
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let user = Auth.auth().currentUser else {
             return
