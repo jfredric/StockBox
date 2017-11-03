@@ -1110,7 +1110,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Te3-VU-jov">
-                                <rect key="frame" x="0.0" y="67" width="375" height="357"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="313"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="qm8-Nf-HCZ">
@@ -1247,7 +1247,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A10-8U-Z13"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="CheckOut" id="HAg-tD-skP"/>
+                    <tabBarItem key="tabBarItem" title="CheckOut" image="icons8-checkout (1)" id="HAg-tD-skP"/>
                     <connections>
                         <outlet property="billingAddressTextField" destination="WJc-1C-73m" id="qsF-dv-LnW"/>
                         <outlet property="shippingAddressTextField" destination="JLV-Ln-nML" id="E19-i0-VNc"/>
@@ -1463,15 +1463,15 @@
         <image name="cart" width="24" height="20"/>
         <image name="heart_deselected_icon" width="22" height="20"/>
         <image name="home_btn" width="24" height="28"/>
+        <image name="icons8-checkout (1)" width="32" height="32"/>
         <image name="menubtn" width="20" height="14"/>
         <image name="profile_btn" width="28" height="28"/>
         <image name="quickadd" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MMr-AL-6Ve"/>
-        <segue reference="M9C-oZ-52f"/>
-        <segue reference="O4F-NG-y1l"/>
         <segue reference="GEZ-Fd-oe5"/>
+        <segue reference="rw0-hR-aws"/>
+        <segue reference="M9C-oZ-52f"/>
         <segue reference="hIG-xH-ZRG"/>
         <segue reference="AZM-Gu-0W3"/>
     </inferredMetricsTieBreakers>
