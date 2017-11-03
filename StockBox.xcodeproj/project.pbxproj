@@ -18,6 +18,8 @@
 		BF0276C61FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276C41FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift */; };
 		BF0276C71FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF0276C51FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib */; };
 		BF0276C91FAC297C006F9DF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276C81FAC297C006F9DF3 /* Constants.swift */; };
+		BF0276CB1FACF8A0006F9DF3 /* Vendor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0276CA1FACF8A0006F9DF3 /* Vendor.storyboard */; };
+		BF0276CD1FAD08ED006F9DF3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0276CC1FAD08ED006F9DF3 /* Login.storyboard */; };
 		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
 		BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D5C1FA1954800F6C032 /* HomeVC.swift */; };
 		BF7565691FA9619C001BBADB /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7565681FA9619C001BBADB /* FavoritesVC.swift */; };
@@ -100,6 +102,8 @@
 		BF0276C41FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOutTableViewCell.swift; sourceTree = "<group>"; };
 		BF0276C51FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckOutTableViewCell.xib; sourceTree = "<group>"; };
 		BF0276C81FAC297C006F9DF3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BF0276CA1FACF8A0006F9DF3 /* Vendor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vendor.storyboard; sourceTree = "<group>"; };
+		BF0276CC1FAD08ED006F9DF3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BF455D581FA15A4300F6C032 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BF455D5C1FA1954800F6C032 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BF7565681FA9619C001BBADB /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
@@ -272,9 +276,13 @@
 		EF6688731FA020100003C569 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF0276C51FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib */,
+				BF0276881FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.xib */,
 				EF6688761FA0223C0003C569 /* ProductTVCell.xib */,
 				EFDFB35B1FA77A4E0075C648 /* ReviewTVCell.xib */,
 				BFFBD35B1F9FDC14008A8C7F /* LaunchScreen.storyboard */,
+				BF0276CA1FACF8A0006F9DF3 /* Vendor.storyboard */,
+				BF0276CC1FAD08ED006F9DF3 /* Login.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -297,10 +305,8 @@
 				BF7B34E51FAA17B6008FCF7F /* UserLogOutVC.swift */,
 				BF0276851FAAC8CA006F9DF3 /* ShoppingCartVC.swift */,
 				BF0276871FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.swift */,
-				BF0276881FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.xib */,
 				BF0276C21FAC0631006F9DF3 /* CheckoutVC.swift */,
 				BF0276C41FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift */,
-				BF0276C51FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib */,
 				EF593FAC1FAA17640056123E /* VendorProductsTVC.swift */,
 			);
 			path = Controllers;
@@ -428,8 +434,10 @@
 				BFFBD3811F9FDF98008A8C7F /* GoogleService-Info.plist in Resources */,
 				BF0276C71FAC0A2A006F9DF3 /* CheckOutTableViewCell.xib in Resources */,
 				EF6688781FA0223C0003C569 /* ProductTVCell.xib in Resources */,
+				BF0276CB1FACF8A0006F9DF3 /* Vendor.storyboard in Resources */,
 				EFDFB35D1FA77A4F0075C648 /* ReviewTVCell.xib in Resources */,
 				BFFBD35A1F9FDC14008A8C7F /* Assets.xcassets in Resources */,
+				BF0276CD1FAD08ED006F9DF3 /* Login.storyboard in Resources */,
 				BFFBD3551F9FDC14008A8C7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

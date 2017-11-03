@@ -85,7 +85,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.present(authAlert, animated: true, completion: nil)
                         return
                     }
-                    self.performSegue(withIdentifier: "loginHomeSegue" , sender: nil)
+                    //self.performSegue(withIdentifier: "loginHomeSegue" , sender: nil)
                     print("logged In")
                     //                self.navigationController!.popViewController(animated: true)
                 }
