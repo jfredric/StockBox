@@ -15,33 +15,48 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         // Set the TextField Delegates
         emailTextField.delegate = self
         passwordTextField.delegate = self
+    }
+
+    override func viewDidLayoutSubviews() {
+        emailTextField.layer.borderColor = UIColor.white.cgColor
+        emailTextField.layer.borderWidth = 2.0
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.layer.masksToBounds = true
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
+                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
+        passwordTextField.layer.borderColor = UIColor.white.cgColor
+        passwordTextField.layer.borderWidth = 2.0
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.masksToBounds = true
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             // ...
         }
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
-    
+
     // MARK: TEXTFIELD DELEGATE FUNCTIONS
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("return button pressed")
         if textField == emailTextField {
@@ -52,11 +67,11 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    
+
     // MARK: ACTION FUNCTIONS
-    
+
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
+
         if ConnectionCheck.isConnectedToNetwork() {
             print("we are good")
             // Look in utility file for trimmedAndUnwrappedUserPass func
@@ -70,7 +85,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
                         self.present(authAlert, animated: true, completion: nil)
                         return
                     }
-                    self.performSegue(withIdentifier: "loginHomeSegue" , sender: nil)
+                    //self.performSegue(withIdentifier: "loginHomeSegue" , sender: nil)
                     print("logged In")
                     //                self.navigationController!.popViewController(animated: true)
                 }
@@ -80,13 +95,13 @@ class LoginVC: UIViewController, UITextFieldDelegate {
             self.present(internetConnectionAlert, animated: true, completion: nil)
         }
     }
-    
-    
+
+
     @IBAction func SignUpBtnPressed(_ sender: Any) {
-        
+
     }
-    
-    
+
+
     //UTILITY FUNCS FOR LOGINVC
     //*************************
     //Checks in either field is empty and alerts with apporpriate response
@@ -110,4 +125,3 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
     }
 }
-

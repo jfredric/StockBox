@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class UserLogOutVC: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
@@ -33,6 +34,14 @@ class UserLogOutVC: UIViewController {
     @IBAction func passwordEditBtnPressed(_ sender: Any) {
     }
     @IBAction func logInOutBtnPressed(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            print("Goodbye!")
+            performSegue(withIdentifier: "signOutSegue", sender: nil)
+        } catch let signOutError as Error {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
 
