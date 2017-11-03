@@ -7,11 +7,23 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class AddProductImageVC: UIViewController,UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+UINavigationControllerDelegate, UITextFieldDelegate  {
 
+    
+   
+    @IBOutlet var productTitle: UITextField!
+    
+    @IBOutlet var prodctPrice: UITextField!
+    
+    @IBOutlet var productDescription: UITextView!
+    
     let picker = UIImagePickerController()
+    
+    var ref: DatabaseReference!
     
     @IBOutlet var imageDisplayed: UIImageView!
     
@@ -46,6 +58,7 @@ UINavigationControllerDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
+        ref = Database.database().reference()
     }
 
 //Delegates
@@ -61,5 +74,21 @@ UINavigationControllerDelegate  {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }
-}
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        let uid = user.uid
+        
+        if let title = productTitle.text {
+            self.ref.child("users").child(uid).setValue(["title": title])
+        }
+        if let price = prodctPrice.text {
+            self.ref.child("users").child(uid).setValue(["price": price])
+        }
+        if let description = productDescription.text {
+            self.ref.child("users").child(uid).setValue(["description": description])
+        }
+    }
 
+}

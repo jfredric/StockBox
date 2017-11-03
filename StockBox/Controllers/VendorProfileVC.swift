@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class VendorProfileVC: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate  {
+UINavigationControllerDelegate, UITextFieldDelegate  {
 
     let picker = UIImagePickerController()
     
+    var ref: DatabaseReference!
+    
+
     @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
@@ -21,9 +26,35 @@ UINavigationControllerDelegate  {
     @IBOutlet var storeNameTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Database.database().reference()
+    
 
     }
 
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let user = Auth.auth().currentUser else {
+            return
+        }
+        let uid = user.uid
+        
+        if let description = descriptionTextView.text {
+            self.ref.child("users").child(uid).setValue(["description": description])
+        }
+        if let storeName = storeNameTextField.text {
+            self.ref.child("users").child(uid).setValue(["store name": storeName])
+        }
+        if let location = vendorLocationTextField.text {
+             self.ref.child("users").child(uid).setValue(["location": location])
+        }
+        if let phoneNum = vendorPhoneNumTextField.text {
+            self.ref.child("users").child(uid).setValue(["phone number": phoneNum])
+        }
+        if let email = vendorEmailTextField.text {
+            self.ref.child("users").child(uid).setValue(["email": email])
+        }
+    }
+    
+    
     @IBAction func vendorImagePress(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.allowsEditing = false

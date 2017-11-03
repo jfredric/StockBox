@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Foundation
 
-class VendorCatalogTVC: UITableViewController {
+class VendorProductsTVC: UITableViewController {
     
-    let productCellReuseID = "ProductTVCell-ID"
+    let segueForDetails = "vendorProductDetailsSegue-ID"
+    let segueForAdd = "addProductSegue-ID"
 
     @IBAction func addBarButton(_ sender: UIBarButtonItem) {
     }
@@ -19,7 +21,7 @@ class VendorCatalogTVC: UITableViewController {
         super.viewDidLoad()
         
         // register table view cell xib
-        tableView.register(UINib.init(nibName: "ProductTVCell", bundle: nil), forCellReuseIdentifier: productCellReuseID)
+        tableView.register(UINib.init(nibName: ProductTVCell.xibName, bundle: nil), forCellReuseIdentifier: ProductTVCell.reuseIdentifier)
         
     }
 
@@ -36,13 +38,17 @@ class VendorCatalogTVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: productCellReuseID, for: indexPath) as! ProductTVCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductTVCell.reuseIdentifier, for: indexPath) as! ProductTVCell
 
         // Configure the cell...
         cell.ratingControl.rating = indexPath.row / 5 // to show varying ratting
-        cell.productPrice.text = "$" + String(Double(indexPath.row))
-
+        cell.productPrice.text = "$" + String(Double(indexPath.row)) //needs text formating
+        //cell.productPrice.text = String(format: "$0.00",Double(indexPath.row))
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: segueForDetails, sender: indexPath) // change this to the cell's data object
     }
 
     /*
@@ -66,22 +72,35 @@ class VendorCatalogTVC: UITableViewController {
     */
 
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        // Get the nav controller we are segueing to
+        guard let navVC = segue.destination as? UINavigationController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        // Get the final view destination from the nav controller
+        guard let productDetailVC = navVC.viewControllers.first as? AddProductImageVC else {
+            fatalError("Unexpected view: \(describing: navVC.viewControllers.first) in \(navVC)")
+        }
+        
+        switch segue.identifier! {
+        case segueForDetails :
+            // set the view elements to be filled with the products data from the modell
+            // create/load product model.
+            // pass model to detail VC
+            //load images here
+            print("segueing to product detail view for edit")
+        case segueForAdd :
+            //add view
+            print("segueing to new product detail view")
+        default :
+            fatalError("Vendor Product View: Did not expect \(segue.identifier ?? "undefined segue")")
+        }
     }
-    */
 
 }

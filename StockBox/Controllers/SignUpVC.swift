@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SignUpVC: UIViewController {
+class SignUpVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var UserMerchantSegmentControl: UISegmentedControl!
@@ -20,7 +20,9 @@ class SignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // set the TextField Delegate's
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +43,21 @@ class SignUpVC: UIViewController {
     @IBAction func backBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    // MARK: TEXTFIELD DELEGATE FUNCTIONS
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("return button pressed")
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        }
+        if textField == passwordTextField{
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    // MARK: ACTION FUNCTIONS
     
     @IBAction func signUpBtnPressed(_ sender: Any) {
         if ConnectionCheck.isConnectedToNetwork() {
