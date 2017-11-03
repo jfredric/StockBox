@@ -18,6 +18,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     var ref: DatabaseReference!
     
 
+
     @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
@@ -33,7 +34,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
 
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let user = Auth.auth().currentUser else {
-            return
+            return 
         }
         let uid = user.uid
         
