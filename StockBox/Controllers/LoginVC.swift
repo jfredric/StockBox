@@ -26,20 +26,18 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+        emailTextField.layer.borderColor = UIColor.white.cgColor
         emailTextField.layer.borderWidth = 2.0
         emailTextField.layer.cornerRadius = 10
         emailTextField.layer.masksToBounds = true
         emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
-                                                               attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
-        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
+        passwordTextField.layer.borderColor = UIColor.white.cgColor
         passwordTextField.layer.borderWidth = 2.0
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.layer.masksToBounds = true
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
-                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
-        
-        
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
     }
 
     override func didReceiveMemoryWarning() {
