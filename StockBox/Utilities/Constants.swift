@@ -8,4 +8,4 @@
 
 import UIKit
 
-let MAINORANGECOLOR = UIColor(red:0.93, green:0.34, blue:0.12, alpha:1.0)
+let MAINORANGECOLOR = UIColor(red: 0.93/255.0, green: 0.34/255.0, blue: 0.12/255.0, alpha: 1.0)

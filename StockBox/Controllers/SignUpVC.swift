@@ -24,6 +24,23 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
+    
+    override func viewDidLayoutSubviews() {
+        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+        emailTextField.layer.borderWidth = 2.0
+        emailTextField.layer.cornerRadius = 10
+        emailTextField.layer.masksToBounds = true
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
+        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+        passwordTextField.layer.borderWidth = 2.0
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.masksToBounds = true
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
+                                                                     attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
