@@ -15,6 +15,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidAppear(_ animated: Bool) {
 //        self.tabBarController?.tabBar.barTintColor = MAINORANGECOLOR
         self.tabBarController?.tabBar.unselectedItemTintColor = UIColor.black
+//        self.navigationController?.navigationBar.barTintColor = MAINORANGECOLOR
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()

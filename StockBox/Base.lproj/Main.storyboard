@@ -270,8 +270,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="StockBox" id="uYf-gy-08J">
                         <barButtonItem key="backBarButtonItem" title="Back" id="fWk-Xa-Cqn"/>
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="menubtn" id="A04-ne-X7R"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menubtn" id="A04-ne-X7R">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" id="rFs-w8-FCR">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="iEg-ai-WTe" kind="show" id="M9C-oZ-52f"/>
                             </connections>
@@ -318,6 +321,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BdE-uS-kVb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -336,6 +345,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcD-fA-1C7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="OR7-Gn-OHb" kind="relationship" relationship="rootViewController" id="Hwq-oa-g6p"/>
@@ -373,9 +388,14 @@
                         <viewLayoutGuide key="safeArea" id="2rn-Ou-FSz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="Nl5-Lz-sch">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="ne7-rC-fWy"/>
-                        <barButtonItem key="leftBarButtonItem" image="menubtn" id="4TU-VN-COS"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ne7-rC-fWy">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="menubtn" id="4TU-VN-COS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="cart" id="Nnh-ev-th2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="iEg-ai-WTe" kind="show" id="w0u-Ya-7ZD"/>
                             </connections>
@@ -969,7 +989,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="MMr-AL-6Ve"/>
-        <segue reference="M9C-oZ-52f"/>
-        <segue reference="O4F-NG-y1l"/>
+        <segue reference="w0u-Ya-7ZD"/>
+        <segue reference="hIG-xH-ZRG"/>
     </inferredMetricsTieBreakers>
 </document>
