@@ -71,7 +71,7 @@
                                         </state>
                                         <connections>
                                             <action selector="SignUpBtnPressed:" destination="UNI-t8-JEH" eventType="touchUpInside" id="O0p-ET-975"/>
-                                            <segue destination="bn9-ny-hOc" kind="presentation" identifier="signUpSegue" id="5qg-Oy-wFV"/>
+                                            <segue destination="bn9-ny-hOc" kind="presentation" identifier="signUpSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="5qg-Oy-wFV"/>
                                         </connections>
                                     </button>
                                 </subviews>

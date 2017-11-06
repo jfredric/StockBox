@@ -36,6 +36,7 @@ class ShoppingCartVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func cancelBtnPressed(_ sender: Any) {
+        print("I am here")
         dismiss(animated: true, completion: nil)
     }
     @IBAction func checkOutBtnPressed(_ sender: Any) {
