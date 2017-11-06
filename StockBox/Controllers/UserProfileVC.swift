@@ -58,14 +58,8 @@ class UserProfileVC: UIViewController {
     @IBAction func passwordEditBtnPressed(_ sender: Any) {
     }
     @IBAction func logInOutBtnPressed(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-            print("Goodbye!")
-            performSegue(withIdentifier: "signOutSegue", sender: nil)
-        } catch let signOutError {
-            print ("Error signing out: %@", signOutError)
-        }
+        AppUser.sharedInstance.logOut()
+        // update view
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

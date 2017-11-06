@@ -53,16 +53,17 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-             if user != nil {
+        /*    if user != nil {
                 // user is logged in
-                print("LoginVC Observer: user is logged in")
                 if AppUser.sharedInstance.account == AppUser.AccountType.consumer {
                     // go back to previous view
+                    print("Log [LoginVC]: User is logged in (observer)")
                     self.dismiss(animated: true, completion: nil)
                 } else {
-                    // segue to the vendor view.
+                    print("Log [LoginVC]: Vendor logged in (observer)")
+                    self.performSegue(withIdentifier: "loginToVendorSegue", sender: self)
                 }
-            }
+            }*/
         }
     }
 
@@ -87,22 +88,24 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBAction func loginBtnPressed(_ sender: Any) {
 
         if ConnectionCheck.isConnectedToNetwork() {
-            print("we are good")
             // Look in utility file for trimmedAndUnwrappedUserPass func
             let unWrappedCleanedStrings = trimmedAndUnwrappedTextFieldInputs(email: emailTextField.text, password: passwordTextField.text)
             // Look below in utility section for textFeildErrorHandling func
             let isvalid = textFieldErrorHandling(emailString: unWrappedCleanedStrings.0, passString: unWrappedCleanedStrings.1)
             if isvalid {
-                Auth.auth().signIn(withEmail: unWrappedCleanedStrings.0, password: unWrappedCleanedStrings.1) { (user, error) in
-                    if let error = error {
-                        let authAlert = loginAuthAlertMaker(alertTitle: "Invalid Entry", alertMessage: error.localizedDescription)
-                        self.present(authAlert, animated: true, completion: nil)
-                        return
+                AppUser.sharedInstance.login(username: unWrappedCleanedStrings.0, password: unWrappedCleanedStrings.1, completion: { (error) in
+                    if error == nil {
+                        switch AppUser.sharedInstance.account {
+                        case .vendor :
+                            self.performSegue(withIdentifier: "loginToVendorSegue", sender: self)
+                        case .consumer :
+                            self.performSegue(withIdentifier: "loginToUserHomeSegue", sender: self)
+                        default:
+                            fatalErrorAlert(message: "Unexpected account type", from: self)
+                            return
+                        }
                     }
-                    //self.performSegue(withIdentifier: "loginHomeSegue" , sender: nil)
-                    print("logged In")
-                    //                self.navigationController!.popViewController(animated: true)
-                }
+                })
             }
         } else {
             let internetConnectionAlert = loginAuthAlertMaker(alertTitle: "Internet Access Required", alertMessage: "In order to properly encript and protect your information during login internet access is required./n Please reconnect and try again")

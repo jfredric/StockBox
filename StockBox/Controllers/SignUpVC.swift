@@ -103,7 +103,15 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
                     else {
                         // sign up successful, return to login page so that it may dismiss itself as well.
                         print("Log [SignUpVC]: User sign-up successfull, dismissing view")
-                        self.dismiss(animated: true, completion: nil)
+                        switch accountType {
+                        case .vendor :
+                            self.performSegue(withIdentifier: "signUpToVendorSegue", sender: self)
+                        case .consumer :
+                            self.performSegue(withIdentifier: "signUpToUserHomeSegue", sender: self)
+                        default:
+                            fatalErrorAlert(message: "Unexpected account type", from: self)
+                            return
+                        }
                     }
                 })
             }

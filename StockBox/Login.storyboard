@@ -102,11 +102,29 @@
                     <connections>
                         <outlet property="emailTextField" destination="YmP-Tf-fLO" id="KKs-5d-HFj"/>
                         <outlet property="passwordTextField" destination="bX9-9U-kHY" id="frY-ui-7s1"/>
+                        <segue destination="1hv-lO-Yr0" kind="presentation" identifier="loginToVendorSegue" modalTransitionStyle="flipHorizontal" id="ff5-j8-2Wx"/>
+                        <segue destination="6wT-WF-wjB" kind="presentation" identifier="loginToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="VKh-62-4E7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK0-u9-dfO" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--VendorTabBarControllerStoryboardID-->
+        <scene sceneID="Dh2-KL-IPF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Vendor" referencedIdentifier="VendorTabBarControllerStoryboardID" id="1hv-lO-Yr0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHW-7y-dRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="209"/>
+        </scene>
+        <!--UserTabBarStoryboardID-->
+        <scene sceneID="muo-Ef-S7L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UserTabBarStoryboardID" id="6wT-WF-wjB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ix-mt-HAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="395"/>
         </scene>
         <!--SignUpVC-->
         <scene sceneID="Qun-oU-GoB">
@@ -223,6 +241,8 @@
                         <outlet property="UserMerchantSegmentControl" destination="iqS-N0-Mlh" id="wLq-wF-cd3"/>
                         <outlet property="emailTextField" destination="4aY-yc-xcQ" id="VuU-U2-ayf"/>
                         <outlet property="passwordTextField" destination="Lgs-DX-fWV" id="Hvj-VG-kXb"/>
+                        <segue destination="1hv-lO-Yr0" kind="presentation" identifier="signUpToVendorSegue" modalTransitionStyle="flipHorizontal" id="b4W-wq-hWd"/>
+                        <segue destination="6wT-WF-wjB" kind="presentation" identifier="signUpToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="7lW-sO-Xg0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inF-mW-sZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,4 +250,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="841.52923538230891"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7lW-sO-Xg0"/>
+        <segue reference="b4W-wq-hWd"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -14,7 +14,8 @@ class AppUser {
     // MARK: PRIVATE PROPERTIES
     private var currentUser: User?
     private var userInfoRef: DatabaseReference?
-    private var _account: AccountType = .consumer
+    private var _account: AccountType = .guest
+    private var _email: String = ""
     private var _name: String = "Guest"
     private var _balance: Double = 0.0
     private var _description: String = "" // vendor only
@@ -44,10 +45,12 @@ class AppUser {
     enum AccountType: String{
         case consumer = "consumer"
         case vendor = "vendor"
+        case guest = "guest"
     }
     
     struct FirebaseKeys {
         static let account = "account"
+        static let email = "email"
         static let name = "name"
         static let balance = "balance"
         static let description = "description"
@@ -64,27 +67,7 @@ class AppUser {
     private init() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                // set the current user to the new user
-                self.currentUser = user
-                
-                // set the database reference for UserInfo data
-                self.userInfoRef = AppDatabase.userInfoRootRef.child(self.currentUser!.uid)
-                
-                // load data
-                self.userInfoRef?.observeSingleEvent(of: .value, with: { (snapshot) in
-                    let newUserInfo = snapshot.value as! [String:Any]
-                    if let accountType = newUserInfo[FirebaseKeys.account] as? AccountType {
-                        self._account = accountType
-                    }
-                    self._name = newUserInfo[FirebaseKeys.name] as? String ?? ""
-                    self._balance = newUserInfo[FirebaseKeys.balance] as? Double ?? 0.0
-                    self._description = newUserInfo[FirebaseKeys.description] as? String ?? ""
-                    self._addresses = newUserInfo[FirebaseKeys.addresses] as? [String] ?? []
-                    self._favorites = newUserInfo[FirebaseKeys.favorites] as? [String] ?? []
-                    self._products = newUserInfo[FirebaseKeys.products] as? [String] ?? []
-                    self._reviews = newUserInfo[FirebaseKeys.reviews] as? [String] ?? []
-                })
-                
+                //self.loadForUser(user: user!)
             } else {
                 // logged out, change to guest mode?
             }
@@ -92,18 +75,40 @@ class AppUser {
     }
     
     // MARK: CLASS METHODS
+    func logOut() {
+        do {
+            try Auth.auth().signOut()
+            currentUser = nil
+            _account = AccountType.guest
+            print("Log [AppUser]: Logged out.")
+            // load for guest
+        } catch let signOutError {
+            print ("Error [AppUser]: Log Out: %@", signOutError)
+        }
+    }
+    
+    func login(username: String, password: String, completion: @escaping (_ error: Error?)->Void) {
+        Auth.auth().signIn(withEmail: username, password: password) { (user, error) in
+            if let error = error {
+                messageAlert(title: "Login Failure", message: error.localizedDescription, from: nil)
+                completion(error)
+                return
+            } else {
+                print("Log [AppUser]: User logged in.")
+                self.loadFor(user: user!,completion: completion)
+            }
+        }
+    }
     
     func signUp(username: String, password: String, accountType: AccountType, completion: @escaping (_ error: Error?)->Void) {
         Auth.auth().createUser(withEmail: username, password: password) { (user, error) in
             if user != nil {// sign-up successful
                 print("Log [AppUser]: new user created.")
                 
-                // tell the calling view that the user was created.
-                completion(nil)
-                
                 // set the current user to the new user
                 self.currentUser = user
                 self._account = accountType
+                self._email = username
                 
                 // set the rest of the properties to default values as needed
                 self._name = ""
@@ -120,9 +125,13 @@ class AppUser {
                         errorAlert(message: "Newly created user could not be logged in automatically.", from: nil)
                     } else {
                         print("Log [AppUser]: new user auto logged in.")
+                        self.loadFor(user: user!, completion: completion)
                         // Should not pass error back to caller because it will be seen as a failure to complete sign up.
                     }
                 }
+                
+                // tell the calling view that the user was created.
+                completion(nil)
             } else {
                 completion(error)
             }
@@ -132,18 +141,50 @@ class AppUser {
     // Converts properties to a dicionary that can be written to Firebase
     func toAnyObject() -> Any {
         return [
-            "account" : _account.rawValue,
-            "name" : _name,
-            "balance" : _balance,
-            "description" : _description,
-            "addresses" : _addresses,
-            "favorites" : _favorites,
-            "products" : _products,
-            "reviews" : _reviews
+            FirebaseKeys.account : _account.rawValue,
+            FirebaseKeys.email : _email,
+            FirebaseKeys.name : _name,
+            FirebaseKeys.balance : _balance,
+            FirebaseKeys.description : _description,
+            FirebaseKeys.addresses : _addresses,
+            FirebaseKeys.favorites : _favorites,
+            FirebaseKeys.products : _products,
+            FirebaseKeys.reviews : _reviews
         ]
     }
     
     // MARK PRIVATE FUNCTIONS
+    private func loadFor(user: User, completion: @escaping (_ error: Error?)->Void) {
+        // set the current user to the new user
+        self.currentUser = user
+        
+        // set the database reference for UserInfo data
+        self.userInfoRef = AppDatabase.userInfoRootRef.child(self.currentUser!.uid)
+        
+        // load data
+        self.userInfoRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let newUserInfo = snapshot.value as! [String:Any]
+            if let accountType = newUserInfo[FirebaseKeys.account] as? String {
+                switch accountType {
+                case AccountType.consumer.rawValue :
+                    self._account = AccountType.consumer
+                case AccountType.vendor.rawValue :
+                    self._account = AccountType.vendor
+                default:
+                    self._account = AccountType.guest //should not do this
+                }
+            }
+            self._email = newUserInfo[FirebaseKeys.email] as? String ?? ""
+            self._name = newUserInfo[FirebaseKeys.name] as? String ?? ""
+            self._balance = newUserInfo[FirebaseKeys.balance] as? Double ?? 0.0
+            self._description = newUserInfo[FirebaseKeys.description] as? String ?? ""
+            self._addresses = newUserInfo[FirebaseKeys.addresses] as? [String] ?? []
+            self._favorites = newUserInfo[FirebaseKeys.favorites] as? [String] ?? []
+            self._products = newUserInfo[FirebaseKeys.products] as? [String] ?? []
+            self._reviews = newUserInfo[FirebaseKeys.reviews] as? [String] ?? []
+            completion(nil)
+        })
+    }
     private func loadGuestSettings() {
         // TBD
     }
