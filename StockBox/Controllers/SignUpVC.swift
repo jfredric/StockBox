@@ -26,18 +26,19 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidLayoutSubviews() {
-        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
-        emailTextField.layer.borderWidth = 2.0
-        emailTextField.layer.cornerRadius = 10
-        emailTextField.layer.masksToBounds = true
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
-                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
-        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
-        passwordTextField.layer.borderWidth = 2.0
-        passwordTextField.layer.cornerRadius = 10
-        passwordTextField.layer.masksToBounds = true
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
-                                                                     attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
+//  causing crashing now that it is moved to new storyboard.
+//        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+//        emailTextField.layer.borderWidth = 2.0
+//        emailTextField.layer.cornerRadius = 10
+//        emailTextField.layer.masksToBounds = true
+//        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
+//                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
+//        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+//        passwordTextField.layer.borderWidth = 2.0
+//        passwordTextField.layer.cornerRadius = 10
+//        passwordTextField.layer.masksToBounds = true
+//        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
+//                                                                     attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
 
 
     }
@@ -64,7 +65,6 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
     // MARK: TEXTFIELD DELEGATE FUNCTIONS
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("return button pressed")
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         }
@@ -78,18 +78,34 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
 
     @IBAction func signUpBtnPressed(_ sender: Any) {
         if ConnectionCheck.isConnectedToNetwork() {
+            
+            // read the account type from the segment controller.
+            var accountType: AppUser.AccountType
+            switch UserMerchantSegmentControl.selectedSegmentIndex {
+            case 0:
+                accountType = .vendor
+            case 1:
+                accountType = .consumer
+            default:
+                accountType = .consumer // compiler complains about not guaranteeing initilalization of variable
+                fatalErrorAlert(message: "Segment Controller in invalid state", from: self)
+            }
+            
             let unWrappedCleanedStrings = trimmedAndUnwrappedTextFieldInputs(email: emailTextField.text, password: passwordTextField.text)
             let isvalid = textFieldErrorHandling(emailString: unWrappedCleanedStrings.0, passString: unWrappedCleanedStrings.1)
             if isvalid {
-                Auth.auth().createUser(withEmail: unWrappedCleanedStrings.0, password: unWrappedCleanedStrings.1) { (user, error) in
+                // Give user singleton the username, password and account type to attempt to create new account
+                AppUser.sharedInstance.signUp(username: unWrappedCleanedStrings.0, password: unWrappedCleanedStrings.1, accountType: accountType, completion: { (error) in
                     if let error = error {
-                        let authAlert = loginAuthAlertMaker(alertTitle: "Invalid Entry", alertMessage: error.localizedDescription)
-                        self.present(authAlert, animated: true, completion: nil)
-                        return
+                        // inform user of failure message. Do nothing else. Letting user try again or backout
+                        messageAlert(title: "Sign-Up Failed", message: error.localizedDescription, from: self)
                     }
-                    //self.performSegue(withIdentifier: "SignUpHomeSegue" , sender: nil)
-                    print("Signed Up")
-                }
+                    else {
+                        // sign up successful, return to login page so that it may dismiss itself as well.
+                        print("Log [SignUpVC]: User sign-up successfull, dismissing view")
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                })
             }
         } else {
             let internetConnectionAlert = loginAuthAlertMaker(alertTitle: "Internet Access Required", alertMessage: "In order to properly encript and protect your information during Sign Up internet access is required./n Please reconnect and try again")

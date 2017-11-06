@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UserLogOutVC: UIViewController {
+class UserProfileVC: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var shippingAddressTextField: UITextField!
     @IBOutlet weak var billingAddressTextField: UITextField!
@@ -17,12 +17,36 @@ class UserLogOutVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // if user is not logged in, should not be here. Throw error?
+        print("view loaded")
     }
+    
+    override func viewWillAppear(_ animated: Bool) { // this might cause a loop if user does not log in...
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                // user is logged in
+                // set the tab bar icon
+            } else {
+                // user is not logged in
+                // set the tab bar icon
+                // segue to login
+                self.performSegue(withIdentifier: "userProfileToLoginSegue", sender: nil)
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    // MARK: ACTION FUNCTIONS
     @IBAction func nameEditBtnPressed(_ sender: Any) {
     }
   
@@ -39,8 +63,14 @@ class UserLogOutVC: UIViewController {
             try firebaseAuth.signOut()
             print("Goodbye!")
             performSegue(withIdentifier: "signOutSegue", sender: nil)
-        } catch let signOutError as Error {
+        } catch let signOutError {
             print ("Error signing out: %@", signOutError)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is LoginVC {
+            print("segueing to login")
         }
     }
     

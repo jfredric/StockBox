@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9E-zl-bE5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9E-zl-bE5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--User Profile VC-->
+        <!--UserProfileVC-->
         <scene sceneID="FGS-P8-R34">
             <objects>
-                <viewController id="8yf-Ge-ZA1" userLabel="User Profile VC" customClass="UserLogOutVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8yf-Ge-ZA1" userLabel="UserProfileVC" customClass="UserProfileVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Mo-gT-MPZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,17 +238,26 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Login" image="icons8-door-opened" id="sOP-qW-0Nb"/>
                     <connections>
-                        <outlet property="accountBalanceTextField" destination="b7j-s9-Ona" id="UMp-Vr-pjr"/>
+                        <outlet property="accountBalanceTextField" destination="b7j-s9-Ona" id="P08-PJ-O9P"/>
                         <outlet property="billingAddressTextField" destination="uNd-KV-Dqm" id="Hbw-hR-btJ"/>
                         <outlet property="emailTextField" destination="Xby-Zi-nYw" id="y14-uV-gPY"/>
                         <outlet property="nameTextField" destination="PSL-cG-7Co" id="hh7-oi-5mR"/>
                         <outlet property="passwordTextField" destination="YGv-jQ-KHK" id="MQG-33-4R0"/>
                         <outlet property="shippingAddressTextField" destination="PTT-Bi-ku1" id="TCg-iy-dMg"/>
+                        <segue destination="mzu-md-lWh" kind="presentation" identifier="userProfileToLoginSegue" id="6l5-4a-TaD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVA-0C-khY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2078" y="2104"/>
+        </scene>
+        <!--LoginVCStoryboardID-->
+        <scene sceneID="gKe-7y-vhg">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="MainToLoginReference" storyboardName="Login" referencedIdentifier="LoginVCStoryboardID" id="mzu-md-lWh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0H-Oc-PIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2078" y="2557"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="OAY-qX-ETf">
@@ -866,10 +875,10 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="71" id="20G-0q-H9p">
-                                                            <rect key="frame" x="0.0" y="28" width="335" height="71"/>
+                                                            <rect key="frame" x="0.0" y="28" width="279" height="71"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="20G-0q-H9p" id="pNk-X5-Pca">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="70.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="279" height="70.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                             </tableViewCellContentView>
                                                         </tableViewCell>
