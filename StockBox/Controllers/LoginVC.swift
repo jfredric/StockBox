@@ -23,9 +23,14 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         // Set the TextField Delegates
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        print("login view did load")
     }
-
+    
     override func viewDidLayoutSubviews() {
+        // had to remove. Was causing crashing once moved to separate storyboard.
+        
+        /*
         emailTextField.layer.borderColor = UIColor.white.cgColor
         emailTextField.layer.borderWidth = 2.0
         emailTextField.layer.cornerRadius = 10
@@ -38,6 +43,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         passwordTextField.layer.masksToBounds = true
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
                                                                   attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
+         */
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,7 +53,16 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // ...
+             if user != nil {
+                // user is logged in
+                print("LoginVC Observer: user is logged in")
+                if AppUser.sharedInstance.account == AppUser.AccountType.consumer {
+                    // go back to previous view
+                    self.dismiss(animated: true, completion: nil)
+                } else {
+                    // segue to the vendor view.
+                }
+            }
         }
     }
 
@@ -58,7 +73,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     // MARK: TEXTFIELD DELEGATE FUNCTIONS
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("return button pressed")
         if textField == emailTextField {
             passwordTextField.becomeFirstResponder()
         }
@@ -96,13 +110,7 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         }
     }
 
-
-    @IBAction func SignUpBtnPressed(_ sender: Any) {
-
-    }
-
-
-    //UTILITY FUNCS FOR LOGINVC
+    //MARK: UTILITY FUNC'S FOR LOGINVC
     //*************************
     //Checks in either field is empty and alerts with apporpriate response
     func textFieldErrorHandling(emailString: String, passString: String) -> Bool {

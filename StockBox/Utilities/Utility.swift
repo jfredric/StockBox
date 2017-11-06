@@ -53,7 +53,7 @@ func messageAlert(title: String, message: String?, from: UIViewController?) {
 }
 
 // send user an error message
-func errorAlert(message: String?, from: UIViewController) {
+func errorAlert(message: String?, from: UIViewController?) {
     // Create the Alert Controller
     let alertController = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
     // add the button actions - Left to right
@@ -61,11 +61,11 @@ func errorAlert(message: String?, from: UIViewController) {
     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
     
     // Present the Alert
-    from.present(alertController, animated: true, completion: nil)
+    (from ?? UIApplication.topViewController()!).present(alertController, animated: true, completion: nil)
 }
 
 // send user an error message
-func fatalErrorAlert(message: String?, from: UIViewController) {
+func fatalErrorAlert(message: String?, from: UIViewController?) {
     // Create the Alert Controller
     let alertController = UIAlertController(title: "Fatal Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
     // add the button actions - Left to right
@@ -76,7 +76,7 @@ func fatalErrorAlert(message: String?, from: UIViewController) {
     alertController.addAction(crashAction)
     
     // Present the Alert
-    from.present(alertController, animated: true, completion: nil)
+    (from ?? UIApplication.topViewController()!).present(alertController, animated: true, completion: nil)
 }
 
 // sets up basic alerts
@@ -88,9 +88,7 @@ func loginAuthAlertMaker(alertTitle: String, alertMessage: String) -> UIAlertCon
 // unswrapps trimmed optional Strings
 func trimmedAndUnwrappedTextFieldInputs(email: String?, password: String?) -> (String,String) {
     //look in Utility file for stringTrimmer Func
-    let trimmedEmail = stringTrimmer(stringToTrim: email)
-    let trimmedPassword = stringTrimmer(stringToTrim: password)
-    guard let unwrappedTrimmedEmail = trimmedEmail else {return ("","")}
-    guard let unwrappedTrimmedPassword = trimmedPassword else {return ("","")}
+    let unwrappedTrimmedEmail = stringTrimmer(stringToTrim: email) ?? ""
+    let unwrappedTrimmedPassword = stringTrimmer(stringToTrim: password) ?? ""
     return (unwrappedTrimmedEmail, unwrappedTrimmedPassword)
 }
