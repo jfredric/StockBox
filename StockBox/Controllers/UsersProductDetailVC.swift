@@ -9,6 +9,10 @@
 import UIKit
 
 class UsersProductDetailVC: UIViewController {
+    
+    @IBOutlet weak var venderBtn: UIButton!
+    @IBOutlet weak var reviewsBtn: UIButton!
+    @IBOutlet weak var addToCartBtn: UIButton!
     @IBOutlet weak var productTitleLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var productDescriptionTextField: UITextView!
@@ -18,6 +22,17 @@ class UsersProductDetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidLayoutSubviews() {
+        venderBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        reviewsBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        addToCartBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        reviewsBtn.layer.borderWidth = 1.0
+        reviewsBtn.layer.borderColor = MAINORANGECOLOR.cgColor
+        venderBtn.layer.borderWidth = 1.0
+        venderBtn.layer.borderColor = MAINORANGECOLOR.cgColor
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
