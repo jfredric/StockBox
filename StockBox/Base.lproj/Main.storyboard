@@ -14,6 +14,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="Thonburi.ttc">
+            <string>Thonburi</string>
             <string>Thonburi-Bold</string>
         </array>
     </customFonts>
@@ -450,13 +451,12 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIs-KO-sTn">
                                 <rect key="frame" x="5" y="69" width="260" height="70"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="15"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="22"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-wT-EbM">
                                 <rect key="frame" x="270" y="69" width="100" height="70"/>
-                                <color key="backgroundColor" red="1" green="0.53725490200000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.51764705882352935" green="0.7803921568627451" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2Tg-Hi-kHv"/>
                                     <constraint firstAttribute="height" constant="70" id="rFf-jR-7a2"/>
@@ -476,14 +476,14 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDB-Oh-lzh">
-                                <rect key="frame" x="16" y="333" width="70" height="40"/>
+                                <rect key="frame" x="16" y="333" width="75" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="qdC-Ku-A6L"/>
+                                    <constraint firstAttribute="width" constant="75" id="00V-CK-mOj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                 <state key="normal" title="Reviews">
-                                    <color key="titleColor" red="1" green="0.53725490200000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.51764705882352935" green="0.7803921568627451" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="reviewsBtnPressed:" destination="wQt-ds-vjr" eventType="touchUpInside" id="r8l-RO-kDi"/>
@@ -491,40 +491,35 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49F-8z-Naq">
-                                <rect key="frame" x="317" y="333" width="42" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="hWc-5L-a4m"/>
-                                </constraints>
+                                <rect key="frame" x="318.5" y="333" width="40.5" height="35"/>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4uM-OY-Efe">
-                                <rect key="frame" x="16" y="424" width="343" height="238"/>
+                                <rect key="frame" x="16" y="419" width="343" height="243"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNn-vM-KRg">
-                                <rect key="frame" x="16" y="381" width="109.5" height="40"/>
+                                <rect key="frame" x="16" y="376" width="131" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jHW-gb-6up"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="24"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKi-Ln-RGA">
-                                <rect key="frame" x="161" y="333" width="70" height="35"/>
+                                <rect key="frame" x="152.5" y="333" width="70" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="6Df-Sq-UwW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                 <state key="normal" title="Vendor">
-                                    <color key="titleColor" red="1" green="0.53725490200000003" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.51764705882352935" green="0.7803921568627451" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="reviewsBtnPressed:" destination="wQt-ds-vjr" eventType="touchUpInside" id="yJ5-ib-Q71"/>
@@ -538,14 +533,13 @@
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="bottom" secondItem="HIs-KO-sTn" secondAttribute="bottom" id="5Mu-PQ-UD6"/>
                             <constraint firstItem="XDB-Oh-lzh" firstAttribute="top" secondItem="ora-IF-OWg" secondAttribute="bottom" constant="8" id="6WN-ZK-f1E"/>
                             <constraint firstItem="4uM-OY-Efe" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="16" id="6vx-zv-Uw3"/>
-                            <constraint firstItem="HKi-Ln-RGA" firstAttribute="leading" relation="lessThanOrEqual" secondItem="XDB-Oh-lzh" secondAttribute="trailing" constant="75" id="719-iY-gC9"/>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="leading" secondItem="HIs-KO-sTn" secondAttribute="trailing" constant="5" id="7z8-CS-KmW"/>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="trailing" secondItem="ora-IF-OWg" secondAttribute="trailing" id="CBz-mW-dfe"/>
+                            <constraint firstItem="HKi-Ln-RGA" firstAttribute="height" secondItem="XDB-Oh-lzh" secondAttribute="height" id="Cej-Ik-Nk3"/>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="top" secondItem="D2q-dr-mRD" secondAttribute="top" constant="5" id="E5r-nD-3rB"/>
                             <constraint firstItem="ora-IF-OWg" firstAttribute="top" secondItem="iVE-wT-EbM" secondAttribute="bottom" constant="5" id="HC1-p3-jKO"/>
+                            <constraint firstItem="HKi-Ln-RGA" firstAttribute="centerX" secondItem="bYp-fj-3mq" secondAttribute="centerX" id="HMO-YF-cpg"/>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="top" secondItem="HIs-KO-sTn" secondAttribute="top" id="HeI-tW-Jya"/>
-                            <constraint firstItem="4uM-OY-Efe" firstAttribute="top" secondItem="HKi-Ln-RGA" secondAttribute="bottom" constant="56" id="IjE-rU-F9K"/>
-                            <constraint firstItem="49F-8z-Naq" firstAttribute="bottom" secondItem="HKi-Ln-RGA" secondAttribute="bottom" id="Jri-ZR-gca"/>
                             <constraint firstAttribute="bottom" secondItem="4uM-OY-Efe" secondAttribute="bottom" constant="5" id="NtS-wZ-pbU"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="49F-8z-Naq" secondAttribute="trailing" constant="16" id="Otf-Uk-VRB"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="4uM-OY-Efe" secondAttribute="trailing" constant="16" id="QNr-cK-aPG"/>
@@ -554,11 +548,12 @@
                             <constraint firstItem="HKi-Ln-RGA" firstAttribute="top" secondItem="ora-IF-OWg" secondAttribute="bottom" constant="8" id="VK3-qe-pZC"/>
                             <constraint firstItem="4uM-OY-Efe" firstAttribute="top" secondItem="bNn-vM-KRg" secondAttribute="bottom" constant="3" id="e72-Vi-hpy"/>
                             <constraint firstItem="XDB-Oh-lzh" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="16" id="gSN-sO-Cwg"/>
-                            <constraint firstItem="49F-8z-Naq" firstAttribute="leading" relation="lessThanOrEqual" secondItem="HKi-Ln-RGA" secondAttribute="trailing" constant="86" id="hfg-7Z-VI1"/>
+                            <constraint firstItem="HKi-Ln-RGA" firstAttribute="top" secondItem="XDB-Oh-lzh" secondAttribute="top" id="igk-MW-jUs"/>
+                            <constraint firstItem="49F-8z-Naq" firstAttribute="bottom" secondItem="HKi-Ln-RGA" secondAttribute="bottom" id="jFT-S2-ffn"/>
                             <constraint firstItem="ora-IF-OWg" firstAttribute="leading" secondItem="HIs-KO-sTn" secondAttribute="leading" id="jHi-3n-OZl"/>
+                            <constraint firstItem="49F-8z-Naq" firstAttribute="top" secondItem="HKi-Ln-RGA" secondAttribute="top" id="vmd-Jv-rSX"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="iVE-wT-EbM" secondAttribute="trailing" constant="5" id="vzb-kn-skF"/>
                             <constraint firstItem="HKi-Ln-RGA" firstAttribute="top" secondItem="XDB-Oh-lzh" secondAttribute="top" id="w4m-4A-7pA"/>
-                            <constraint firstItem="49F-8z-Naq" firstAttribute="top" secondItem="XDB-Oh-lzh" secondAttribute="top" id="wUC-iA-otf"/>
                             <constraint firstItem="bNn-vM-KRg" firstAttribute="top" secondItem="XDB-Oh-lzh" secondAttribute="bottom" constant="8" id="y2Y-af-M0Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="D2q-dr-mRD"/>
