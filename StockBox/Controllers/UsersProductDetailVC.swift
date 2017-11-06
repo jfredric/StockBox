@@ -28,9 +28,9 @@ class UsersProductDetailVC: UIViewController {
         reviewsBtn.layer.cornerRadius = BUTTONCORNERRADIUS
         addToCartBtn.layer.cornerRadius = BUTTONCORNERRADIUS
         reviewsBtn.layer.borderWidth = 1.0
-        reviewsBtn.layer.borderColor = MAINORANGECOLOR.cgColor
+        reviewsBtn.layer.borderColor = SECONDARYORANGECOLOR.cgColor
         venderBtn.layer.borderWidth = 1.0
-        venderBtn.layer.borderColor = MAINORANGECOLOR.cgColor
+        venderBtn.layer.borderColor = SECONDARYORANGECOLOR.cgColor
     }
     
 
