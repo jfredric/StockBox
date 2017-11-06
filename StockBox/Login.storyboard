@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNI-t8-JEH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNI-t8-JEH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,9 +31,9 @@
                                     <constraint firstAttribute="height" constant="50" id="JSl-Je-53J"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="cUH-mR-JLF"/>
                                 </constraints>
-                                <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-9U-kHY">
                                 <rect key="frame" x="112.5" y="176" width="150" height="50"/>
@@ -41,9 +41,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7T7-Er-8Hx"/>
                                 </constraints>
-                                <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="send" secureTextEntry="YES" textContentType="password"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-be-ZJr">
                                 <rect key="frame" x="83" y="241" width="209" height="37"/>
@@ -101,7 +101,9 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="YmP-Tf-fLO" id="KKs-5d-HFj"/>
+                        <outlet property="loginBtn" destination="PYA-fW-gUo" id="GaC-Hu-4Fi"/>
                         <outlet property="passwordTextField" destination="bX9-9U-kHY" id="frY-ui-7s1"/>
+                        <outlet property="signupBtn" destination="PH4-QV-hYf" id="LJW-iR-3vm"/>
                         <segue destination="1hv-lO-Yr0" kind="presentation" identifier="loginToVendorSegue" modalTransitionStyle="flipHorizontal" id="ff5-j8-2Wx"/>
                         <segue destination="6wT-WF-wjB" kind="presentation" identifier="loginToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="VKh-62-4E7"/>
                     </connections>
@@ -134,7 +136,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R5-Cv-bZj">
+                            <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R5-Cv-bZj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0VN-GQ-0AC">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -146,39 +148,39 @@
                                 <rect key="frame" x="57" y="167" width="262.5" height="333.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-xs-mEW">
-                                        <rect key="frame" x="215.5" y="8" width="39" height="30"/>
-                                        <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="8" y="8" width="39" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="46" id="9qv-Bg-6Ak"/>
                                             <constraint firstAttribute="height" constant="30" id="Cv5-x4-pDB"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                         <state key="normal" title="Back">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="backBtnPressed:" destination="bn9-ny-hOc" eventType="touchUpInside" id="KZo-Op-zvm"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-yc-xcQ">
-                                        <rect key="frame" x="57.5" y="58" width="147.5" height="40"/>
+                                        <rect key="frame" x="59" y="58" width="145" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="fM9-mA-gh7"/>
                                         </constraints>
                                         <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lgs-DX-fWV">
-                                        <rect key="frame" x="57.5" y="106" width="147.5" height="40"/>
+                                        <rect key="frame" x="59" y="106" width="145" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="continue" secureTextEntry="YES" textContentType="password"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iqS-N0-Mlh">
-                                        <rect key="frame" x="57.5" y="164" width="147.5" height="29"/>
+                                        <rect key="frame" x="59" y="164" width="145" height="29"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="zgb-Rw-giY"/>
@@ -190,7 +192,7 @@
                                         <color key="tintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-HO-EML">
-                                        <rect key="frame" x="57.5" y="219" width="147.5" height="55"/>
+                                        <rect key="frame" x="59" y="219" width="145" height="55"/>
                                         <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="iv0-9u-VUw"/>
@@ -208,13 +210,12 @@
                                 <constraints>
                                     <constraint firstItem="4aY-yc-xcQ" firstAttribute="centerX" secondItem="4Kh-xh-zN9" secondAttribute="centerX" id="19v-58-hRa"/>
                                     <constraint firstItem="Lgs-DX-fWV" firstAttribute="width" secondItem="4aY-yc-xcQ" secondAttribute="width" id="2pd-JU-GJI"/>
-                                    <constraint firstAttribute="trailing" secondItem="Pej-xs-mEW" secondAttribute="trailing" constant="8" id="6tf-o8-S4p"/>
+                                    <constraint firstAttribute="leading" secondItem="Pej-xs-mEW" secondAttribute="leading" constant="-8" id="6tf-o8-S4p"/>
                                     <constraint firstItem="iqS-N0-Mlh" firstAttribute="centerX" secondItem="Lgs-DX-fWV" secondAttribute="centerX" id="71l-ob-lu0"/>
                                     <constraint firstItem="iqS-N0-Mlh" firstAttribute="top" secondItem="Lgs-DX-fWV" secondAttribute="bottom" constant="18" id="7fu-za-g9t"/>
                                     <constraint firstItem="XHg-HO-EML" firstAttribute="centerX" secondItem="4aY-yc-xcQ" secondAttribute="centerX" id="Jwo-tX-F4j"/>
                                     <constraint firstItem="Lgs-DX-fWV" firstAttribute="top" secondItem="4aY-yc-xcQ" secondAttribute="bottom" constant="8" id="LUl-IB-Ty5"/>
                                     <constraint firstItem="4aY-yc-xcQ" firstAttribute="top" secondItem="Pej-xs-mEW" secondAttribute="bottom" constant="20" id="RK4-CU-JKP"/>
-                                    <constraint firstItem="Pej-xs-mEW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4Kh-xh-zN9" secondAttribute="leading" constant="20" symbolic="YES" id="ZQk-Hh-gAf"/>
                                     <constraint firstItem="XHg-HO-EML" firstAttribute="width" secondItem="4aY-yc-xcQ" secondAttribute="width" id="f0v-Zh-2IB"/>
                                     <constraint firstItem="iqS-N0-Mlh" firstAttribute="width" secondItem="Lgs-DX-fWV" secondAttribute="width" id="f5I-bv-6pJ"/>
                                     <constraint firstItem="XHg-HO-EML" firstAttribute="top" secondItem="iqS-N0-Mlh" secondAttribute="bottom" constant="27" id="jyi-d0-37g"/>
@@ -241,6 +242,8 @@
                         <outlet property="UserMerchantSegmentControl" destination="iqS-N0-Mlh" id="wLq-wF-cd3"/>
                         <outlet property="emailTextField" destination="4aY-yc-xcQ" id="VuU-U2-ayf"/>
                         <outlet property="passwordTextField" destination="Lgs-DX-fWV" id="Hvj-VG-kXb"/>
+                        <outlet property="popUpView" destination="4Kh-xh-zN9" id="8B0-jd-5kZ"/>
+                        <outlet property="signUpBtn" destination="XHg-HO-EML" id="2or-Te-XgD"/>
                         <segue destination="1hv-lO-Yr0" kind="presentation" identifier="signUpToVendorSegue" modalTransitionStyle="flipHorizontal" id="b4W-wq-hWd"/>
                         <segue destination="6wT-WF-wjB" kind="presentation" identifier="signUpToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="7lW-sO-Xg0"/>
                     </connections>

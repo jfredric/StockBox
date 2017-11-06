@@ -11,6 +11,9 @@ import Firebase
 import FirebaseAuth
 
 class SignUpVC: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var signUpBtn: UIButton!
+    @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var UserMerchantSegmentControl: UISegmentedControl!
@@ -24,21 +27,22 @@ class SignUpVC: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-
+    
     override func viewDidLayoutSubviews() {
-//  causing crashing now that it is moved to new storyboard.
-//        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
-//        emailTextField.layer.borderWidth = 2.0
-//        emailTextField.layer.cornerRadius = 10
-//        emailTextField.layer.masksToBounds = true
-//        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
-//                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
-//        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
-//        passwordTextField.layer.borderWidth = 2.0
-//        passwordTextField.layer.cornerRadius = 10
-//        passwordTextField.layer.masksToBounds = true
-//        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
-//                                                                     attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR.cgColor])
+        emailTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+        emailTextField.layer.borderWidth = 1.0
+        emailTextField.layer.cornerRadius = 5
+        emailTextField.layer.masksToBounds = true
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR])
+        popUpView.layer.cornerRadius = BUTTONCORNERRADIUS
+        signUpBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        passwordTextField.layer.borderColor = MAINORANGECOLOR.cgColor
+        passwordTextField.layer.borderWidth = 1.0
+        passwordTextField.layer.cornerRadius = 5
+        passwordTextField.layer.masksToBounds = true
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
+                                                                     attributes: [NSAttributedStringKey.foregroundColor: MAINORANGECOLOR])
 
 
     }

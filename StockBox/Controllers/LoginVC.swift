@@ -13,6 +13,8 @@ import FirebaseAuth
 class LoginVC: UIViewController, UITextFieldDelegate {
     var handle: AuthStateDidChangeListenerHandle?
 
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
 
@@ -30,20 +32,24 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLayoutSubviews() {
         // had to remove. Was causing crashing once moved to separate storyboard.
         
-        /*
         emailTextField.layer.borderColor = UIColor.white.cgColor
-        emailTextField.layer.borderWidth = 2.0
-        emailTextField.layer.cornerRadius = 10
+        emailTextField.layer.borderWidth = 1.0
+        emailTextField.layer.cornerRadius = BUTTONCORNERRADIUS
         emailTextField.layer.masksToBounds = true
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "Enter Email",
-                                                               attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
+        let attributedString = NSAttributedString(string: "Enter Email",
+                                                  attributes: [NSAttributedStringKey.foregroundColor: PLACEHOLDERTEXTCOLOR])
+        loginBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        signupBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        
+        
+        emailTextField.attributedPlaceholder = attributedString
         passwordTextField.layer.borderColor = UIColor.white.cgColor
-        passwordTextField.layer.borderWidth = 2.0
-        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.borderWidth = 1.0
+        passwordTextField.layer.cornerRadius = BUTTONCORNERRADIUS
         passwordTextField.layer.masksToBounds = true
         passwordTextField.attributedPlaceholder = NSAttributedString(string: "Enter Password",
-                                                                  attributes: [NSAttributedStringKey.foregroundColor: UIColor.white.cgColor])
-         */
+                                                                  attributes: [NSAttributedStringKey.foregroundColor: PLACEHOLDERTEXTCOLOR])
+
     }
 
     override func didReceiveMemoryWarning() {
