@@ -27,7 +27,6 @@ class LoginVC: UIViewController, UITextFieldDelegate {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         
-        print("login view did load")
     }
     
     override func viewDidLayoutSubviews() {

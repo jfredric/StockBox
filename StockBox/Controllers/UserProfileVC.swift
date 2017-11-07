@@ -70,7 +70,7 @@ class UserProfileVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is LoginVC {
-            print("segueing to login")
+            //print("segueing to login")
         }
     }
     
