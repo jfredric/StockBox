@@ -36,7 +36,7 @@ class UserProfileVC: UIViewController {
             } else {
                 // user is not logged in
                 // set the tab bar icon
-                // segue to login
+                // set tab index to home(0) and then segue to login
                 self.performSegue(withIdentifier: "userProfileToLoginSegue", sender: nil)
             }
         }
@@ -59,6 +59,7 @@ class UserProfileVC: UIViewController {
     }
     @IBAction func logInOutBtnPressed(_ sender: Any) {
         AppUser.sharedInstance.logOut()
+        
         // update view
     }
     

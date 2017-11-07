@@ -17,7 +17,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-
+    @IBOutlet weak var browseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,6 +32,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLayoutSubviews() {
         // had to remove. Was causing crashing once moved to separate storyboard.
+        
+        // change browse button text color to secondary here.
         
         emailTextField.layer.borderColor = UIColor.white.cgColor
         emailTextField.layer.borderWidth = 1.0
@@ -91,6 +94,9 @@ class LoginVC: UIViewController, UITextFieldDelegate {
 
     // MARK: ACTION FUNCTIONS
 
+    @IBAction func browseButtonTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "loginToUserHomeSegue", sender: self)
+    }
     @IBAction func loginBtnPressed(_ sender: Any) {
 
         if ConnectionCheck.isConnectedToNetwork() {

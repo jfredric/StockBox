@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9E-zl-bE5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9E-zl-bE5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -194,7 +194,6 @@
                                 <state key="normal" title="logOut"/>
                                 <connections>
                                     <action selector="logInOutBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="MXJ-n8-gam"/>
-                                    <segue destination="L9E-zl-bE5" kind="show" identifier="signOutSegue" id="rwx-vN-zCA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -245,7 +244,7 @@
                         <outlet property="nameTextField" destination="PSL-cG-7Co" id="hh7-oi-5mR"/>
                         <outlet property="passwordTextField" destination="YGv-jQ-KHK" id="MQG-33-4R0"/>
                         <outlet property="shippingAddressTextField" destination="PTT-Bi-ku1" id="TCg-iy-dMg"/>
-                        <segue destination="mzu-md-lWh" kind="presentation" identifier="userProfileToLoginSegue" id="6l5-4a-TaD"/>
+                        <segue destination="mzu-md-lWh" kind="presentation" identifier="userProfileToLoginSegue" modalTransitionStyle="flipHorizontal" id="6l5-4a-TaD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVA-0C-khY" userLabel="First Responder" sceneMemberID="firstResponder"/>
