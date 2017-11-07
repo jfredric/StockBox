@@ -94,16 +94,22 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             return
         }
         let uid = user.uid
-        
-        if let title = addProductTitle.text {
-            self.ref.child("users").child(uid).setValue(["title": title])
-        }
-        if let price = prodctPrice.text {
-            self.ref.child("users").child(uid).setValue(["price": price])
-        }
-        if let description = productDescription.text {
-            self.ref.child("users").child(uid).setValue(["description": description])
-        }
+//
+//        if let title = addProductTitle.text {
+//            self.ref.child("users").child(uid).setValue(["title": title])
+//        }
+//        if let price = prodctPrice.text {
+//            self.ref.child("users").child(uid).setValue(["price": price])
+//        }
+//        if let description = productDescription.text {
+//            self.ref.child("users").child(uid).setValue(["description": description])
+//        }
     }
-
+    @IBAction func CancelProductInfoBtn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func SaveProductInfoBtn(_ sender: Any) {
+    }
 }

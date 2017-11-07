@@ -72,24 +72,21 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Product Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-12-F4h">
                                 <rect key="frame" x="19" y="421" width="335" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpT-gR-fcT">
                                 <rect key="frame" x="20" y="371" width="335" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-8c-RSj">
-                                <rect key="frame" x="107" y="571" width="152" height="30"/>
+                                <rect key="frame" x="128" y="571" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.79724121309999996" blue="0.42411116399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Reviews">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -102,7 +99,7 @@
                                 <rect key="frame" x="227" y="318" width="132" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="Add Product Image"/>
+                                <state key="normal" title="Add Image"/>
                                 <connections>
                                     <action selector="addPhotoButton:" destination="uV6-wC-R5j" eventType="touchUpInside" id="vHW-pE-aZR"/>
                                 </connections>
@@ -118,7 +115,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="aPs-7n-T9J"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Product" id="x2f-lh-7TR"/>
+                    <navigationItem key="navigationItem" title="Add a Product" id="x2f-lh-7TR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="605-1U-hSp">
+                            <connections>
+                                <action selector="CancelProductInfoBtn:" destination="uV6-wC-R5j" id="ldB-G3-wf1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aMj-1z-ue7">
+                            <connections>
+                                <action selector="SaveProductInfoBtn:" destination="uV6-wC-R5j" id="uMZ-o0-91c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addProductTitle" destination="pGo-mF-leX" id="vyV-G1-Gj6"/>
                         <outlet property="imageDisplayed" destination="4RT-U0-WJu" id="zc6-3h-7aC"/>
