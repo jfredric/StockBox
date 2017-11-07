@@ -12,10 +12,8 @@ import FirebaseDatabase
 
 class AddProductImageVC: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
-
     
-   
-    @IBOutlet var productTitle: UITextField!
+    @IBOutlet var addProductTitle: UITextField!
     
     @IBOutlet var prodctPrice: UITextField!
     
@@ -58,7 +56,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         picker.delegate = self
-        productTitle.delegate = self
+        addProductTitle.delegate = self
         prodctPrice.delegate = self
         ref = Database.database().reference()
     }
@@ -80,7 +78,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
-        if textField == productTitle {
+        if textField == addProductTitle {
             prodctPrice.becomeFirstResponder()
         }
         if textField == productDescription{
@@ -97,7 +95,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         }
         let uid = user.uid
         
-        if let title = productTitle.text {
+        if let title = addProductTitle.text {
             self.ref.child("users").child(uid).setValue(["title": title])
         }
         if let price = prodctPrice.text {
