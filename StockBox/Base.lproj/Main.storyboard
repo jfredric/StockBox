@@ -975,20 +975,151 @@
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ks9-3W-Zea">
                                                     <rect key="frame" x="10" y="63" width="299" height="396"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iyr-XA-Nfr">
-                                                        <size key="itemSize" width="237" height="386"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iyr-XA-Nfr">
+                                                        <size key="itemSize" width="229" height="386"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="sectionInset" minX="35" minY="0.0" maxX="35" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="shoppingCartCell" id="Gwc-gm-K2p" customClass="ShoppingCartCollectionViewCell" customModule="StockBox" customModuleProvider="target">
-                                                            <rect key="frame" x="31" y="0.0" width="237" height="386"/>
+                                                            <rect key="frame" x="35" y="5" width="229" height="386"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="237" height="386"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="229" height="386"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quickadd" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-EY-3iw">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="229" height="150"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="150" id="yRM-Lt-izd"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUW-c3-3cW">
+                                                                        <rect key="frame" x="199" y="0.0" width="30" height="30"/>
+                                                                        <state key="normal" title="Btn"/>
+                                                                        <connections>
+                                                                            <action selector="deleteBtnPressed:" destination="Gwc-gm-K2p" eventType="touchUpInside" id="D9E-qI-bY8"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNI-P2-YZr">
+                                                                        <rect key="frame" x="5" y="164" width="113.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQN-Cf-fbd">
+                                                                        <rect key="frame" x="5" y="193" width="63.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender Location" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba4-fG-RrD">
+                                                                        <rect key="frame" x="5" y="217" width="111.5" height="18.5"/>
+                                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="14"/>
+                                                                        <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quanitity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mxz-V7-Uio">
+                                                                        <rect key="frame" x="5" y="245.5" width="79.5" height="49"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="49" id="Lxx-pq-6Bq"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNS-4M-zcL">
+                                                                        <rect key="frame" x="5" y="303" width="48.5" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="B1X-1A-S2v"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdR-dm-Cn0">
+                                                                        <rect key="frame" x="5" y="332" width="48.5" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="h9j-ve-8OC"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CF-Ya-EvN">
+                                                                        <rect key="frame" x="89.5" y="245.5" width="40" height="49"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="VTQ-3U-lkg"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.85" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HG-Ty-p1b">
+                                                                        <rect key="frame" x="67" y="303" width="50.5" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="cx3-lu-aO3"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10.85" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8i-2Z-2bQ">
+                                                                        <rect key="frame" x="67" y="332" width="50.5" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="pQu-bw-JbZ"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
                                                             </view>
+                                                            <color key="backgroundColor" red="0.95879538759352667" green="0.95879538759352667" blue="0.95879538759352667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="vNS-4M-zcL" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="0Jh-63-Fv1"/>
+                                                                <constraint firstItem="4HG-Ty-p1b" firstAttribute="top" secondItem="vNS-4M-zcL" secondAttribute="top" id="4rd-IM-jlY"/>
+                                                                <constraint firstItem="UdR-dm-Cn0" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="5t0-ca-Pqn"/>
+                                                                <constraint firstItem="4HG-Ty-p1b" firstAttribute="height" secondItem="vNS-4M-zcL" secondAttribute="height" id="CKR-mT-OBi"/>
+                                                                <constraint firstItem="bNI-P2-YZr" firstAttribute="top" secondItem="NRb-EY-3iw" secondAttribute="bottom" constant="14" id="DUg-8u-XH6"/>
+                                                                <constraint firstItem="ba4-fG-RrD" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="Dvt-Em-B5D"/>
+                                                                <constraint firstItem="NRb-EY-3iw" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" id="ITG-ut-9We"/>
+                                                                <constraint firstItem="a8i-2Z-2bQ" firstAttribute="leading" secondItem="UdR-dm-Cn0" secondAttribute="trailing" constant="13" id="KBb-NU-Fe3"/>
+                                                                <constraint firstItem="0CF-Ya-EvN" firstAttribute="leading" secondItem="Mxz-V7-Uio" secondAttribute="trailing" constant="5" id="M5n-0H-bKo"/>
+                                                                <constraint firstItem="tQN-Cf-fbd" firstAttribute="top" secondItem="bNI-P2-YZr" secondAttribute="bottom" constant="5" id="PDh-Co-LFh"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4HG-Ty-p1b" secondAttribute="trailing" symbolic="YES" id="Sna-5g-Rex"/>
+                                                                <constraint firstItem="Mxz-V7-Uio" firstAttribute="top" secondItem="ba4-fG-RrD" secondAttribute="bottom" constant="10" id="Sqa-VA-LwT"/>
+                                                                <constraint firstItem="0CF-Ya-EvN" firstAttribute="height" secondItem="Mxz-V7-Uio" secondAttribute="height" id="VDk-7L-GuF"/>
+                                                                <constraint firstItem="fUW-c3-3cW" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="199" id="Y4u-QA-wG2"/>
+                                                                <constraint firstItem="0CF-Ya-EvN" firstAttribute="top" secondItem="Mxz-V7-Uio" secondAttribute="top" id="aRy-84-O4L"/>
+                                                                <constraint firstItem="NRb-EY-3iw" firstAttribute="top" secondItem="Gwc-gm-K2p" secondAttribute="top" id="da1-4B-0Dg"/>
+                                                                <constraint firstItem="fUW-c3-3cW" firstAttribute="top" secondItem="Gwc-gm-K2p" secondAttribute="top" id="f8s-RU-iEo"/>
+                                                                <constraint firstItem="Mxz-V7-Uio" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="foz-e3-Y7p"/>
+                                                                <constraint firstItem="UdR-dm-Cn0" firstAttribute="top" secondItem="vNS-4M-zcL" secondAttribute="bottom" constant="9" id="gkY-Hx-R2u"/>
+                                                                <constraint firstItem="4HG-Ty-p1b" firstAttribute="leading" secondItem="vNS-4M-zcL" secondAttribute="trailing" constant="13.5" id="gpq-bH-ASU"/>
+                                                                <constraint firstItem="bNI-P2-YZr" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="kBs-6C-Rs1"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0CF-Ya-EvN" secondAttribute="trailing" symbolic="YES" id="oD0-aX-vw7"/>
+                                                                <constraint firstItem="tQN-Cf-fbd" firstAttribute="leading" secondItem="Gwc-gm-K2p" secondAttribute="leading" constant="5" id="sRi-en-eQE"/>
+                                                                <constraint firstItem="a8i-2Z-2bQ" firstAttribute="height" secondItem="UdR-dm-Cn0" secondAttribute="height" id="tLh-MC-4wP"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tQN-Cf-fbd" secondAttribute="trailing" symbolic="YES" id="tcK-UY-nFK"/>
+                                                                <constraint firstItem="vNS-4M-zcL" firstAttribute="top" secondItem="Mxz-V7-Uio" secondAttribute="bottom" constant="8.5" id="uZZ-gN-yuw"/>
+                                                                <constraint firstItem="ba4-fG-RrD" firstAttribute="top" secondItem="tQN-Cf-fbd" secondAttribute="bottom" id="waW-ei-Pzj"/>
+                                                                <constraint firstAttribute="trailing" secondItem="NRb-EY-3iw" secondAttribute="trailing" id="waf-Qm-3SL"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ba4-fG-RrD" secondAttribute="trailing" symbolic="YES" id="wei-jV-Kku"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fUW-c3-3cW" secondAttribute="trailing" id="yNF-jj-Vbq"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bNI-P2-YZr" secondAttribute="trailing" symbolic="YES" id="zJj-Bb-Py6"/>
+                                                                <constraint firstItem="a8i-2Z-2bQ" firstAttribute="top" secondItem="UdR-dm-Cn0" secondAttribute="top" id="zeE-xj-2oz"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="numOfProducts" destination="0CF-Ya-EvN" id="URE-CP-hUt"/>
+                                                                <outlet property="productImage" destination="NRb-EY-3iw" id="gpT-qo-pzR"/>
+                                                                <outlet property="productPrice" destination="4HG-Ty-p1b" id="8D9-Kb-Az7"/>
+                                                                <outlet property="productTitle" destination="bNI-P2-YZr" id="7nS-Pb-BX1"/>
+                                                                <outlet property="totalLbl" destination="a8i-2Z-2bQ" id="9oJ-Qo-KUF"/>
+                                                                <outlet property="venderLocation" destination="ba4-fG-RrD" id="uee-DT-MnC"/>
+                                                                <outlet property="verderName" destination="tQN-Cf-fbd" id="Fel-kF-KU0"/>
+                                                            </connections>
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
