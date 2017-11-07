@@ -1,5 +1,5 @@
 //
-//  UserLogOutVC.swift
+//  UserProfileVC.swift
 //  StockBox
 //
 //  Created by Jared Sobol on 11/1/17.
@@ -25,18 +25,23 @@ class UserProfileVC: UIViewController {
         // Do any additional setup after loading the view.
         
         // if user is not logged in, should not be here. Throw error?
-        print("view loaded")
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) { // this might cause a loop if user does not log in...
+    override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            
             if user != nil {
                 // user is logged in
                 // set the tab bar icon
+//                let profileTabBarItem: UITabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile-tab"), selectedImage: UIImage(named: "profile-tab"))
+//                self.tabBarItem = profileTabBarItem
             } else {
                 // user is not logged in
                 // set the tab bar icon
-                // set tab index to home(0) and then segue to login
+//                let loginTabBarItem: UITabBarItem = UITabBarItem(title: "Login", image: UIImage(named: "login-tab"), selectedImage: UIImage(named: "login-tab"))
+//                self.tabBarItem = loginTabBarItem
+                // segue to login view
                 self.performSegue(withIdentifier: "userProfileToLoginSegue", sender: nil)
             }
         }

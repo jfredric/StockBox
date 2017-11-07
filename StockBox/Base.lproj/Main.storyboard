@@ -236,7 +236,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wSQ-S4-byc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" image="icons8-door-opened" id="sOP-qW-0Nb"/>
+                    <tabBarItem key="tabBarItem" title="Login" image="login-tab" id="sOP-qW-0Nb" userLabel="Login and Profile"/>
                     <connections>
                         <outlet property="accountBalanceTextField" destination="b7j-s9-Ona" id="P08-PJ-O9P"/>
                         <outlet property="billingAddressTextField" destination="uNd-KV-Dqm" id="Hbw-hR-btJ"/>
@@ -340,7 +340,7 @@
         <scene sceneID="Ldl-k0-bSw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vsv-lU-IlY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home-page" id="Op9-NI-5aI"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-tab" id="Op9-NI-5aI"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BdE-uS-kVb">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -365,7 +365,7 @@
         <scene sceneID="pgW-Uh-zIc">
             <objects>
                 <navigationController id="hQG-Qt-oXb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorties" image="heart_deselected_icon" id="DWi-Jd-r26"/>
+                    <tabBarItem key="tabBarItem" title="Favorties" image="favorites-tab" id="DWi-Jd-r26"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qcD-fA-1C7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -737,7 +737,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A10-8U-Z13"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="CheckOut" image="icons8-checkout (1)" id="HAg-tD-skP"/>
+                    <tabBarItem key="tabBarItem" title="CheckOut" image="checkout-tab" id="HAg-tD-skP"/>
                     <connections>
                         <outlet property="billingAddressTextField" destination="WJc-1C-73m" id="qsF-dv-LnW"/>
                         <outlet property="shippingAddressTextField" destination="JLV-Ln-nML" id="E19-i0-VNc"/>
@@ -1037,10 +1037,10 @@
     </scenes>
     <resources>
         <image name="cart" width="24" height="20"/>
-        <image name="heart_deselected_icon" width="22" height="20"/>
-        <image name="icons8-checkout (1)" width="32" height="32"/>
-        <image name="icons8-door-opened" width="25" height="25"/>
-        <image name="icons8-home-page" width="25" height="25"/>
+        <image name="checkout-tab" width="32" height="32"/>
+        <image name="favorites-tab" width="22" height="20"/>
+        <image name="home-tab" width="25" height="25"/>
+        <image name="login-tab" width="25" height="25"/>
         <image name="menubtn" width="20" height="14"/>
         <image name="quickadd" width="200" height="200"/>
     </resources>

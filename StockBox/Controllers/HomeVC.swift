@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
+    
+    var handle: AuthStateDidChangeListenerHandle?
     
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.unselectedItemTintColor = UNSELECTEDTABITEMSCOLOR
@@ -21,6 +24,30 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ProductTVCell", bundle: nil), forCellReuseIdentifier: "ProductTVCell-ID")
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            // gets the root profilevc from the tab bar controller
+            if let profileVC = self.tabBarController?.viewControllers![2] {
+                // set the profilevc tab bar item based on login status
+                if user != nil {
+                    // user is logged in
+                    // set the tab bar icon
+                    let profileTabBarItem: UITabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile-tab"), selectedImage: UIImage(named: "profile-tab"))
+                    profileVC.tabBarItem = profileTabBarItem
+                } else {
+                    // user is not logged in
+                    // set the tab bar icon
+                    let loginTabBarItem: UITabBarItem = UITabBarItem(title: "Login", image: UIImage(named: "login-tab"), selectedImage: UIImage(named: "login-tab"))
+                    profileVC.tabBarItem = loginTabBarItem
+                }
+            }
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(handle!)
     }
 
     override func didReceiveMemoryWarning() {
