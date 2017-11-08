@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omh-Gw-Sgx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omh-Gw-Sgx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -90,18 +90,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-8c-RSj">
-                                <rect key="frame" x="154" y="569" width="67" height="35"/>
+                                <rect key="frame" x="137.5" y="569" width="100" height="39"/>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="eaa-Qv-qAd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
                                 <state key="normal" title="Reviews">
                                     <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUq-LY-r8p">
-                                <rect key="frame" x="20" y="316" width="154" height="30"/>
+                                <rect key="frame" x="20" y="316" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                <state key="normal" title="Add Image From Library">
+                                <state key="normal" title="Use Library">
                                     <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -116,10 +119,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-Gc-bOS">
-                                <rect key="frame" x="201" y="316" width="154" height="30"/>
+                                <rect key="frame" x="265" y="316" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="TCH-oA-Lm0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
-                                <state key="normal" title="Add Image from Camera">
+                                <state key="normal" title="Take Photo">
                                     <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -157,6 +163,9 @@
                                             <constraint firstItem="l2c-jM-fjx" firstAttribute="top" secondItem="Bhp-0d-NB4" secondAttribute="top" id="Och-KT-ekj"/>
                                             <constraint firstItem="l2c-jM-fjx" firstAttribute="leading" secondItem="Bhp-0d-NB4" secondAttribute="leading" id="gO1-wC-qgx"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="productImage" destination="l2c-jM-fjx" id="ScA-Pb-c4v"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -204,8 +213,11 @@
                     <connections>
                         <outlet property="addProductTitle" destination="pGo-mF-leX" id="vyV-G1-Gj6"/>
                         <outlet property="collectionView" destination="s1x-WL-Ba6" id="oDm-T2-Idk"/>
+                        <outlet property="photoLibraryBtn" destination="OUq-LY-r8p" id="V0B-ZJ-hAj"/>
                         <outlet property="prodctPrice" destination="kpT-gR-fcT" id="DVi-kf-qIL"/>
                         <outlet property="productDescription" destination="3Pg-12-F4h" id="fXk-k1-JvP"/>
+                        <outlet property="reviewsBtn" destination="7Eu-8c-RSj" id="3Qw-hm-8Co"/>
+                        <outlet property="takePhotoBtn" destination="lOh-Gc-bOS" id="5Qb-Ij-6qD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePl-56-K5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
