@@ -28,7 +28,19 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            // gets the root profilevc from the tab bar controller
+            if user != nil {
+                //AppUser does not load user quick enough, so lets do this...
+                let userInfoRef = AppDatabase.userInfoRootRef.child((user?.uid)!)
+                userInfoRef.child("account").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let account = snapshot.value as! String
+                    if account == AppUser.AccountType.vendor.rawValue {
+                        // current user is vendor, segue to vendor view
+                        // userToVendorSegue
+                        self.performSegue(withIdentifier: "userToVendorSegue", sender: self)
+                    }
+                })
+            }
+            // gets the root profile view controller from the tab bar controller
             if let profileVC = self.tabBarController?.viewControllers![2] {
                 // set the profilevc tab bar item based on login status
                 if user != nil {

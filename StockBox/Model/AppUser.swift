@@ -67,7 +67,11 @@ class AppUser {
     private init() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                //self.loadForUser(user: user!)
+                self.loadFor(user: user!, completion: { (error) in
+                    if error != nil {
+                        print("Error [AppUser]: \(error!)")
+                    }
+                })
             } else {
                 // logged out, change to guest mode?
             }
