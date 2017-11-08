@@ -16,11 +16,10 @@ class ShoppingCartVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(UINib.init(nibName: "ShoppingCartCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "shoppingCartCell")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,6 +31,7 @@ class ShoppingCartVC: UIViewController, UICollectionViewDelegate, UICollectionVi
         cell.venderLocation.text = "Chennai, India"
         cell.numOfProducts.text = "2"
         cell.productPrice.text = "10.28"
+        cell.totalLbl.text = "20.56"
         return cell
     }
     

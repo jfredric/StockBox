@@ -8,7 +8,8 @@
 
 import UIKit
 
-class UsersProductDetailVC: UIViewController {
+class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    @IBOutlet weak var colectionView: UICollectionView!
     
     @IBOutlet weak var venderBtn: UIButton!
     @IBOutlet weak var reviewsBtn: UIButton!
@@ -19,6 +20,8 @@ class UsersProductDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colectionView.delegate = self
+        colectionView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
@@ -47,5 +50,16 @@ class UsersProductDetailVC: UIViewController {
     @IBAction func vendersBtnPresssed(_ sender: Any) {
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserProductDetailCVCell", for: indexPath) as? UserProductDetailCVCell else {
+            fatalError("The World Is Ending")
+        }
+        
+        return cell
+    }
     
 }
