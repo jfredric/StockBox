@@ -34,6 +34,12 @@ class AppUser {
         get {
             return _name
         }
+        set {
+            _name = newValue
+            if currentUser != nil {
+                userInfoRef?.child(FirebaseKeys.name).setValue(newValue)
+            }
+        }
     }
     var balance: Double {
         get {

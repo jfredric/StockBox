@@ -9,13 +9,12 @@
 import UIKit
 import Firebase
 
-class UserProfileVC: UIViewController {
+class UserProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var shippingAddressTextField: UITextField!
-    @IBOutlet weak var billingAddressTextField: UITextField!
-    @IBOutlet weak var accountBalanceTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var shippingAddressTextView: UITextView!
+    @IBOutlet weak var billingAddressTextView: UITextView!
+    @IBOutlet weak var accountBalanceLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     var handle: AuthStateDidChangeListenerHandle?
     
@@ -25,6 +24,9 @@ class UserProfileVC: UIViewController {
         // Do any additional setup after loading the view.
         
         // if user is not logged in, should not be here. Throw error?
+        if AppUser.sharedInstance.name != "" {
+            nameTextField.text = AppUser.sharedInstance.name
+        }
         
     }
     
@@ -51,21 +53,39 @@ class UserProfileVC: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
-    // MARK: ACTION FUNCTIONS
-    @IBAction func nameEditBtnPressed(_ sender: Any) {
+    // MARK: TEXTFIELD DELEGATE FUNCTIONS
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            // save name
+            if let newName = textField.text {
+                // only save the name if it has changed
+                if newName != AppUser.sharedInstance.name {
+                    AppUser.sharedInstance.name = newName
+                }
+            }
+            // dismiss keyboard
+            textField.resignFirstResponder()
+        }
+        return true
     }
-  
+    
+    // MARK: ACTION FUNCTIONS
+    
     @IBAction func shippingAddressEditBtnPressed(_ sender: Any) {
     }
+    
     @IBAction func billingAddressEditBtnPressed(_ sender: Any) {
     }
     
-    @IBAction func passwordEditBtnPressed(_ sender: Any) {
+    @IBAction func emailChangeBtnPressed(_ sender: UIButton) {
     }
+    
+    @IBAction func passwordChangeBtnPressed(_ sender: Any) {
+    }
+    
     @IBAction func logInOutBtnPressed(_ sender: Any) {
         AppUser.sharedInstance.logOut()
-        
-        // update view
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

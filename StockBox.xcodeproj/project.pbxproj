@@ -185,9 +185,6 @@
 		6562ADC51FB27962006E99E2 /* Vendor Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF593FAC1FAA17640056123E /* VendorProductsTVC.swift */,
-				65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */,
-				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
 			);
 			name = "Vendor Controllers";
 			sourceTree = "<group>";
@@ -888,7 +885,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8TXY43N996;
+				DEVELOPMENT_TEAM = 6D2UCX5FZW;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -905,7 +902,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8TXY43N996;
+				DEVELOPMENT_TEAM = 6D2UCX5FZW;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
