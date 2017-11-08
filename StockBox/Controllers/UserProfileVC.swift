@@ -17,6 +17,7 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailLabel: UILabel!
     
     var handle: AuthStateDidChangeListenerHandle?
+    var currentAppUser: AppUser!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +26,30 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         
         // if user is not logged in, should not be here. Throw error?
         
+        currentAppUser = AppUser.sharedInstance
         nameTextField.delegate = self
         
-        if AppUser.sharedInstance.name != "" {
-            nameTextField.text = AppUser.sharedInstance.name
+        if currentAppUser.name != "" {
+            nameTextField.text = currentAppUser.name
         }
-        accountBalanceLabel.text = String(format: "$%.02f", AppUser.sharedInstance.balance)
-        if let email = AppUser.sharedInstance.currentUser?.email {
+        accountBalanceLabel.text = doubleToCurrencyString(value: currentAppUser.balance)
+        if let email = currentAppUser.currentUser?.email {
             emailLabel.text = email
         } else {
             emailLabel.text = "none"
         }
+        
+        if currentAppUser.addresses.count > 0 {
+            shippingAddressTextView.text = currentAppUser.addresses[0].toText()
+        } else {
+            shippingAddressTextView.text = "\n\naddress info needed"
+        }
+        if currentAppUser.addresses.count > 1 {
+            billingAddressTextView.text = currentAppUser.addresses[1].toText()
+        } else {
+            billingAddressTextView.text = "\n\naddress info needed"
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

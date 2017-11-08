@@ -19,7 +19,8 @@ class AppUser {
     private var _name: String = "Guest"
     private var _balance: Double = 0.0
     private var _description: String = "" // vendor only
-    private var _addresses: [String] = [] // only one for vendor
+    private var _addressIDs: [String] = [] // only one for vendor
+    private var _addresses: [Address] = []
     private var _favorites: [String] = [] // consumer only
     private var _products: [String] = [] // vendor only
     private var _reviews: [String] = [] // consumer only
@@ -45,6 +46,24 @@ class AppUser {
         get {
             return _balance
         }
+    }
+    var description: String {
+        get { return _description }
+        set {
+            _description = newValue
+            if currentUser != nil {
+                userInfoRef?.child(FirebaseKeys.description).setValue(newValue)
+            }
+        }
+    }
+    
+    var addresses: [Address] {
+        get { return _addresses }
+    }
+    
+    func appendAddress(newAddress: Address) {
+        _addresses.append(newAddress)
+        _addressIDs.append((newAddress.addressRef?.key)!)
     }
     
     // MARK: CONSTANTS AND TYPES
@@ -156,7 +175,7 @@ class AppUser {
             FirebaseKeys.name : _name,
             FirebaseKeys.balance : _balance,
             FirebaseKeys.description : _description,
-            FirebaseKeys.addresses : _addresses,
+            FirebaseKeys.addresses : _addressIDs,
             FirebaseKeys.favorites : _favorites,
             FirebaseKeys.products : _products,
             FirebaseKeys.reviews : _reviews
@@ -188,10 +207,19 @@ class AppUser {
             self._name = newUserInfo[FirebaseKeys.name] as? String ?? ""
             self._balance = newUserInfo[FirebaseKeys.balance] as? Double ?? 0.0
             self._description = newUserInfo[FirebaseKeys.description] as? String ?? ""
-            self._addresses = newUserInfo[FirebaseKeys.addresses] as? [String] ?? []
+            self._addressIDs = newUserInfo[FirebaseKeys.addresses] as? [String] ?? []
             self._favorites = newUserInfo[FirebaseKeys.favorites] as? [String] ?? []
             self._products = newUserInfo[FirebaseKeys.products] as? [String] ?? []
             self._reviews = newUserInfo[FirebaseKeys.reviews] as? [String] ?? []
+            
+            // load address data
+            for addressID in self._addressIDs {
+                let newAddressRef = AppDatabase.addressesRootRef.child(addressID)
+                newAddressRef.observeSingleEvent(of: .value, with: { (addressSnapshot) in
+                    self._addresses.append(Address(snapshot: snapshot))
+                })
+            }
+            
             completion(nil)
         })
     }
@@ -203,7 +231,7 @@ class AppUser {
         _name = "Guest"
         _balance = 0.0
         _description = ""
-        _addresses = []
+        _addressIDs = []
         _favorites = []
         _products = []
         _reviews = []

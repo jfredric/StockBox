@@ -9,10 +9,16 @@
 import Foundation
 import UIKit
 
+// MARK: STRING FORMATING FUNCTIONS
 // removes empty space from user inputs
 func stringTrimmer(stringToTrim string: String?) -> String? {
     let trimmedString = string?.trimmingCharacters(in: .whitespacesAndNewlines)
     return trimmedString
+}
+
+// converts a double to a String of Format '$0.00'
+func doubleToCurrencyString(value: Double) -> String {
+    return String(format: "$%.02f", value)
 }
 
 // MARK: ALERTS
