@@ -7,4 +7,9 @@
 //
 
 import Foundation
+import Firebase
+
+
+//var groups: Category 
+
 

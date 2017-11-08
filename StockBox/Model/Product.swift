@@ -31,8 +31,6 @@ class Product {
         self.price = price
         self.description = description
         self.vendorID = vendorID
-//        categories = []
-        //categoriesIDs = []
         reviews = []
         self.imagesURLs = imagesURLs
         //note: images may need to be downloaded here
