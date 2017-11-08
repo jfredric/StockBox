@@ -15,6 +15,7 @@ class CheckOutTableViewCell: UITableViewCell {
     
     @IBOutlet weak var productPrice: UILabel!
     
+    
     @IBOutlet weak var quantityNum: UITextField!
     
     @IBOutlet weak var totalLBl: UILabel!
