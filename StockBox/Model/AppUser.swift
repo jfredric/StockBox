@@ -79,7 +79,7 @@ class AppUser {
                     }
                 })
             } else {
-                // logged out, change to guest mode?
+                self.loadGuestSettings()
             }
         }
     }
@@ -196,7 +196,17 @@ class AppUser {
         })
     }
     private func loadGuestSettings() {
-        // TBD
+        currentUser = nil
+        userInfoRef = nil
+        _account = .guest
+        _email = ""
+        _name = "Guest"
+        _balance = 0.0
+        _description = ""
+        _addresses = []
+        _favorites = []
+        _products = []
+        _reviews = []
     }
     
     
