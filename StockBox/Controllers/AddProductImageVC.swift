@@ -17,21 +17,63 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     @IBOutlet var prodctPrice: UITextField!
     @IBOutlet var productDescription: UITextView!
     @IBOutlet var imageDisplayed: UIImageView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var currentProdcut: Product?
     
-    let picker = UIImagePickerController()
+    var picker = UIImagePickerController()
+    var imagePicker: UIImagePickerController!
     
     var ref: DatabaseReference!
+    @IBAction func addImageFromLibraryBtnPressed(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let askAlert = UIAlertController(title: "Allow Photo Library Access", message: "Please allow photo library access, so that you can add images of your products", preferredStyle: .alert)
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+                self.imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+            }
+            
+            // Add the actions
+            askAlert.addAction(okAction)
+            askAlert.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(askAlert, animated: true, completion: nil)
+        } else {
+            noCamera()
+        }
+    }
     
     
     @IBAction func addPhotoButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.allowsEditing = false
-            picker.sourceType = .camera
-            picker.cameraCaptureMode = .photo
-            picker.modalPresentationStyle = .fullScreen
-            present(picker,animated: true)
+            let askAlert = UIAlertController(title: "Allow Camera Access", message: "Please allow camera access, so that you can add images of your products", preferredStyle: .alert)
+            // Create the actions
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+                UIAlertAction in
+                self.imagePicker.allowsEditing = true
+                self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+                self.imagePicker.cameraCaptureMode = .photo
+                self.imagePicker.modalPresentationStyle = .fullScreen
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) {
+                UIAlertAction in
+            }
+            
+            // Add the actions
+            askAlert.addAction(okAction)
+            askAlert.addAction(cancelAction)
+            
+            // Present the controller
+            self.present(askAlert, animated: true, completion: nil)
         } else {
             noCamera()
         }
@@ -55,21 +97,29 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
         picker.delegate = self
         addProductTitle.delegate = self
         prodctPrice.delegate = self
         ref = Database.database().reference()
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
 
 //Delegates
     private func imagePickerController(_ picker: UIImagePickerController,
                                        didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
-        var  chosenImage = UIImage()
-        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        imageDisplayed.contentMode = .scaleAspectFit
-        imageDisplayed.image = chosenImage
-        dismiss(animated:true)
+        imagePicker.dismiss(animated: true, completion: nil)
+//        if case let info[UIImagePickerControllerEditedImage] as? UIImage{
+//
+//        }
+//        var  chosenImage = UIImage()
+//        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        imageDisplayed.contentMode = .scaleAspectFit
+//        imageDisplayed.image = chosenImage
+//        dismiss(animated:true)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
@@ -123,4 +173,21 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             //use current object id
         }
     }
+}
+
+extension AddProductImageVC: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddProductImageVC", for: indexPath) as? VenderProductDetailCVCell else {
+            fatalError("The World Is Ending")
+        }
+        
+        return cell
+    }
+    
+    
 }
