@@ -65,4 +65,9 @@ class Product {
             ]
         return asDictionary
     }
+    
+    func appendImage(url: String){
+        imagesURLs.append(url)
+        productRef.child(FirebaseKeys.images).setValue(imagesURLs)
+    }
 }

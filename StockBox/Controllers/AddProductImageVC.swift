@@ -12,6 +12,7 @@ import FirebaseDatabase
 import AVFoundation
 import Photos
 
+
 class AddProductImageVC: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
     
@@ -24,7 +25,8 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     @IBOutlet var imageDisplayed: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var currentProdcut: Product?
+    var productImageURls = [String]()
+    var currentProduct: Product?
     var pickedImages = [UIImage]()
     var picker = UIImagePickerController()
     var imagePicker: UIImagePickerController!
@@ -207,12 +209,13 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     }
     
     @IBAction func SaveProductInfoBtn(_ sender: Any) {
-        if currentProdcut == nil {
+        if currentProduct == nil {
             
             guard let title = addProductTitle.text else {
                 errorAlert(message: "Not able to record title", from: self)
                 return
             }
+            
             guard let price = prodctPrice.text else {
                 errorAlert(message: "Not able to record price", from: self)
                 return
@@ -225,7 +228,42 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                 errorAlert(message: "Not able to record description", from: self)
                 return
             }
-            currentProdcut = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, imagesURLs: [])
+            
+            let image = #imageLiteral(resourceName: "quickadd")
+            print(image, "THIS IS THE IMAGE I AM TALKING ABOUT")
+            if let imageData = UIImageJPEGRepresentation(image, 0.2){
+                let metaData = StorageMetadata()
+                metaData.contentType = "image/jpeg"
+                let storage = Storage.storage().reference()
+                let productPhotos = storage.child("productPhotos")
+                productPhotos.putData(imageData, metadata: metaData) { (metaData, error) in
+                    print("I GOT HERE")
+                }
+                
+            }
+            
+             currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, imagesURLs: [])
+            
+            for image in pickedImages {
+                print(image, "This Got here")
+                if let imageData = UIImageJPEGRepresentation(image, 0.2) {
+                    let metaData = StorageMetadata()
+                    metaData.contentType = "image/jpeg"
+                    let storage = Storage.storage().reference()
+                    let randomNum = arc4random()
+                    let photoID = storage.child("\(randomNum)")
+                    photoID.putData(imageData, metadata: metaData) { (metaData, error) in
+                        if error != nil {
+                            print("Unable to upload image")
+                        } else {
+                            print("Successful download")
+                            let downloadUrl = metaData?.downloadURL()?.absoluteString
+                            self.currentProduct!.appendImage(url: downloadUrl!)
+                        }
+                    }
+                    
+                }
+            }
             dismiss(animated: true, completion: nil)
         }
         else {
