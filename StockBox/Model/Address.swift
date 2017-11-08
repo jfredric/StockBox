@@ -26,7 +26,7 @@ class Address {
     static let guestAddress = Address()
     
     //
-    struct AddressKeys {
+    struct FirebaseKeys {
         static let id = "id"
         static let recipient = "recipient"
         static let street = "street"
@@ -60,13 +60,13 @@ class Address {
     // return data values as dictionary so it can be saved to firebase
     func toAnyObject() -> [String:Any] {
         return [
-            AddressKeys.recipient : recipient,
-            AddressKeys.street : street,
-            AddressKeys.unit : unit ?? "",
-            AddressKeys.city : city,
-            AddressKeys.state : state,
-            AddressKeys.zipcode : zipcode,
-            AddressKeys.country : country
+            FirebaseKeys.recipient : recipient,
+            FirebaseKeys.street : street,
+            FirebaseKeys.unit : unit ?? "",
+            FirebaseKeys.city : city,
+            FirebaseKeys.state : state,
+            FirebaseKeys.zipcode : zipcode,
+            FirebaseKeys.country : country
         ]
 
     }
