@@ -25,6 +25,8 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         
         // if user is not logged in, should not be here. Throw error?
         
+        nameTextField.delegate = self
+        
         if AppUser.sharedInstance.name != "" {
             nameTextField.text = AppUser.sharedInstance.name
         }

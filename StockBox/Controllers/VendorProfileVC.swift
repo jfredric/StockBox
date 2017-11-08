@@ -55,6 +55,10 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         }
     }
     
+    @IBAction func logOutButtonTapped(_ sender: UIButton) {
+        AppUser.sharedInstance.logOut()
+        self.performSegue(withIdentifier: "vendorProfileToLogin", sender: nil)
+    }
     
     @IBAction func vendorImagePress(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {

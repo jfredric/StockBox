@@ -14,6 +14,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     
     var handle: AuthStateDidChangeListenerHandle?
+    var userInfo: AppUser!
     
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.unselectedItemTintColor = UNSELECTEDTABITEMSCOLOR
@@ -24,6 +25,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ProductTVCell", bundle: nil), forCellReuseIdentifier: "ProductTVCell-ID")
         // Do any additional setup after loading the view.
+        userInfo = AppUser.sharedInstance // this also forces the userInfo to load
     }
     
     override func viewWillAppear(_ animated: Bool) {
