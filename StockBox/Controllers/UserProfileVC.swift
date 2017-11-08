@@ -24,10 +24,16 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
         
         // if user is not logged in, should not be here. Throw error?
+        
         if AppUser.sharedInstance.name != "" {
             nameTextField.text = AppUser.sharedInstance.name
         }
-        
+        accountBalanceLabel.text = String(format: "$%.02f", AppUser.sharedInstance.balance)
+        if let email = AppUser.sharedInstance.currentUser?.email {
+            emailLabel.text = email
+        } else {
+            emailLabel.text = "none"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +49,7 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
                 // set the tab bar icon
 //                let loginTabBarItem: UITabBarItem = UITabBarItem(title: "Login", image: UIImage(named: "login-tab"), selectedImage: UIImage(named: "login-tab"))
 //                self.tabBarItem = loginTabBarItem
+                
                 // segue to login view
                 self.performSegue(withIdentifier: "userProfileToLoginSegue", sender: nil)
             }
