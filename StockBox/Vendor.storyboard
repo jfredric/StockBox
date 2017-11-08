@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omh-Gw-Sgx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="omh-Gw-Sgx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Thonburi.ttc">
+            <string>Thonburi</string>
+            <string>Thonburi-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Vendor Products VC-->
         <scene sceneID="6Qc-1A-kfy">
@@ -69,59 +75,127 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Product Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-12-F4h">
-                                <rect key="frame" x="19" y="421" width="335" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Product Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Pg-12-F4h">
+                                <rect key="frame" x="19" y="419" width="335" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="4Id-uN-jFY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpT-gR-fcT">
-                                <rect key="frame" x="20" y="371" width="335" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Product Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kpT-gR-fcT">
+                                <rect key="frame" x="20" y="369" width="335" height="30"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-8c-RSj">
-                                <rect key="frame" x="128" y="571" width="89" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.79724121309999996" blue="0.42411116399999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-8c-RSj">
+                                <rect key="frame" x="154" y="569" width="67" height="35"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
                                 <state key="normal" title="Reviews">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="quickadd" translatesAutoresizingMaskIntoConstraints="NO" id="4RT-U0-WJu">
-                                <rect key="frame" x="19" y="139" width="335" height="182"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-Gc-bOS">
-                                <rect key="frame" x="227" y="318" width="132" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <state key="normal" title="Add Image"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUq-LY-r8p">
+                                <rect key="frame" x="20" y="316" width="154" height="30"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                <state key="normal" title="Add Image From Library">
+                                    <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addImageFromLibraryBtnPressed:" destination="uV6-wC-R5j" eventType="touchUpInside" id="De9-v9-s0U"/>
+                                    <action selector="addPhotoButton:" destination="uV6-wC-R5j" eventType="touchUpInside" id="nQs-D5-kCz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Enter Product Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGo-mF-leX">
+                                <rect key="frame" x="20" y="91" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOh-Gc-bOS">
+                                <rect key="frame" x="201" y="316" width="154" height="30"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="13"/>
+                                <state key="normal" title="Add Image from Camera">
+                                    <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="addPhotoButton:" destination="uV6-wC-R5j" eventType="touchUpInside" id="vHW-pE-aZR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGo-mF-leX">
-                                <rect key="frame" x="12" y="91" width="343" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s1x-WL-Ba6">
+                                <rect key="frame" x="20" y="129" width="335" height="179"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="179" id="9ca-eF-mpO"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u4l-Nx-dUZ">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddProductImageVC" id="Bhp-0d-NB4" customClass="VenderProductDetailCVCell" customModule="StockBox" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quickadd" translatesAutoresizingMaskIntoConstraints="NO" id="l2c-jM-fjx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="l2c-jM-fjx" secondAttribute="bottom" id="GV2-q7-1sz"/>
+                                            <constraint firstAttribute="trailing" secondItem="l2c-jM-fjx" secondAttribute="trailing" id="M0R-Gs-Sqe"/>
+                                            <constraint firstItem="l2c-jM-fjx" firstAttribute="top" secondItem="Bhp-0d-NB4" secondAttribute="top" id="Och-KT-ekj"/>
+                                            <constraint firstItem="l2c-jM-fjx" firstAttribute="leading" secondItem="Bhp-0d-NB4" secondAttribute="leading" id="gO1-wC-qgx"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3Pg-12-F4h" firstAttribute="top" secondItem="kpT-gR-fcT" secondAttribute="bottom" constant="20" id="9GP-ji-EoY"/>
+                            <constraint firstItem="lOh-Gc-bOS" firstAttribute="width" secondItem="OUq-LY-r8p" secondAttribute="width" id="B8o-dm-hYg"/>
+                            <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="kpT-gR-fcT" secondAttribute="trailing" constant="20" id="EiV-ZB-cLN"/>
+                            <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="pGo-mF-leX" secondAttribute="trailing" constant="20" id="EkR-Xu-AHK"/>
+                            <constraint firstItem="3Pg-12-F4h" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="19" id="Mg6-FE-ti8"/>
+                            <constraint firstItem="7Eu-8c-RSj" firstAttribute="top" secondItem="3Pg-12-F4h" secondAttribute="bottom" constant="8" id="Pvm-jC-91f"/>
+                            <constraint firstItem="OUq-LY-r8p" firstAttribute="leading" secondItem="s1x-WL-Ba6" secondAttribute="leading" id="SR9-NH-Jy8"/>
+                            <constraint firstItem="lOh-Gc-bOS" firstAttribute="height" secondItem="OUq-LY-r8p" secondAttribute="height" id="dEG-bH-UUr"/>
+                            <constraint firstItem="s1x-WL-Ba6" firstAttribute="top" secondItem="pGo-mF-leX" secondAttribute="bottom" constant="8" id="dir-Lf-LZN"/>
+                            <constraint firstItem="7Eu-8c-RSj" firstAttribute="centerX" secondItem="pmJ-BV-Bk9" secondAttribute="centerX" id="hAI-yd-ByX"/>
+                            <constraint firstItem="s1x-WL-Ba6" firstAttribute="trailing" secondItem="pGo-mF-leX" secondAttribute="trailing" id="hNc-4R-adH"/>
+                            <constraint firstItem="kpT-gR-fcT" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="20" id="iAT-pG-EGW"/>
+                            <constraint firstItem="pGo-mF-leX" firstAttribute="top" secondItem="aPs-7n-T9J" secondAttribute="top" constant="27" id="jZ3-sc-Rjx"/>
+                            <constraint firstItem="lOh-Gc-bOS" firstAttribute="top" secondItem="OUq-LY-r8p" secondAttribute="top" id="kor-L0-kuq"/>
+                            <constraint firstItem="pGo-mF-leX" firstAttribute="centerX" secondItem="pmJ-BV-Bk9" secondAttribute="centerX" id="kqq-K1-qBW"/>
+                            <constraint firstItem="kpT-gR-fcT" firstAttribute="top" secondItem="lOh-Gc-bOS" secondAttribute="bottom" constant="23" id="nj2-eB-nWS"/>
+                            <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="3Pg-12-F4h" secondAttribute="trailing" constant="21" id="nmP-BU-7j1"/>
+                            <constraint firstItem="pGo-mF-leX" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="20" id="seq-KP-KDQ"/>
+                            <constraint firstItem="OUq-LY-r8p" firstAttribute="top" secondItem="s1x-WL-Ba6" secondAttribute="bottom" constant="8" id="tUX-G6-66h"/>
+                            <constraint firstItem="lOh-Gc-bOS" firstAttribute="trailing" secondItem="s1x-WL-Ba6" secondAttribute="trailing" id="tcY-si-fi9"/>
+                            <constraint firstItem="s1x-WL-Ba6" firstAttribute="leading" secondItem="pGo-mF-leX" secondAttribute="leading" id="wXZ-VA-Psr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aPs-7n-T9J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Product" id="x2f-lh-7TR">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="605-1U-hSp">
+                            <color key="tintColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="CancelProductInfoBtn:" destination="uV6-wC-R5j" id="ldB-G3-wf1"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aMj-1z-ue7">
+                            <color key="tintColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="SaveProductInfoBtn:" destination="uV6-wC-R5j" id="uMZ-o0-91c"/>
                             </connections>
@@ -129,7 +203,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addProductTitle" destination="pGo-mF-leX" id="vyV-G1-Gj6"/>
-                        <outlet property="imageDisplayed" destination="4RT-U0-WJu" id="zc6-3h-7aC"/>
+                        <outlet property="collectionView" destination="s1x-WL-Ba6" id="oDm-T2-Idk"/>
                         <outlet property="prodctPrice" destination="kpT-gR-fcT" id="DVi-kf-qIL"/>
                         <outlet property="productDescription" destination="3Pg-12-F4h" id="fXk-k1-JvP"/>
                     </connections>
@@ -278,6 +352,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eTQ-Se-bf5">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

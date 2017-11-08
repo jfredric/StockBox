@@ -21,6 +21,7 @@
 		BF0276CB1FACF8A0006F9DF3 /* Vendor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0276CA1FACF8A0006F9DF3 /* Vendor.storyboard */; };
 		BF0276CD1FAD08ED006F9DF3 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF0276CC1FAD08ED006F9DF3 /* Login.storyboard */; };
 		BF158D371FB2372700A20F68 /* UserProductDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF158D361FB2372700A20F68 /* UserProductDetailCVCell.swift */; };
+		BF17A6AB1FB2C7D6006EA73E /* VenderProductDetailCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF17A6AA1FB2C7D6006EA73E /* VenderProductDetailCVCell.swift */; };
 		BF455D591FA15A4300F6C032 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D581FA15A4300F6C032 /* LoginVC.swift */; };
 		BF455D5D1FA1954800F6C032 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF455D5C1FA1954800F6C032 /* HomeVC.swift */; };
 		BF7565691FA9619C001BBADB /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7565681FA9619C001BBADB /* FavoritesVC.swift */; };
@@ -106,6 +107,7 @@
 		BF0276CA1FACF8A0006F9DF3 /* Vendor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vendor.storyboard; sourceTree = "<group>"; };
 		BF0276CC1FAD08ED006F9DF3 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		BF158D361FB2372700A20F68 /* UserProductDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProductDetailCVCell.swift; sourceTree = "<group>"; };
+		BF17A6AA1FB2C7D6006EA73E /* VenderProductDetailCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenderProductDetailCVCell.swift; sourceTree = "<group>"; };
 		BF455D581FA15A4300F6C032 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		BF455D5C1FA1954800F6C032 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		BF7565681FA9619C001BBADB /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
@@ -185,9 +187,6 @@
 		6562ADC51FB27962006E99E2 /* Vendor Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				EF593FAC1FAA17640056123E /* VendorProductsTVC.swift */,
-				65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */,
-				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
 			);
 			name = "Vendor Controllers";
 			sourceTree = "<group>";
@@ -362,6 +361,7 @@
 				EF6688751FA0223C0003C569 /* ProductTVCell.swift */,
 				EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */,
 				BF0276C41FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift */,
+				BF17A6AA1FB2C7D6006EA73E /* VenderProductDetailCVCell.swift */,
 			);
 			name = "Cell Controllers";
 			sourceTree = "<group>";
@@ -696,6 +696,7 @@
 				EFDFB35C1FA77A4E0075C648 /* ReviewTVCell.swift in Sources */,
 				BF0276C31FAC0631006F9DF3 /* CheckoutVC.swift in Sources */,
 				BFE785811FA029BB0015C930 /* Utility.swift in Sources */,
+				BF17A6AB1FB2C7D6006EA73E /* VenderProductDetailCVCell.swift in Sources */,
 				BF0276C91FAC297C006F9DF3 /* Constants.swift in Sources */,
 				EFDFB3651FA8C5A50075C648 /* Address.swift in Sources */,
 				BF0276861FAAC8CA006F9DF3 /* ShoppingCartVC.swift in Sources */,
@@ -888,7 +889,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8TXY43N996;
+				DEVELOPMENT_TEAM = J69W6VP8JF;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -905,7 +906,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8TXY43N996;
+				DEVELOPMENT_TEAM = J69W6VP8JF;
 				INFOPLIST_FILE = StockBox/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
