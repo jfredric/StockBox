@@ -16,6 +16,8 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var accountBalanceLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    @IBOutlet weak var editAddressView: UIView!
+    
     var handle: AuthStateDidChangeListenerHandle?
     var currentAppUser: AppUser!
     
@@ -96,9 +98,16 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     // MARK: ACTION FUNCTIONS
     
     @IBAction func shippingAddressEditBtnPressed(_ sender: Any) {
+        editAddressView.isHidden = false
+        
     }
     
     @IBAction func billingAddressEditBtnPressed(_ sender: Any) {
+        editAddressView.isHidden = false
+    }
+    
+    @IBAction func doneEditingAddressBtnPressed(_ sender: UIButton) {
+        editAddressView.isHidden = true
     }
     
     @IBAction func emailChangeBtnPressed(_ sender: UIButton) {
