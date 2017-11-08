@@ -280,11 +280,20 @@
                     <connections>
                         <outlet property="tableView" destination="3Fs-A7-EB6" id="FqT-B3-oT9"/>
                         <segue destination="wQt-ds-vjr" kind="show" identifier="homeToDetailSegue" id="O4F-NG-y1l"/>
+                        <segue destination="Tff-Iz-fAc" kind="presentation" identifier="userToVendorSegue" id="wYR-Kh-lsE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuF-g1-acF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2904.8000000000002" y="-215.44227886056973"/>
+        </scene>
+        <!--VendorTabBarControllerStoryboardID-->
+        <scene sceneID="ltS-hI-ZuW">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Vendor" referencedIdentifier="VendorTabBarControllerStoryboardID" id="Tff-Iz-fAc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOF-8C-0nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2904" y="-819"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1Lz-XU-PNE">
@@ -1231,7 +1240,7 @@
         <image name="quickadd" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toB-aT-0kr"/>
+        <segue reference="hl0-rG-3s9"/>
         <segue reference="O4F-NG-y1l"/>
     </inferredMetricsTieBreakers>
 </document>

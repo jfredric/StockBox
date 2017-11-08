@@ -21,7 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Allow StockBox to access Photo Library</string>
+	<string>Allow StockBox access to your photo library so you can add photos of your products.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow StockBox access to your camera so you can take photos of your products.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
