@@ -10,17 +10,35 @@ import UIKit
 import Firebase
 
 class UserProfileVC: UIViewController, UITextFieldDelegate {
+    
+    // MARK: OUTLETS
+    
+    // Primary View Outlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var shippingAddressTextView: UITextView!
     @IBOutlet weak var billingAddressTextView: UITextView!
     @IBOutlet weak var accountBalanceLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
     @IBOutlet weak var editAddressView: UIView!
+    @IBOutlet weak var shipEditButton: UIButton!
+    @IBOutlet weak var billEditButton: UIButton!
     
+    // Edit Address View Outlets
+    @IBOutlet weak var editAddressTitleLabel: UILabel!
+    @IBOutlet weak var recipientTextField: UITextField!
+    @IBOutlet weak var addressLineTextField: UITextField!
+    @IBOutlet weak var unitTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var zipTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
+    
+    // MARK: PROPERTIES
     var handle: AuthStateDidChangeListenerHandle?
     var currentAppUser: AppUser!
+    var editingShipping = false
     
+    // MARK: VIEW DELEGATE
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +48,13 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         
         currentAppUser = AppUser.sharedInstance
         nameTextField.delegate = self
+        recipientTextField.delegate = self
+        addressLineTextField.delegate = self
+        unitTextField.delegate = self
+        cityTextField.delegate = self
+        stateTextField.delegate = self
+        zipTextField.delegate = self
+        countryTextField.delegate = self
         
         if currentAppUser.name != "" {
             nameTextField.text = currentAppUser.name
@@ -78,7 +103,7 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
-    // MARK: TEXTFIELD DELEGATE FUNCTIONS
+    // MARK: TEXTFIELD DELEGATE
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == nameTextField {
@@ -92,6 +117,25 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
             // dismiss keyboard
             textField.resignFirstResponder()
         }
+        
+        // edit view - text field chaining
+        switch textField {
+        case recipientTextField :
+            addressLineTextField.becomeFirstResponder()
+        case addressLineTextField :
+            unitTextField.becomeFirstResponder()
+        case unitTextField :
+            cityTextField.becomeFirstResponder()
+        case cityTextField :
+            stateTextField.becomeFirstResponder()
+        case stateTextField :
+            zipTextField.becomeFirstResponder()
+        case zipTextField :
+            countryTextField.becomeFirstResponder()
+        default :
+            textField.resignFirstResponder()
+        }
+        
         return true
     }
     
@@ -99,14 +143,25 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     
     @IBAction func shippingAddressEditBtnPressed(_ sender: Any) {
         editAddressView.isHidden = false
-        
+        editingShipping = true
+        editAddressTitleLabel.text = "Edit Shipping Address"
     }
     
     @IBAction func billingAddressEditBtnPressed(_ sender: Any) {
         editAddressView.isHidden = false
+        editingShipping = false
+        editAddressTitleLabel.text = "Edit Billing Address"
     }
     
     @IBAction func doneEditingAddressBtnPressed(_ sender: UIButton) {
+        // read the text fields
+        if editingShipping {
+            
+        } else {
+            
+        }
+        recipientTextField.becomeFirstResponder() // hack it until you make it...
+        recipientTextField.resignFirstResponder() // make sure keyboard is dismissed
         editAddressView.isHidden = true
     }
     

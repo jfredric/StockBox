@@ -158,7 +158,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-vi-CW3" userLabel="Edit View">
-                                <rect key="frame" x="42" y="209" width="291" height="249"/>
+                                <rect key="frame" x="42" y="104" width="291" height="249"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adQ-x6-XqI" userLabel="Edit Address Label">
                                         <rect key="frame" x="124.5" y="8" width="42" height="21"/>
@@ -171,35 +171,47 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cV3-6i-Pcp">
                                         <rect key="frame" x="8" y="71" width="275" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aL2-lC-YwX">
                                         <rect key="frame" x="8" y="105" width="275" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iou-KS-I9e">
                                         <rect key="frame" x="8" y="139" width="140.5" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-q4-nOC" userLabel="State">
+                                        <rect key="frame" x="152" y="139" width="49.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXh-Si-KPj" userLabel="Zip">
+                                        <rect key="frame" x="206" y="139" width="77" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pux-qe-Sya">
                                         <rect key="frame" x="8" y="173" width="275" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-I0-hgB" userLabel="Done Button">
                                         <rect key="frame" x="126.5" y="211" width="37" height="30"/>
@@ -208,18 +220,6 @@
                                             <action selector="doneEditingAddressBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="60M-of-rCb"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Zip" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RXh-Si-KPj" userLabel="Zip">
-                                        <rect key="frame" x="206" y="139" width="77" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUu-q4-nOC" userLabel="State">
-                                        <rect key="frame" x="152.5" y="139" width="49.5" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -275,7 +275,6 @@
                             <constraint firstItem="lTJ-Zb-2IH" firstAttribute="centerY" secondItem="BNX-F8-rmr" secondAttribute="centerY" id="LMA-Xk-R9b"/>
                             <constraint firstItem="wSQ-S4-byc" firstAttribute="trailing" secondItem="SG6-G0-8qn" secondAttribute="trailing" constant="8" id="Lo3-59-x5d"/>
                             <constraint firstItem="x3l-38-4Sd" firstAttribute="leading" secondItem="wSQ-S4-byc" secondAttribute="leading" constant="10" id="MRF-Gj-qNb"/>
-                            <constraint firstItem="5hm-vi-CW3" firstAttribute="centerY" secondItem="6Mo-gT-MPZ" secondAttribute="centerY" id="Ml9-VY-2Ma"/>
                             <constraint firstItem="BNX-F8-rmr" firstAttribute="top" secondItem="NH9-lv-mSd" secondAttribute="bottom" constant="16" id="MpC-73-B5B"/>
                             <constraint firstItem="B05-TZ-XgQ" firstAttribute="leading" secondItem="wSQ-S4-byc" secondAttribute="leading" constant="8" id="OKM-aE-3M0"/>
                             <constraint firstItem="l8h-QQ-vmX" firstAttribute="leading" secondItem="qiy-Ng-pd0" secondAttribute="trailing" constant="8" id="QGH-jz-f4E"/>
@@ -289,6 +288,7 @@
                             <constraint firstItem="5hm-vi-CW3" firstAttribute="trailing" secondItem="6Mo-gT-MPZ" secondAttribute="trailing" constant="-42" id="Yds-fB-5gm"/>
                             <constraint firstItem="wSQ-S4-byc" firstAttribute="bottom" secondItem="y1C-En-Qqo" secondAttribute="bottom" constant="16" id="abM-K9-QDX"/>
                             <constraint firstItem="wSQ-S4-byc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fw0-VK-dWP" secondAttribute="trailing" constant="8" id="ap5-sr-mUP"/>
+                            <constraint firstItem="5hm-vi-CW3" firstAttribute="top" secondItem="wSQ-S4-byc" secondAttribute="top" constant="40" id="baI-fX-zET"/>
                             <constraint firstItem="BNX-F8-rmr" firstAttribute="leading" secondItem="wSQ-S4-byc" secondAttribute="leading" constant="8" id="cMo-N5-a6W"/>
                             <constraint firstAttribute="leading" secondItem="5hm-vi-CW3" secondAttribute="leading" constant="-42" id="eJq-A9-yqn"/>
                             <constraint firstItem="mu1-OE-46M" firstAttribute="centerY" secondItem="bE8-J9-edO" secondAttribute="centerY" id="fsj-XX-N9V"/>
@@ -311,11 +311,21 @@
                     <navigationItem key="navigationItem" title="User Profile" id="fkz-09-FaJ"/>
                     <connections>
                         <outlet property="accountBalanceLabel" destination="Fw0-VK-dWP" id="jmp-Kj-i0d"/>
+                        <outlet property="addressLineTextField" destination="cV3-6i-Pcp" id="02g-LV-gBY"/>
+                        <outlet property="billEditButton" destination="mu1-OE-46M" id="Jbz-Hs-Yc7"/>
                         <outlet property="billingAddressTextView" destination="bE8-J9-edO" id="gPa-ss-RQa"/>
+                        <outlet property="cityTextField" destination="Iou-KS-I9e" id="zBT-VE-StK"/>
+                        <outlet property="countryTextField" destination="Pux-qe-Sya" id="Dip-Xi-Hmm"/>
+                        <outlet property="editAddressTitleLabel" destination="adQ-x6-XqI" id="Sfq-VN-acb"/>
                         <outlet property="editAddressView" destination="5hm-vi-CW3" id="sjb-pi-xGh"/>
                         <outlet property="emailLabel" destination="lTJ-Zb-2IH" id="ULD-ck-qxz"/>
                         <outlet property="nameTextField" destination="PSL-cG-7Co" id="hh7-oi-5mR"/>
+                        <outlet property="recipientTextField" destination="c00-49-ccZ" id="oEa-EG-BJH"/>
+                        <outlet property="shipEditButton" destination="SG6-G0-8qn" id="i0I-9B-3jd"/>
                         <outlet property="shippingAddressTextView" destination="4Xi-d3-hrL" id="uni-gL-1TU"/>
+                        <outlet property="stateTextField" destination="bUu-q4-nOC" id="Skf-rM-1Iv"/>
+                        <outlet property="unitTextField" destination="aL2-lC-YwX" id="ccg-kz-uzu"/>
+                        <outlet property="zipTextField" destination="RXh-Si-KPj" id="fYI-T1-nka"/>
                         <segue destination="mzu-md-lWh" kind="presentation" identifier="userProfileToLoginSegue" modalTransitionStyle="flipHorizontal" id="6l5-4a-TaD"/>
                     </connections>
                 </viewController>
