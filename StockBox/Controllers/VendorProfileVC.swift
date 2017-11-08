@@ -10,15 +10,11 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class VendorProfileVC: UIViewController, UIImagePickerControllerDelegate,
+class VendorProfileVC: UIViewController,
 UINavigationControllerDelegate, UITextFieldDelegate  {
-
-    let picker = UIImagePickerController()
     
     var ref: DatabaseReference!
     
-
-
     @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
@@ -31,74 +27,42 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
 
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let user = Auth.auth().currentUser else {
-            return 
-        }
-        let uid = user.uid
-        
-        if let description = descriptionTextView.text {
-            self.ref.child("users").child(uid).setValue(["description": description])
-        }
-        if let storeName = storeNameTextField.text {
-            self.ref.child("users").child(uid).setValue(["store name": storeName])
-        }
-        if let location = vendorLocationTextField.text {
-             self.ref.child("users").child(uid).setValue(["location": location])
-        }
-        if let phoneNum = vendorPhoneNumTextField.text {
-            self.ref.child("users").child(uid).setValue(["phone number": phoneNum])
-        }
-        if let email = vendorEmailTextField.text {
-            self.ref.child("users").child(uid).setValue(["email": email])
+        guard Auth.auth().currentUser != nil else {
+            return
         }
     }
-    
+
+    @IBAction func profCancelBtn(_ sender: Any) {
+         dismiss(animated: true, completion: nil)
+    }
+    @IBAction func profileSaveBtn(_ sender: Any) {
+//        if storeNameTextField.text != nil {
+//            AppUser.FirebaseKeys.name
+//        } else {
+//            errorAlert(message: "Not able to record name", from: self)
+//            return
+//        }
+//        if vendorLocationTextField.text != nil {
+//            AppUser.FirebaseKeys.addresses
+//        } else {
+//            errorAlert(message: "Not able to record location", from: self)
+//            return
+//        }
+//        if vendorEmailTextField.text != nil {
+//            AppUser.FirebaseKeys.email
+//        } else {
+//            errorAlert(message: "Not able to record email", from: self)
+//            return
+//        }
+        
+    }
+   
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
         AppUser.sharedInstance.logOut()
         self.performSegue(withIdentifier: "vendorProfileToLogin", sender: nil)
     }
     
-    @IBAction func vendorImagePress(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.allowsEditing = false
-            picker.sourceType = .camera
-            picker.cameraCaptureMode = .photo
-            picker.modalPresentationStyle = .fullScreen
-            present(picker,animated: true)
-        } else {
-            noCamera()
-        }
-    }
-    func noCamera(){
-        let alertVC = UIAlertController(
-            title: "No Camera",
-            message: "Sorry, this device cannot use the camera",
-            preferredStyle: .alert)
-        let okAction = UIAlertAction(
-            title: "Okay",
-            style:.default,
-            handler: nil)
-        alertVC.addAction(okAction)
-        present(
-            alertVC,
-            animated: true)
-    }
-    
-//Delegates
-    private func imagePickerController(_ picker: UIImagePickerController,
-                                       didFinishPickingMediaWithInfo info: [String : AnyObject])
-    {
-        var  chosenImage = UIImage()
-        chosenImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        vendorImageBtn.contentMode = .scaleAspectFit
-        vendorImageBtn.imageView?.image = chosenImage
-        dismiss(animated:true)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        dismiss(animated: true)
-    }
     
 }
