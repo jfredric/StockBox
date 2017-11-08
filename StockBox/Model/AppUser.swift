@@ -12,7 +12,7 @@ import Firebase
 class AppUser {
     
     // MARK: PRIVATE PROPERTIES
-    private var currentUser: User?
+    public var currentUser: User?
     private var userInfoRef: DatabaseReference?
     private var _account: AccountType = .guest
     private var _email: String = ""

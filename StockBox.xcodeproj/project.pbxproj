@@ -180,6 +180,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6562ADC51FB27962006E99E2 /* Vendor Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF593FAC1FAA17640056123E /* VendorProductsTVC.swift */,
+				65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */,
+				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
+			);
+			name = "Vendor Controllers";
+			sourceTree = "<group>";
+		};
 		8EB56AE6E0D7B572BCD996D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,12 +309,11 @@
 		EF6688741FA020510003C569 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6562ADC51FB27962006E99E2 /* Vendor Controllers */,
 				EF26A3191FAF96D300EF40AD /* Login Controllers */,
 				EF6688751FA0223C0003C569 /* ProductTVCell.swift */,
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
 				BF455D5C1FA1954800F6C032 /* HomeVC.swift */,
-				65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */,
-				65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */,
 				EFDFB35A1FA77A4E0075C648 /* ReviewTVCell.swift */,
 				BF7565681FA9619C001BBADB /* FavoritesVC.swift */,
 				BF75656A1FA970CE001BBADB /* UsersProductDetailVC.swift */,
@@ -315,7 +324,6 @@
 				BF0276871FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.swift */,
 				BF0276C21FAC0631006F9DF3 /* CheckoutVC.swift */,
 				BF0276C41FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift */,
-				EF593FAC1FAA17640056123E /* VendorProductsTVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";

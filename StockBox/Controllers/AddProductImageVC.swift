@@ -14,16 +14,16 @@ class AddProductImageVC: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
     
     @IBOutlet var addProductTitle: UITextField!
-    
     @IBOutlet var prodctPrice: UITextField!
-    
     @IBOutlet var productDescription: UITextView!
+    @IBOutlet var imageDisplayed: UIImageView!
+    
+    var currentProdcut: Product?
     
     let picker = UIImagePickerController()
     
     var ref: DatabaseReference!
     
-    @IBOutlet var imageDisplayed: UIImageView!
     
     @IBAction func addPhotoButton(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -85,25 +85,12 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             textField.resignFirstResponder()
         }
         return true
-        }
-    
-
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let user = Auth.auth().currentUser else {
             return
         }
-        let uid = user.uid
-//
-//        if let title = addProductTitle.text {
-//            self.ref.child("users").child(uid).setValue(["title": title])
-//        }
-//        if let price = prodctPrice.text {
-//            self.ref.child("users").child(uid).setValue(["price": price])
-//        }
-//        if let description = productDescription.text {
-//            self.ref.child("users").child(uid).setValue(["description": description])
-//        }
     }
     @IBAction func CancelProductInfoBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -111,5 +98,29 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     }
     
     @IBAction func SaveProductInfoBtn(_ sender: Any) {
+        if currentProdcut == nil {
+            
+            guard let title = addProductTitle.text else {
+                errorAlert(message: "Not able to record title", from: self)
+                return
+            }
+            guard let price = prodctPrice.text else {
+                errorAlert(message: "Not able to record price", from: self)
+                return
+            }
+            guard let priceAsDouble = Double(price) else {
+                errorAlert(message: "Please enter a number into price.", from: self)
+                return
+            }
+            guard let description = productDescription.text else {
+                errorAlert(message: "Not able to record description", from: self)
+                return
+            }
+            currentProdcut = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, imagesURLs: [])
+            dismiss(animated: true, completion: nil)
+        }
+        else {
+            //use current object id
+        }
     }
 }
