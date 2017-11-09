@@ -78,6 +78,9 @@ class AppUser {
     func appendAddress(newAddress: Address) {
         _addresses.append(newAddress)
         _addressIDs.append((newAddress.addressRef?.key)!)
+        if currentUser != nil {
+            userInfoRef?.child(FirebaseKeys.addresses).setValue(_addressIDs)
+        }
     }
     
     // MARK: CONSTANTS AND TYPES

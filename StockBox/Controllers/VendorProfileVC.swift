@@ -12,20 +12,33 @@ import FirebaseDatabase
 
 class VendorProfileVC: UIViewController,
 UINavigationControllerDelegate, UITextFieldDelegate  {
+    
+    // MARK: PROPERTIES
+    
+    var userInfo = AppUser.sharedInstance
 
-    var ref: DatabaseReference!
-
-    @IBOutlet var vendorCountryTextField: UITextField!
-//    @IBOutlet var vendorImageBtn: UIButton!
-//    @IBOutlet var descriptionTextView: UITextView!
-//    @IBOutlet var vendorPhoneNumTextField: UITextField!
-    @IBOutlet var vendorEmailTextField: UITextField!
-    @IBOutlet var vendorLocationTextField: UITextField!
+    // MARK: OUTLETS
+    
     @IBOutlet var storeNameTextField: UITextField!
+    @IBOutlet var vendorLocationTextField: UITextField! // city
+    @IBOutlet var vendorCountryTextField: UITextField!
+    @IBOutlet var vendorEmailTextField: UITextField!
+    
+    // MARK: VIEW CONTROLLER FUNCTIONS
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
-
+        
+        // load userProfile details
+        if userInfo.currentUser != nil {
+            storeNameTextField.text = userInfo.name
+            if userInfo.addresses.count > 0 {
+                vendorLocationTextField.text = userInfo.addresses[0].city
+                vendorCountryTextField.text = userInfo.addresses[0].country
+            }
+            vendorEmailTextField.text = userInfo.email
+        }
+        
 
     }
 
