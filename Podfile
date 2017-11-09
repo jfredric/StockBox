@@ -10,6 +10,7 @@ target 'StockBox' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
+  pod 'Firebase/Messaging'
 
   target 'StockBoxTests' do
     inherit! :search_paths
