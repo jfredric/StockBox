@@ -47,7 +47,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgK-Kb-wb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="3305"/>
+            <point key="canvasLocation" x="230" y="3331"/>
         </scene>
         <!--Vendor Products Nav Controller-->
         <scene sceneID="g3x-tS-3W1">
@@ -65,7 +65,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYs-0Q-D3I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="2579"/>
+            <point key="canvasLocation" x="230" y="2540"/>
         </scene>
         <!--Add a Product-->
         <scene sceneID="yxB-Uh-faq">
@@ -222,32 +222,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePl-56-K5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1916" y="4108.695652173913"/>
-        </scene>
-        <!--Orders-->
-        <scene sceneID="yzj-Hx-fbU">
-            <objects>
-                <viewController id="gvv-uS-gVE" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2AV-3j-k8S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Orders" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRo-O9-Azh">
-                                <rect key="frame" x="16" y="12" width="95" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="2Zg-Yf-zV6"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Orders" id="SUe-TM-Igv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S1K-ok-roV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="76" y="2579"/>
+            <point key="canvasLocation" x="1444" y="4109"/>
         </scene>
         <!--LoginVCStoryboardID-->
         <scene sceneID="zUT-fE-bRS">
@@ -374,7 +349,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0H5-NE-9Ha" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432.8000000000002" y="2578.5607196401802"/>
+            <point key="canvasLocation" x="2550" y="2540"/>
         </scene>
         <!--Vendor Tab Bar Controller-->
         <scene sceneID="9MY-xx-l2Q">
@@ -387,7 +362,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="dNQ-C3-pfF" kind="relationship" relationship="viewControllers" id="Opb-bf-DNN"/>
-                        <segue destination="gvv-uS-gVE" kind="relationship" relationship="viewControllers" id="2yS-4Q-SoT"/>
                         <segue destination="t8C-Br-xwF" kind="relationship" relationship="viewControllers" id="6BC-lH-HC8"/>
                     </connections>
                 </tabBarController>
@@ -415,7 +389,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyA-bW-bNI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="4109"/>
+            <point key="canvasLocation" x="230" y="4109"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vyu-LN-Bmu">
@@ -435,7 +409,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQM-Ob-pO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607" y="2579"/>
+            <point key="canvasLocation" x="1631" y="2552"/>
         </scene>
     </scenes>
     <resources>

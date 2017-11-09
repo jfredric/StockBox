@@ -11,6 +11,8 @@ import UIKit
 class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var colectionView: UICollectionView!
     
+    @IBOutlet var vendorLocation: UITextField!
+    @IBOutlet var vendorName: UITextField!
     @IBOutlet weak var venderBtn: UIButton!
     @IBOutlet weak var reviewsBtn: UIButton!
     @IBOutlet weak var addToCartBtn: UIButton!
