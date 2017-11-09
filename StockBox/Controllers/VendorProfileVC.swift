@@ -53,7 +53,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         // Dismiss keyboard hack
         storeNameTextField.becomeFirstResponder()
         storeNameTextField.resignFirstResponder()
-        
+
         //Store name Text Field
         if storeNameTextField.text != nil {
             AppUser.sharedInstance.name = storeNameTextField.text!
@@ -101,8 +101,8 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record email", from: self)
             return
         }
-        
-        
+
+
         messageAlert(title: "Profile Saved", message: "Your profile information has been saved.", from: self)
     }
 
