@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class ShoppingCart {
+    static let sharedInstance = ShoppingCart()
+    static let shoppingCartArray = [Product]()
+    private init() {
+    }
+}

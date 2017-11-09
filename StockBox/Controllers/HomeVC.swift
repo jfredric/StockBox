@@ -98,10 +98,20 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "homeToDetailSegue", sender: nil)
+
+        performSegue(withIdentifier: "homeToDetailSegue", sender: indexPath)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "homeToDetailSegue" {
+            let indexPath = sender as! IndexPath
+            let productToPass = productsArray[(indexPath.row)]
+            let destinationVC = segue.destination as! UsersProductDetailVC
+            destinationVC.currentProduct = productToPass
+        }
+    }
 
 
 }
