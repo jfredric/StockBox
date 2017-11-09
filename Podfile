@@ -11,6 +11,7 @@ target 'StockBox' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Messaging'
+  pod 'NVActivityIndicatorView'
 
   target 'StockBoxTests' do
     inherit! :search_paths

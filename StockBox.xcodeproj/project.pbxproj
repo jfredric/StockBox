@@ -543,6 +543,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockBox/Pods-StockBox-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-615f275e/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -551,6 +552,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -702,7 +704,6 @@
 				BF0276C61FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BF158D371FB2372700A20F68 /* UserProductDetailCVCell.swift in Sources */,
-				65F8BA3C1FB3B1F400896BDD /* categories temp.swift in Sources */,
 				BF740B281FB415CE00328C3D /* ShoppingCart.swift in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
 				BF75656F1FA98882001BBADB /* UsersProductReviewsVC.swift in Sources */,
