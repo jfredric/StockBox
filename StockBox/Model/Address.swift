@@ -12,6 +12,7 @@ import Firebase
 class Address {
     
     // MARK: PRIVATE PROPERTIES
+    
     private var _recipient: String = ""
     private var _street: String = ""
     private var _unit: String?
@@ -19,11 +20,13 @@ class Address {
     private var _state: String = ""
     private var _zipcode: String = ""
     private var _country: String = ""
-    private var addressRef: DatabaseReference?
     
     private var currentUser = AppUser.sharedInstance.currentUser
     
     // MARK: PROPERTIES, GETTERS & SETTERS
+    
+    var addressRef: DatabaseReference?
+    
     var recipient: String {
         get { return _recipient}
         set {
