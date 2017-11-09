@@ -40,7 +40,7 @@ class Address {
     }
     
     // create new object from user inputed values
-    init(id:String, recipient:String, street:String, unit:String?, city:String, state:String, zipcode:String, country:String) {
+    init(recipient:String, street:String, unit:String?, city:String, state:String, zipcode:String, country:String) {
         
         // initialize properties
         self.recipient = recipient
@@ -52,7 +52,7 @@ class Address {
         self.country = country
         
         // get reference from firebase
-        addressRef = AppDatabase.addressesRootRef.child(id)
+        addressRef = AppDatabase.addressesRootRef.childByAutoId()
         
         // write new object to database
         addressRef?.setValue(toAnyObject())

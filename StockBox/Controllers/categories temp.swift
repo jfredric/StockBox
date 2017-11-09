@@ -10,6 +10,6 @@ import Foundation
 import Firebase
 
 
-//var groups: Category 
+var groups: Category?
 
 

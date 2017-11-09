@@ -15,6 +15,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     
     var ref: DatabaseReference!
     
+    @IBOutlet var vendorCountryTextField: UITextField!
     @IBOutlet var vendorImageBtn: UIButton!
     @IBOutlet var descriptionTextView: UITextView!
     @IBOutlet var vendorPhoneNumTextField: UITextField!
@@ -38,24 +39,48 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
          dismiss(animated: true, completion: nil)
     }
     @IBAction func profileSaveBtn(_ sender: Any) {
-//        if storeNameTextField.text != nil {
-//            AppUser.FirebaseKeys.name
-//        } else {
-//            errorAlert(message: "Not able to record name", from: self)
-//            return
-//        }
-//        if vendorLocationTextField.text != nil {
-//            AppUser.FirebaseKeys.addresses
-//        } else {
-//            errorAlert(message: "Not able to record location", from: self)
-//            return
-//        }
-//        if vendorEmailTextField.text != nil {
-//            AppUser.FirebaseKeys.email
-//        } else {
-//            errorAlert(message: "Not able to record email", from: self)
-//            return
-//        }
+        if storeNameTextField.text != nil {
+            AppUser.sharedInstance.name = storeNameTextField.text!
+        } else {
+            errorAlert(message: "Not able to record name", from: self)
+            return
+        }
+        
+        //City Text Field
+        
+        if vendorLocationTextField.text != nil {
+            
+            if AppUser.sharedInstance.addresses.count > 0 {
+                AppUser.sharedInstance.addresses[0].city = vendorLocationTextField.text!
+            } else {
+                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+            }
+        } else {
+            errorAlert(message: "Not able to record city", from: self)
+            return
+        }
+        
+        //Country Text Field
+        if vendorCountryTextField.text != nil {
+            if AppUser.sharedInstance.addresses.count > 0 {
+                AppUser.sharedInstance.addresses[0].country = vendorCountryTextField.text!
+            } else {
+                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+            }
+        } else {
+            errorAlert(message: "Not able to record country", from: self)
+            return
+        }
+        
+            
+            // Email
+        if vendorEmailTextField.text != nil {
+           // AppUser.sharedInstance.email =  vendorEmailTextField.text
+            }
+        else {
+            errorAlert(message: "Not able to record email", from: self)
+            return
+        }
         
     }
    
@@ -63,6 +88,6 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         AppUser.sharedInstance.logOut()
         self.performSegue(withIdentifier: "vendorProfileToLogin", sender: nil)
     }
-    
-    
+
 }
+
