@@ -9,13 +9,17 @@
 import UIKit
 import Firebase
 
-class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var handle: AuthStateDidChangeListenerHandle?
     var userInfo: AppUser!
     var productsArray = [Product]()
+    var searchResults = [Product]()
     
+    // MARK: VIEW CONTROLLER
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.unselectedItemTintColor = UNSELECTEDTABITEMSCOLOR
     }
@@ -27,11 +31,15 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Do any additional setup after loading the view.
         userInfo = AppUser.sharedInstance // this also forces the userInfo to load
         
+        // set up the search controller
+        searchBar.delegate = self
+        
         AppDatabase.productsRootRef.observe(.value, with: { snapshot in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let product = Product(snapShot: child)
                 self.productsArray.append(product)
             }
+            self.searchResults = self.productsArray
             self.tableView.reloadData()
         })
     }
@@ -77,23 +85,50 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: SEARCH BAR FUNCTIONS
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text! == "" {
+            searchResults = productsArray
+        } else {
+            print("Log [UserHome]: Searching: \(searchBar.text!)")
+            // filter
+            searchResults = productsArray.filter() {
+                ($0 as Product).contains(text: searchBar.text!)
+            }
+        }
+        self.tableView.reloadData()
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    
+    // MARK: TABLE VIEW FUNCTIONS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return productsArray.count
+        return searchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTVCell-ID") as? ProductTVCell else {
             fatalError("The World Is Ending")
         }
-        if productsArray[indexPath.row].imagesURLs.count > 0 {
-        let productImageURL = URL(string: productsArray[indexPath.row].imagesURLs[0])
+        if searchResults[indexPath.row].imagesURLs.count > 0 {
+        let productImageURL = URL(string: searchResults[indexPath.row].imagesURLs[0])
         let data = try? Data(contentsOf: productImageURL!)
-        cell.productImage.image = UIImage(data: data!) 
+        cell.productImage.image = UIImage(data: data!)
         } else{
         cell.productImage.image = #imageLiteral(resourceName: "quickadd")
         }
-        cell.productPrice.text = String(productsArray[indexPath.row].price)
-        cell.productTitle.text = productsArray[indexPath.row].name
+        cell.productPrice.text = String(searchResults[indexPath.row].price)
+        cell.productTitle.text = searchResults[indexPath.row].name
         
         return cell
     }

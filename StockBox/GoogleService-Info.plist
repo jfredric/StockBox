@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>136697421266-s6oj9tmk297gqt8lf6jm4vv9v52679hc.apps.googleusercontent.com</string>
+	<string>136697421266-kuh3bmoiun2hpibapssp4idk6n79sisb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.136697421266-s6oj9tmk297gqt8lf6jm4vv9v52679hc</string>
+	<string>com.googleusercontent.apps.136697421266-kuh3bmoiun2hpibapssp4idk6n79sisb</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCQCYOzgt4amZr5_MlILUysJ2EChRRekqM</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,23 +17,23 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.JaredSobol.StockBox</string>
+	<string>com.easydoesit.stockbox.josh</string>
 	<key>PROJECT_ID</key>
 	<string>stockbox-3c735</string>
 	<key>STORAGE_BUCKET</key>
 	<string>stockbox-3c735.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:136697421266:ios:8f901a843b4fa9cf</string>
+	<string>1:136697421266:ios:2f502bb4a764faf3</string>
 	<key>DATABASE_URL</key>
 	<string>https://stockbox-3c735.firebaseio.com</string>
 </dict>
