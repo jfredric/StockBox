@@ -48,6 +48,9 @@ class AppUser {
         get {
             return _balance
         }
+        set {
+           _balance = newValue
+        }
     }
     var description: String {
         get { return _description }

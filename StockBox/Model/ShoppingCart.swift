@@ -19,7 +19,7 @@ class ShoppingCart: NSObject, NSCoding {
     }
     
     static let sharedInstance = ShoppingCart()
-    static let shoppingCartArray = [Product]()
+    static let shoppingCartArray = [(Product, Int)]()
     private override init() {
     }
 }
