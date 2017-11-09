@@ -89,17 +89,6 @@
                                 <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-8c-RSj">
-                                <rect key="frame" x="137.5" y="569" width="100" height="39"/>
-                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="eaa-Qv-qAd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
-                                <state key="normal" title="Reviews">
-                                    <color key="titleColor" red="0.95879538760000005" green="0.95879538760000005" blue="0.95879538760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUq-LY-r8p">
                                 <rect key="frame" x="20" y="316" width="90" height="30"/>
                                 <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -169,30 +158,44 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lzI-D6-8gf">
+                                <rect key="frame" x="47" y="569" width="280" height="29"/>
+                                <segments>
+                                    <segment title="Spices"/>
+                                    <segment title="Herbs"/>
+                                    <segment title="Rubs"/>
+                                </segments>
+                                <connections>
+                                    <action selector="addCategories:" destination="uV6-wC-R5j" eventType="valueChanged" id="hGf-pI-Ulw"/>
+                                    <action selector="changeCategory:" destination="uV6-wC-R5j" eventType="valueChanged" id="Fgf-Yz-yee"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Pg-12-F4h" firstAttribute="top" secondItem="kpT-gR-fcT" secondAttribute="bottom" constant="20" id="9GP-ji-EoY"/>
                             <constraint firstItem="lOh-Gc-bOS" firstAttribute="width" secondItem="OUq-LY-r8p" secondAttribute="width" id="B8o-dm-hYg"/>
+                            <constraint firstItem="lzI-D6-8gf" firstAttribute="top" secondItem="3Pg-12-F4h" secondAttribute="bottom" constant="8" id="Dcn-BK-wG7"/>
                             <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="kpT-gR-fcT" secondAttribute="trailing" constant="20" id="EiV-ZB-cLN"/>
                             <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="pGo-mF-leX" secondAttribute="trailing" constant="20" id="EkR-Xu-AHK"/>
                             <constraint firstItem="3Pg-12-F4h" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="19" id="Mg6-FE-ti8"/>
-                            <constraint firstItem="7Eu-8c-RSj" firstAttribute="top" secondItem="3Pg-12-F4h" secondAttribute="bottom" constant="8" id="Pvm-jC-91f"/>
                             <constraint firstItem="OUq-LY-r8p" firstAttribute="leading" secondItem="s1x-WL-Ba6" secondAttribute="leading" id="SR9-NH-Jy8"/>
                             <constraint firstItem="lOh-Gc-bOS" firstAttribute="height" secondItem="OUq-LY-r8p" secondAttribute="height" id="dEG-bH-UUr"/>
                             <constraint firstItem="s1x-WL-Ba6" firstAttribute="top" secondItem="pGo-mF-leX" secondAttribute="bottom" constant="8" id="dir-Lf-LZN"/>
-                            <constraint firstItem="7Eu-8c-RSj" firstAttribute="centerX" secondItem="pmJ-BV-Bk9" secondAttribute="centerX" id="hAI-yd-ByX"/>
                             <constraint firstItem="s1x-WL-Ba6" firstAttribute="trailing" secondItem="pGo-mF-leX" secondAttribute="trailing" id="hNc-4R-adH"/>
                             <constraint firstItem="kpT-gR-fcT" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="20" id="iAT-pG-EGW"/>
                             <constraint firstItem="pGo-mF-leX" firstAttribute="top" secondItem="aPs-7n-T9J" secondAttribute="top" constant="27" id="jZ3-sc-Rjx"/>
+                            <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="lzI-D6-8gf" secondAttribute="trailing" constant="48" id="kK6-z8-eU5"/>
                             <constraint firstItem="lOh-Gc-bOS" firstAttribute="top" secondItem="OUq-LY-r8p" secondAttribute="top" id="kor-L0-kuq"/>
                             <constraint firstItem="pGo-mF-leX" firstAttribute="centerX" secondItem="pmJ-BV-Bk9" secondAttribute="centerX" id="kqq-K1-qBW"/>
                             <constraint firstItem="kpT-gR-fcT" firstAttribute="top" secondItem="lOh-Gc-bOS" secondAttribute="bottom" constant="23" id="nj2-eB-nWS"/>
                             <constraint firstItem="aPs-7n-T9J" firstAttribute="trailing" secondItem="3Pg-12-F4h" secondAttribute="trailing" constant="21" id="nmP-BU-7j1"/>
+                            <constraint firstItem="aPs-7n-T9J" firstAttribute="bottom" secondItem="lzI-D6-8gf" secondAttribute="bottom" constant="21" id="oS4-GJ-Kpg"/>
                             <constraint firstItem="pGo-mF-leX" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="20" id="seq-KP-KDQ"/>
                             <constraint firstItem="OUq-LY-r8p" firstAttribute="top" secondItem="s1x-WL-Ba6" secondAttribute="bottom" constant="8" id="tUX-G6-66h"/>
                             <constraint firstItem="lOh-Gc-bOS" firstAttribute="trailing" secondItem="s1x-WL-Ba6" secondAttribute="trailing" id="tcY-si-fi9"/>
                             <constraint firstItem="s1x-WL-Ba6" firstAttribute="leading" secondItem="pGo-mF-leX" secondAttribute="leading" id="wXZ-VA-Psr"/>
+                            <constraint firstItem="lzI-D6-8gf" firstAttribute="leading" secondItem="aPs-7n-T9J" secondAttribute="leading" constant="47" id="xdZ-fs-Yjj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aPs-7n-T9J"/>
                     </view>
@@ -216,13 +219,13 @@
                         <outlet property="photoLibraryBtn" destination="OUq-LY-r8p" id="V0B-ZJ-hAj"/>
                         <outlet property="prodctPrice" destination="kpT-gR-fcT" id="DVi-kf-qIL"/>
                         <outlet property="productDescription" destination="3Pg-12-F4h" id="fXk-k1-JvP"/>
-                        <outlet property="reviewsBtn" destination="7Eu-8c-RSj" id="3Qw-hm-8Co"/>
+                        <outlet property="segController" destination="lzI-D6-8gf" id="aTI-Fg-zMN"/>
                         <outlet property="takePhotoBtn" destination="lOh-Gc-bOS" id="5Qb-Ij-6qD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePl-56-K5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="4109"/>
+            <point key="canvasLocation" x="1444" y="4108.695652173913"/>
         </scene>
         <!--LoginVCStoryboardID-->
         <scene sceneID="zUT-fE-bRS">

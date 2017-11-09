@@ -10,7 +10,6 @@
 		3899BA3A777030EB0EDF2990 /* Pods_StockBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */; };
 		65CAD66B1FA2C2F60067FEAE /* VendorProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */; };
 		65DAEF581FA993D5005091B9 /* AddProductImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */; };
-		65F8BA3C1FB3B1F400896BDD /* categories temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F8BA3B1FB3B1F400896BDD /* categories temp.swift */; };
 		A306D75EDDD827E77A7F9957 /* Pods_StockBoxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */; };
 		BF0276861FAAC8CA006F9DF3 /* ShoppingCartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276851FAAC8CA006F9DF3 /* ShoppingCartVC.swift */; };
 		BF0276891FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0276871FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.swift */; };
@@ -95,7 +94,6 @@
 		65AADC92F8729D4FCBBA65CC /* Pods_StockBoxTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65CAD66A1FA2C2F60067FEAE /* VendorProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorProfileVC.swift; sourceTree = "<group>"; };
 		65DAEF571FA993D5005091B9 /* AddProductImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductImageVC.swift; sourceTree = "<group>"; };
-		65F8BA3B1FB3B1F400896BDD /* categories temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "categories temp.swift"; sourceTree = "<group>"; };
 		6B557C8C2D453FFBF216B342 /* Pods_StockBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70DBE8D22DCD6DD9F4EEC956 /* Pods_StockBoxUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockBoxUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976E540A03F35A2DC7CD016A /* Pods-StockBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockBox.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockBox/Pods-StockBox.release.xcconfig"; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 				BF75656A1FA970CE001BBADB /* UsersProductDetailVC.swift */,
 				BF75656C1FA98135001BBADB /* UsersVenderDetailVC.swift */,
 				BF75656E1FA98882001BBADB /* UsersProductReviewsVC.swift */,
-				65F8BA3B1FB3B1F400896BDD /* categories temp.swift */,
 				BF0276851FAAC8CA006F9DF3 /* ShoppingCartVC.swift */,
 				BF0276871FAB6FCA006F9DF3 /* ShoppingCartCollectionViewCell.swift */,
 				BF0276C21FAC0631006F9DF3 /* CheckoutVC.swift */,
@@ -690,7 +687,6 @@
 				BF0276C61FAC0A2A006F9DF3 /* CheckOutTableViewCell.swift in Sources */,
 				BFFBD3581F9FDC14008A8C7F /* StockBox.xcdatamodeld in Sources */,
 				BF158D371FB2372700A20F68 /* UserProductDetailCVCell.swift in Sources */,
-				65F8BA3C1FB3B1F400896BDD /* categories temp.swift in Sources */,
 				BFE785851FA0DAC00015C930 /* Reachability.swift in Sources */,
 				BF75656F1FA98882001BBADB /* UsersProductReviewsVC.swift in Sources */,
 				EF593FAD1FAA17640056123E /* VendorProductsTVC.swift in Sources */,

@@ -53,7 +53,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             if AppUser.sharedInstance.addresses.count > 0 {
                 AppUser.sharedInstance.addresses[0].city = vendorLocationTextField.text!
             } else {
-                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: "", zipcode: "", country: <#T##String#>)
             }
         } else {
             errorAlert(message: "Not able to record city", from: self)
@@ -65,7 +65,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             if AppUser.sharedInstance.addresses.count > 0 {
                 AppUser.sharedInstance.addresses[0].country = vendorCountryTextField.text!
             } else {
-                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+              //  let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: "", state: "", zipcode: "", country: <#T##String#>)
             }
         } else {
             errorAlert(message: "Not able to record country", from: self)
