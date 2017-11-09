@@ -12,9 +12,9 @@ import Firebase
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableView: UITableView!
-    
     var handle: AuthStateDidChangeListenerHandle?
     var userInfo: AppUser!
+    var productsArray = [Product]()
     
     override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.unselectedItemTintColor = UNSELECTEDTABITEMSCOLOR
@@ -26,6 +26,14 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.register(UINib.init(nibName: "ProductTVCell", bundle: nil), forCellReuseIdentifier: "ProductTVCell-ID")
         // Do any additional setup after loading the view.
         userInfo = AppUser.sharedInstance // this also forces the userInfo to load
+        
+        AppDatabase.productsRootRef.observe(.value, with: { snapshot in
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let product = Product(snapShot: child)
+                self.productsArray.append(product)
+            }
+            self.tableView.reloadData()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,15 +78,22 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return productsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTVCell-ID") as? ProductTVCell else {
             fatalError("The World Is Ending")
         }
-        cell.productPrice.text = "$9.85"
-        cell.productTitle.text = "Ipad Pro"
+        if productsArray[indexPath.row].imagesURLs.count > 0 {
+        let productImageURL = URL(string: productsArray[indexPath.row].imagesURLs[0])
+        let data = try? Data(contentsOf: productImageURL!)
+        cell.productImage.image = UIImage(data: data!) 
+        } else{
+        cell.productImage.image = #imageLiteral(resourceName: "quickadd")
+        }
+        cell.productPrice.text = String(productsArray[indexPath.row].price)
+        cell.productTitle.text = productsArray[indexPath.row].name
         
         return cell
     }

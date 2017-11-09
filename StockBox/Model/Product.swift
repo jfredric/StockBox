@@ -41,6 +41,24 @@ class Product {
         
     }
     
+    
+    init(snapShot: DataSnapshot) {
+        productRef = snapShot.ref
+        
+        guard let productSnap = snapShot.value as? [String:Any] else {
+            fatalErrorAlert(message: "database return invalid data", from: nil)
+            fatalError()
+        }
+        
+        name = productSnap[FirebaseKeys.name] as! String
+        price = productSnap[FirebaseKeys.price] as! Double
+        description = productSnap[FirebaseKeys.description] as! String
+        vendorID = productSnap[FirebaseKeys.vendorID] as! String
+        categoriesIDs = productSnap[FirebaseKeys.categories] as? [String] ?? []
+        reviewsIDs = productSnap[FirebaseKeys.reviews] as? [String] ?? []
+        imagesURLs = productSnap[FirebaseKeys.images] as? [String] ?? []
+    }
+    
     struct FirebaseKeys {
         static let name = "name"
         static let price = "price"
