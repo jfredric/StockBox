@@ -16,9 +16,9 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     var ref: DatabaseReference!
     
     @IBOutlet var vendorCountryTextField: UITextField!
-    @IBOutlet var vendorImageBtn: UIButton!
-    @IBOutlet var descriptionTextView: UITextView!
-    @IBOutlet var vendorPhoneNumTextField: UITextField!
+//    @IBOutlet var vendorImageBtn: UIButton!
+//    @IBOutlet var descriptionTextView: UITextView!
+//    @IBOutlet var vendorPhoneNumTextField: UITextField!
     @IBOutlet var vendorEmailTextField: UITextField!
     @IBOutlet var vendorLocationTextField: UITextField!
     @IBOutlet var storeNameTextField: UITextField!
@@ -38,22 +38,30 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     @IBAction func profCancelBtn(_ sender: Any) {
          dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func profileSaveBtn(_ sender: Any) {
+        
+        //Store name Text Field
         if storeNameTextField.text != nil {
             AppUser.sharedInstance.name = storeNameTextField.text!
+            if AppUser.sharedInstance.addresses.count > 0 {
+                AppUser.sharedInstance.addresses[0].recipient = vendorLocationTextField.text!
+            } else {
+                let newAddress = Address(recipient: vendorLocationTextField.text!, street: "", unit: nil, city: "", state: "", zipcode: "", country: "")
+                AppUser.sharedInstance.appendAddress(newAddress: newAddress)
+            }
         } else {
             errorAlert(message: "Not able to record name", from: self)
             return
         }
         
         //City Text Field
-        
         if vendorLocationTextField.text != nil {
-            
             if AppUser.sharedInstance.addresses.count > 0 {
                 AppUser.sharedInstance.addresses[0].city = vendorLocationTextField.text!
             } else {
-                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+                let newAddress = Address(recipient: "", street: "", unit: nil, city: vendorLocationTextField.text!, state: "", zipcode: "", country: "")
+                AppUser.sharedInstance.appendAddress(newAddress: newAddress)
             }
         } else {
             errorAlert(message: "Not able to record city", from: self)
@@ -65,19 +73,18 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             if AppUser.sharedInstance.addresses.count > 0 {
                 AppUser.sharedInstance.addresses[0].country = vendorCountryTextField.text!
             } else {
-                //let newAddress = Address(id: "", recipient: "", street: "", unit: "", city: <#T##String#>, state: <#T##String#>, zipcode: <#T##String#>, country: <#T##String#>)
+                let newAddress = Address(recipient: "", street: "", unit: nil, city: "", state: "", zipcode: "", country: vendorCountryTextField.text!)
+                AppUser.sharedInstance.appendAddress(newAddress: newAddress)
             }
         } else {
             errorAlert(message: "Not able to record country", from: self)
             return
         }
-        
             
-            // Email
+        // Email - change username
         if vendorEmailTextField.text != nil {
-           // AppUser.sharedInstance.email =  vendorEmailTextField.text
-            }
-        else {
+           // call the change email/username once implemented
+        } else {
             errorAlert(message: "Not able to record email", from: self)
             return
         }

@@ -11,15 +11,83 @@ import Firebase
 
 class Address {
     
-    // MARK: PROPERTIES
-    var recipient:String = ""
-    var street:String = ""
-    var unit:String?
-    var city:String = ""
-    var state:String = ""
-    var zipcode:String = ""
-    var country:String = ""
-    var addressRef: DatabaseReference?
+    // MARK: PRIVATE PROPERTIES
+    private var _recipient: String = ""
+    private var _street: String = ""
+    private var _unit: String?
+    private var _city: String = ""
+    private var _state: String = ""
+    private var _zipcode: String = ""
+    private var _country: String = ""
+    private var addressRef: DatabaseReference?
+    
+    private var currentUser = AppUser.sharedInstance.currentUser
+    
+    // MARK: PROPERTIES, GETTERS & SETTERS
+    var recipient: String {
+        get { return _recipient}
+        set {
+            if currentUser != nil {
+                _recipient = newValue
+                addressRef?.child(FirebaseKeys.recipient).setValue(newValue)
+            }
+        }
+    }
+    var street: String {
+        get { return _street}
+        set {
+            if currentUser != nil {
+                _street = newValue
+                addressRef?.child(FirebaseKeys.recipient).setValue(newValue)
+            }
+        }
+    }
+    var unit: String? {
+        get { return _unit}
+        set {
+            if currentUser != nil {
+                _unit = newValue
+                addressRef?.child(FirebaseKeys.unit).setValue(newValue ?? "")
+            }
+        }
+    }
+    var city: String {
+        get { return _city}
+        set {
+            if currentUser != nil {
+                _city = newValue
+                addressRef?.child(FirebaseKeys.city).setValue(newValue)
+            }
+        }
+    }
+    var state: String {
+        get { return _state}
+        set {
+            if currentUser != nil {
+                _state = newValue
+                addressRef?.child(FirebaseKeys.state).setValue(newValue)
+            }
+        }
+    }
+    var zipcode: String {
+        get { return _zipcode}
+        set {
+            if currentUser != nil {
+                _zipcode = newValue
+                addressRef?.child(FirebaseKeys.zipcode).setValue(newValue)
+            }
+        }
+    }
+    var country: String {
+        get { return _country}
+        set {
+            if currentUser != nil {
+                _country = newValue
+                addressRef?.child(FirebaseKeys.country).setValue(newValue)
+            }
+        }
+    }
+    
     
     // MARK: CONSTANTS
     
@@ -43,13 +111,13 @@ class Address {
     init(recipient:String, street:String, unit:String?, city:String, state:String, zipcode:String, country:String) {
         
         // initialize properties
-        self.recipient = recipient
-        self.street = street
-        self.unit = unit
-        self.city = city
-        self.state = state
-        self.zipcode = zipcode
-        self.country = country
+        _recipient = recipient
+        _street = street
+        _unit = unit
+        _city = city
+        _state = state
+        _zipcode = zipcode
+        _country = country
         
         // get reference from firebase
         addressRef = AppDatabase.addressesRootRef.childByAutoId()
@@ -70,13 +138,13 @@ class Address {
         }
         
         // initialize properties with received data
-        recipient = newAddressData[FirebaseKeys.recipient] as! String
-        street = newAddressData[FirebaseKeys.street] as! String
-        unit = newAddressData[FirebaseKeys.unit] as? String
-        city = newAddressData[FirebaseKeys.city] as! String
-        state = newAddressData[FirebaseKeys.state] as! String
-        zipcode = newAddressData[FirebaseKeys.zipcode] as! String
-        country = newAddressData[FirebaseKeys.country] as! String
+        _recipient = newAddressData[FirebaseKeys.recipient] as! String
+        _street = newAddressData[FirebaseKeys.street] as! String
+        _unit = newAddressData[FirebaseKeys.unit] as? String
+        _city = newAddressData[FirebaseKeys.city] as! String
+        _state = newAddressData[FirebaseKeys.state] as! String
+        _zipcode = newAddressData[FirebaseKeys.zipcode] as! String
+        _country = newAddressData[FirebaseKeys.country] as! String
     }
     
     // MARK: PUBLIC FUNCTIONS
@@ -84,13 +152,13 @@ class Address {
     func toText() -> String {
         var newString = ""
         
-        newString.append(recipient)
-        newString.append("\n" + street)
-        if unit != nil {
-            newString.append("\n" + unit!)
+        newString.append(_recipient)
+        newString.append("\n" + _street)
+        if _unit != nil {
+            newString.append("\n" + _unit!)
         }
-        newString.append("\n" + city + ", " + state + " " + String(zipcode))
-        newString.append("\n" + country)
+        newString.append("\n" + _city + ", " + _state + " " + String(_zipcode))
+        newString.append("\n" + _country)
         
         return newString
     }
@@ -99,15 +167,17 @@ class Address {
     
     // return data values as dictionary so it can be saved to firebase
     private func toAnyObject() -> [String:Any] {
-        return [
-            FirebaseKeys.recipient : recipient,
-            FirebaseKeys.street : street,
-            FirebaseKeys.unit : unit ?? "",
-            FirebaseKeys.city : city,
-            FirebaseKeys.state : state,
-            FirebaseKeys.zipcode : zipcode,
-            FirebaseKeys.country : country
+        var currentData: [String:Any] = [
+            FirebaseKeys.recipient : _recipient,
+            FirebaseKeys.street : _street,
+            FirebaseKeys.city : _city,
+            FirebaseKeys.state : _state,
+            FirebaseKeys.zipcode : _zipcode,
+            FirebaseKeys.country : _country
         ]
-
+        if _unit != nil {
+            currentData[FirebaseKeys.unit] = _unit!
+        }
+        return currentData
     }
 }
