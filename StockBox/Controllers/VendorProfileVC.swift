@@ -35,12 +35,12 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         }
     }
 
-    @IBAction func profCancelBtn(_ sender: Any) {
-         dismiss(animated: true, completion: nil)
-    }
-
     @IBAction func profileSaveBtn(_ sender: Any) {
 
+        // Dismiss keyboard hack
+        storeNameTextField.becomeFirstResponder()
+        storeNameTextField.resignFirstResponder()
+        
         //Store name Text Field
         if storeNameTextField.text != nil {
             AppUser.sharedInstance.name = storeNameTextField.text!
@@ -88,7 +88,9 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record email", from: self)
             return
         }
-
+        
+        
+        messageAlert(title: "Profile Saved", message: "Your profile information has been saved.", from: self)
     }
 
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
