@@ -31,8 +31,6 @@ class Product {
         self.price = price
         self.description = description
         self.vendorID = vendorID
-//        categories = []
-        //categoriesIDs = []
         reviews = []
         self.imagesURLs = imagesURLs
         //note: images may need to be downloaded here
@@ -64,5 +62,10 @@ class Product {
             FirebaseKeys.images: imagesURLs
             ]
         return asDictionary
+    }
+    
+    func appendImage(url: String){
+        imagesURLs.append(url)
+        productRef.child(FirebaseKeys.images).setValue(imagesURLs)
     }
 }

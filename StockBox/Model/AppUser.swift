@@ -24,7 +24,8 @@ class AppUser {
     private var _favorites: [String] = [] // consumer only
     private var _products: [String] = [] // vendor only
     private var _reviews: [String] = [] // consumer only
-    
+   
+
     // MARK: GETTERS AND SETTERS
     var account: AccountType {
         get {
@@ -42,6 +43,7 @@ class AppUser {
             }
         }
     }
+    
     var balance: Double {
         get {
             return _balance
