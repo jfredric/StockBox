@@ -66,33 +66,12 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
             emailLabel.text = "none"
         }
         
-        if currentAppUser.addresses.count > 0 {
-            shippingAddressTextView.text = currentAppUser.addresses[0].toText()
-        } else {
-            shippingAddressTextView.text = "\n\naddress info needed"
-        }
-        if currentAppUser.addresses.count > 1 {
-            billingAddressTextView.text = currentAppUser.addresses[1].toText()
-        } else {
-            billingAddressTextView.text = "\n\naddress info needed"
-        }
-        
+        updateAddressViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            
-            if user != nil {
-                // user is logged in
-                // set the tab bar icon
-//                let profileTabBarItem: UITabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: "profile-tab"), selectedImage: UIImage(named: "profile-tab"))
-//                self.tabBarItem = profileTabBarItem
-            } else {
-                // user is not logged in
-                // set the tab bar icon
-//                let loginTabBarItem: UITabBarItem = UITabBarItem(title: "Login", image: UIImage(named: "login-tab"), selectedImage: UIImage(named: "login-tab"))
-//                self.tabBarItem = loginTabBarItem
-                
+            if user == nil {
                 // segue to login view
                 self.performSegue(withIdentifier: "userProfileToLoginSegue", sender: nil)
             }
@@ -144,37 +123,162 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     @IBAction func shippingAddressEditBtnPressed(_ sender: Any) {
         editAddressView.isHidden = false
         editingShipping = true
-        editAddressTitleLabel.text = "Edit Shipping Address"
+        editAddressTitleLabel.text = "Edit Address"
     }
     
     @IBAction func billingAddressEditBtnPressed(_ sender: Any) {
         editAddressView.isHidden = false
         editingShipping = false
-        editAddressTitleLabel.text = "Edit Billing Address"
+        editAddressTitleLabel.text = "Edit Address"
     }
     
     @IBAction func doneEditingAddressBtnPressed(_ sender: UIButton) {
+        
+        // if empty fields, then do not save
+        if !validTextFields() {
+            return
+        }
+        
         // read the text fields
         if editingShipping {
-            
-        } else {
-            
+            if currentAppUser.addresses.count == 0 {
+                // create new address(s)
+                guard let newAddress = saveAddressChangesFromTextFields(currentAddress: nil) else {
+                    return
+                }
+                // we are currently linking the billing and shipping addresses store in addresses [0] and [1]
+                currentAppUser.appendAddress(newAddress: newAddress) // shipping
+                currentAppUser.appendAddress(newAddress: newAddress) // billing
+                updateAddressViews()
+            } else {
+                // modify address
+                // we are currently linking the billing and shipping addresses store in addresses [0] and [1]
+                saveAddressChangesFromTextFields(currentAddress: currentAppUser.addresses[0]) // shipping
+                saveAddressChangesFromTextFields(currentAddress: currentAppUser.addresses[1]) // billing
+                updateAddressViews()
+            }
+        } else { // currently not needed to do separately...but coded for later update
+            if currentAppUser.addresses.count == 0 {
+                // create new address(s)
+                guard let newAddress = saveAddressChangesFromTextFields(currentAddress: nil) else {
+                    return
+                }
+                // we are currently linking the billing and shipping addresses store in addresses [0] and [1]
+                currentAppUser.appendAddress(newAddress: newAddress) // shipping
+                currentAppUser.appendAddress(newAddress: newAddress) // billing
+                updateAddressViews()
+            } else {
+                // modify address
+                // modify address
+                // we are currently linking the billing and shipping addresses store in addresses [0] and [1]
+                saveAddressChangesFromTextFields(currentAddress: currentAppUser.addresses[0]) // shipping
+                saveAddressChangesFromTextFields(currentAddress: currentAppUser.addresses[1]) // billing
+                updateAddressViews()
+            }
         }
+        
+        // only dismiss if valid input is received. Cancel needed?
         recipientTextField.becomeFirstResponder() // hack it until you make it...
         recipientTextField.resignFirstResponder() // make sure keyboard is dismissed
         editAddressView.isHidden = true
     }
     
     @IBAction func emailChangeBtnPressed(_ sender: UIButton) {
+        messageAlert(title: "Notice", message: "upating email is not currently supported.", from: self)
     }
     
     @IBAction func passwordChangeBtnPressed(_ sender: Any) {
+        messageAlert(title: "Notice", message: "upating password is not currently supported.", from: self)
     }
     
     @IBAction func logInOutBtnPressed(_ sender: Any) {
         AppUser.sharedInstance.logOut()
     }
     
+    // MARK: PRIVATE FUNCTIONS
+    
+    private func validTextFields() -> Bool {
+        if recipientTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for recipient.", from: self)
+            return false
+        }
+        if addressLineTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for address line.", from: self)
+            return false
+        }
+        if cityTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for city.", from: self)
+            return false
+        }
+        if stateTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for state.", from: self)
+            return false
+        }
+        if zipTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for zipcode.", from: self)
+            return false
+        }
+        if countryTextField.text! == "" {
+            messageAlert(title: "Invalid Input", message: "Input needed for country.", from: self)
+            return false
+        }
+        return true
+    }
+    
+    private func updateAddressViews() {
+        // currently linking both addresses together.
+        if currentAppUser.addresses.count > 0 {
+            shippingAddressTextView.text = currentAppUser.addresses[0].toText()
+            billingAddressTextView.text = currentAppUser.addresses[1].toText()
+        } else {
+            shippingAddressTextView.text = "\n\naddress info needed"
+            billingAddressTextView.text = "\n\naddress info needed"
+        }
+    }
+    
+    // if this is a new address then pass in nil
+    private func saveAddressChangesFromTextFields(currentAddress: Address?) -> Address? {
+        // get and trim text values of text fields
+        let recipient = stringTrimmer(stringToTrim: recipientTextField.text!)!
+        let street = stringTrimmer(stringToTrim: addressLineTextField.text!)!
+        var unit = stringTrimmer(stringToTrim: unitTextField.text!)
+        if unit! == "" {
+            unit = nil
+        }
+        let city = stringTrimmer(stringToTrim: cityTextField.text!)!
+        let state = stringTrimmer(stringToTrim: stateTextField.text!)!
+        let zip = stringTrimmer(stringToTrim: zipTextField.text!)!
+        let country = stringTrimmer(stringToTrim: countryTextField.text!)!
+        
+        if currentAddress == nil {
+            return Address(recipient: recipient, street: street, unit: unit, city: city, state: state, zipcode: zip, country: country)
+        } else {
+            if recipient != currentAddress!.recipient {
+                currentAddress!.recipient = recipient
+            }
+            if street != currentAddress!.street {
+                currentAddress!.street = street
+            }
+            if unit != currentAddress!.unit {
+                currentAddress!.unit = unit
+            }
+            if city != currentAddress!.city {
+                currentAddress!.city = city
+            }
+            if state != currentAddress!.state {
+                currentAddress!.state = state
+            }
+            if recipient != currentAddress!.recipient {
+                currentAddress!.recipient = recipient
+            }
+            if recipient != currentAddress!.recipient {
+                currentAddress!.recipient = recipient
+            }
+            return nil
+        }
+    }
+    
+    // MARK: NAVIGATION
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is LoginVC {
             //print("segueing to login")
