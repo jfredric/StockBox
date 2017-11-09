@@ -50,7 +50,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xi-d3-hrL" userLabel="Shipping Text View">
-                                <rect key="frame" x="85" y="118" width="244" height="100"/>
+                                <rect key="frame" x="85" y="118" width="242" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="lwB-p5-q3g"/>
@@ -66,8 +66,12 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SG6-G0-8qn" userLabel="Edit Ship Button">
-                                <rect key="frame" x="337" y="153" width="30" height="30"/>
-                                <state key="normal" title="Edit"/>
+                                <rect key="frame" x="335" y="150.5" width="32" height="35"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="shippingAddressEditBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="gCh-x2-soz"/>
                                 </connections>
@@ -85,7 +89,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE8-J9-edO" userLabel="Billing Text View">
-                                <rect key="frame" x="78.5" y="226" width="250.5" height="100"/>
+                                <rect key="frame" x="78.5" y="226" width="248.5" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="kFL-CF-dRZ"/>
@@ -101,8 +105,12 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mu1-OE-46M" userLabel="Edit Billing Button">
-                                <rect key="frame" x="337" y="261" width="30" height="30"/>
-                                <state key="normal" title="Edit"/>
+                                <rect key="frame" x="335" y="258.5" width="32" height="35"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="billingAddressEditBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="IAH-Vc-oQA"/>
                                 </connections>
@@ -133,7 +141,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klq-ua-Dlf" userLabel="Change Email Button">
                                 <rect key="frame" x="243.5" y="373.5" width="53" height="30"/>
-                                <state key="normal" title="Change"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="emailChangeBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="FAs-u0-fQg"/>
                                 </connections>
@@ -152,7 +164,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-QQ-vmX" userLabel="Change Password Button">
                                 <rect key="frame" x="161.5" y="411" width="53" height="30"/>
-                                <state key="normal" title="Change"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="passwordChangeBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="XLz-sL-1R8"/>
                                 </connections>
@@ -254,8 +269,12 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1C-En-Qqo">
-                                <rect key="frame" x="160" y="572" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
+                                <rect key="frame" x="154" y="567" width="67" height="35"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                <state key="normal" title="Log Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="logInOutBtnPressed:" destination="8yf-Ge-ZA1" eventType="touchUpInside" id="MXJ-n8-gam"/>
                                 </connections>
@@ -509,9 +528,6 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="ne7-rC-fWy">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" image="menubtn" id="4TU-VN-COS">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="cart" id="Nnh-ev-th2">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -560,17 +576,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="38b-je-Xsh">
                                 <rect key="frame" x="5" y="333" width="365" height="22.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6a-Rp-esR">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r6a-Rp-esR">
                                         <rect key="frame" x="0.0" y="0.0" width="133" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWE-HW-5Hl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vender Location" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWE-HW-5Hl">
                                         <rect key="frame" x="133" y="0.0" width="179" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49F-8z-Naq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49F-8z-Naq">
                                         <rect key="frame" x="312" y="0.0" width="53" height="22.5"/>
                                         <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                         <nil key="highlightedColor"/>

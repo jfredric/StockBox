@@ -8,9 +8,18 @@
 
 import Foundation
 
-class ShoppingCart {
+class ShoppingCart: NSObject, NSCoding {
+    
+    func encode(with aCoder: NSCoder) {
+        <#code#>
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        <#code#>
+    }
+    
     static let sharedInstance = ShoppingCart()
     static let shoppingCartArray = [Product]()
-    private init() {
+    private override init() {
     }
 }
