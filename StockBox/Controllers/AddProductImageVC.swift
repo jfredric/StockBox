@@ -17,6 +17,7 @@ import Photos
 class AddProductImageVC: UIViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate  {
     
+    @IBOutlet var segController: UISegmentedControl!
     @IBOutlet weak var reviewsBtn: UIButton!
     @IBOutlet weak var takePhotoBtn: UIButton!
     @IBOutlet weak var photoLibraryBtn: UIButton!
@@ -271,6 +272,21 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             //use current object id
         }
     }
+
+//Segemented Category Controller
+    
+    @IBAction func changeCategory(_ sender: Any) {
+        if segController.selectedSegmentIndex == 0 {
+            //do something for spices
+        }
+        if segController.selectedSegmentIndex == 1 {
+            //do something for herbs
+        }
+        if segController.selectedSegmentIndex == 2 {
+            //do something for rubs
+        }
+        
+    }
 }
 
 extension AddProductImageVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -297,6 +313,7 @@ extension AddProductImageVC: UICollectionViewDataSource, UICollectionViewDelegat
         return cell
         }
     }
+    
     
     
 }

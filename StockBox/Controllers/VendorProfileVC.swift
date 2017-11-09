@@ -12,9 +12,9 @@ import FirebaseDatabase
 
 class VendorProfileVC: UIViewController,
 UINavigationControllerDelegate, UITextFieldDelegate  {
-    
+
     var ref: DatabaseReference!
-    
+
     @IBOutlet var vendorCountryTextField: UITextField!
 //    @IBOutlet var vendorImageBtn: UIButton!
 //    @IBOutlet var descriptionTextView: UITextView!
@@ -25,10 +25,10 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-    
+
 
     }
-    
+
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard Auth.auth().currentUser != nil else {
             return
@@ -38,9 +38,9 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     @IBAction func profCancelBtn(_ sender: Any) {
          dismiss(animated: true, completion: nil)
     }
-    
+
     @IBAction func profileSaveBtn(_ sender: Any) {
-        
+
         //Store name Text Field
         if storeNameTextField.text != nil {
             AppUser.sharedInstance.name = storeNameTextField.text!
@@ -54,7 +54,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record name", from: self)
             return
         }
-        
+
         //City Text Field
         if vendorLocationTextField.text != nil {
             if AppUser.sharedInstance.addresses.count > 0 {
@@ -67,7 +67,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record city", from: self)
             return
         }
-        
+
         //Country Text Field
         if vendorCountryTextField.text != nil {
             if AppUser.sharedInstance.addresses.count > 0 {
@@ -80,7 +80,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record country", from: self)
             return
         }
-            
+
         // Email - change username
         if vendorEmailTextField.text != nil {
            // call the change email/username once implemented
@@ -88,13 +88,12 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
             errorAlert(message: "Not able to record email", from: self)
             return
         }
-        
+
     }
-   
+
     @IBAction func logOutButtonTapped(_ sender: UIButton) {
         AppUser.sharedInstance.logOut()
         self.performSegue(withIdentifier: "vendorProfileToLogin", sender: nil)
     }
 
 }
-
