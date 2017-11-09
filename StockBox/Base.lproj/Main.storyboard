@@ -379,16 +379,122 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oq-6i-ONQ">
+                                <rect key="frame" x="-224" y="64" width="224" height="700"/>
+                                <subviews>
+                                    <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-RS-Zom">
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="80"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2An-If-oYB">
+                                                <rect key="frame" x="189" y="5" width="30" height="39"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="20"/>
+                                                <state key="normal" title="X">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="menuBackBtnClicked:" destination="fsf-wB-RGM" eventType="touchUpInside" id="Ief-q6-lsk"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catagories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0O-TF-VdC">
+                                                <rect key="frame" x="8" y="12" width="128.5" height="63"/>
+                                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="B0O-TF-VdC" secondAttribute="trailing" constant="20" symbolic="YES" id="9pD-Pd-vht"/>
+                                            <constraint firstItem="2An-If-oYB" firstAttribute="top" secondItem="ljo-RS-Zom" secondAttribute="top" constant="5" id="AFv-8E-uFv"/>
+                                            <constraint firstAttribute="bottom" secondItem="B0O-TF-VdC" secondAttribute="bottom" constant="5" id="CrE-fa-tWc"/>
+                                            <constraint firstAttribute="trailing" secondItem="2An-If-oYB" secondAttribute="trailing" constant="5" id="D0Y-Un-qjG"/>
+                                            <constraint firstAttribute="height" constant="80" id="WnY-ux-lAs"/>
+                                            <constraint firstItem="B0O-TF-VdC" firstAttribute="leading" secondItem="ljo-RS-Zom" secondAttribute="leading" constant="8" id="wto-Am-NRg"/>
+                                            <constraint firstItem="B0O-TF-VdC" firstAttribute="top" secondItem="ljo-RS-Zom" secondAttribute="top" constant="12" id="y2Q-X6-uEs"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbQ-VZ-wT5">
+                                        <rect key="frame" x="5" y="87" width="62" height="39"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                        <state key="normal" title="Spices">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuSpicesBtnPressed:" destination="fsf-wB-RGM" eventType="touchUpInside" id="PFv-o7-SSI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8TY-mn-fYN">
+                                        <rect key="frame" x="5" y="132" width="57" height="39"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                        <state key="normal" title="Herbs">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuHerbsBtnPressed:" destination="fsf-wB-RGM" eventType="touchUpInside" id="wNI-W2-h5T"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpj-TB-aWu">
+                                        <rect key="frame" x="0.0" y="126" width="224" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="4dG-dy-f7o"/>
+                                            <constraint firstAttribute="width" constant="224" id="MbL-CL-3Pk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="say-rY-OPS">
+                                        <rect key="frame" x="0.0" y="171" width="224" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="6Cm-l0-5f1"/>
+                                            <constraint firstAttribute="width" constant="224" id="vTI-15-TKo"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R0-jW-7XU">
+                                        <rect key="frame" x="5" y="177" width="47" height="39"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="20"/>
+                                        <state key="normal" title="Rubs">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="menuRubsBtnPressed:" destination="fsf-wB-RGM" eventType="touchUpInside" id="I2l-Lo-Tij"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91188938560939969" green="0.91188938560939969" blue="0.91188938560939969" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ljo-RS-Zom" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" id="9Fn-hY-wad"/>
+                                    <constraint firstAttribute="height" constant="700" id="EhP-qa-J5m"/>
+                                    <constraint firstItem="say-rY-OPS" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" id="Jrg-pa-Fcq"/>
+                                    <constraint firstAttribute="trailing" secondItem="ljo-RS-Zom" secondAttribute="trailing" id="Ok9-vj-fXY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dpj-TB-aWu" secondAttribute="trailing" id="Ptg-nD-M19"/>
+                                    <constraint firstItem="8TY-mn-fYN" firstAttribute="top" secondItem="Dpj-TB-aWu" secondAttribute="bottom" constant="5" id="SBq-OM-7a5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8R0-jW-7XU" secondAttribute="trailing" constant="20" symbolic="YES" id="UqQ-0k-VC2"/>
+                                    <constraint firstItem="8R0-jW-7XU" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" constant="5" id="Y4c-qZ-0Eu"/>
+                                    <constraint firstItem="HbQ-VZ-wT5" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" constant="5" id="ZQx-BF-JRe"/>
+                                    <constraint firstItem="Dpj-TB-aWu" firstAttribute="top" secondItem="HbQ-VZ-wT5" secondAttribute="bottom" id="dH1-Ds-b9G"/>
+                                    <constraint firstAttribute="trailing" secondItem="say-rY-OPS" secondAttribute="trailing" id="fkW-I6-xOn"/>
+                                    <constraint firstItem="8TY-mn-fYN" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" constant="5" id="id9-8T-7aO"/>
+                                    <constraint firstItem="ljo-RS-Zom" firstAttribute="top" secondItem="0oq-6i-ONQ" secondAttribute="top" id="mFw-rl-46a"/>
+                                    <constraint firstItem="say-rY-OPS" firstAttribute="top" secondItem="8TY-mn-fYN" secondAttribute="bottom" id="okV-rf-QgZ"/>
+                                    <constraint firstItem="8R0-jW-7XU" firstAttribute="top" secondItem="say-rY-OPS" secondAttribute="bottom" constant="5" id="qS2-cM-hbj"/>
+                                    <constraint firstItem="HbQ-VZ-wT5" firstAttribute="top" secondItem="ljo-RS-Zom" secondAttribute="bottom" constant="7" id="t0e-Uh-q5E"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HbQ-VZ-wT5" secondAttribute="trailing" constant="20" symbolic="YES" id="tPP-eA-npc"/>
+                                    <constraint firstItem="Dpj-TB-aWu" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="leading" id="vFG-7Q-NJ7"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8TY-mn-fYN" secondAttribute="trailing" constant="20" symbolic="YES" id="z4q-Sf-hiG"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Fs-A7-EB6" firstAttribute="leading" secondItem="Yl4-Um-Ey9" secondAttribute="leading" id="EqK-8f-keU"/>
+                            <constraint firstItem="Yl4-Um-Ey9" firstAttribute="leading" secondItem="0oq-6i-ONQ" secondAttribute="trailing" id="K9n-0L-m0w"/>
                             <constraint firstItem="bfh-ma-2My" firstAttribute="leading" secondItem="Yl4-Um-Ey9" secondAttribute="leading" id="avY-o8-cbb"/>
                             <constraint firstItem="bfh-ma-2My" firstAttribute="top" secondItem="Yl4-Um-Ey9" secondAttribute="top" id="cYq-1A-dQ2"/>
                             <constraint firstItem="bfh-ma-2My" firstAttribute="trailing" secondItem="Yl4-Um-Ey9" secondAttribute="trailing" id="dlF-CM-LhJ"/>
                             <constraint firstItem="3Fs-A7-EB6" firstAttribute="trailing" secondItem="Yl4-Um-Ey9" secondAttribute="trailing" id="oqo-D3-TbK"/>
                             <constraint firstItem="3Fs-A7-EB6" firstAttribute="top" secondItem="bfh-ma-2My" secondAttribute="bottom" id="qwo-ph-Yvj"/>
                             <constraint firstAttribute="bottom" secondItem="3Fs-A7-EB6" secondAttribute="bottom" id="tBo-aF-Mlm"/>
+                            <constraint firstItem="0oq-6i-ONQ" firstAttribute="top" secondItem="Yl4-Um-Ey9" secondAttribute="top" id="yXL-Ed-qP2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yl4-Um-Ey9"/>
                     </view>
@@ -396,6 +502,9 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="fWk-Xa-Cqn"/>
                         <barButtonItem key="leftBarButtonItem" title="Item" image="menubtn" id="A04-ne-X7R">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuBtnClicked:" destination="fsf-wB-RGM" id="tio-z5-676"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" id="rFs-w8-FCR">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -405,6 +514,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="menuView" destination="0oq-6i-ONQ" id="Fy6-ph-2jU"/>
                         <outlet property="searchBar" destination="bfh-ma-2My" id="zDZ-2K-lHZ"/>
                         <outlet property="tableView" destination="3Fs-A7-EB6" id="FqT-B3-oT9"/>
                         <segue destination="wQt-ds-vjr" kind="show" identifier="homeToDetailSegue" id="O4F-NG-y1l"/>
@@ -413,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuF-g1-acF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="-163"/>
+            <point key="canvasLocation" x="3533.5999999999999" y="-185.75712143928038"/>
         </scene>
         <!--VendorTabBarControllerStoryboardID-->
         <scene sceneID="ltS-hI-ZuW">
@@ -1340,7 +1450,7 @@
         <image name="quickadd" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="toB-aT-0kr"/>
-        <segue reference="hIG-xH-ZRG"/>
+        <segue reference="hl0-rG-3s9"/>
+        <segue reference="O4F-NG-y1l"/>
     </inferredMetricsTieBreakers>
 </document>

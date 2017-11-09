@@ -11,6 +11,7 @@ import Firebase
 
 class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    @IBOutlet weak var menuView: UIView!
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -148,5 +149,35 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         }
     }
 
-
+    @IBAction func menuBtnClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = 0
+        }
+    }
+    
+    @IBAction func menuBackBtnClicked(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = -self.menuView.frame.size.width
+        }
+    }
+    
+    @IBAction func menuSpicesBtnPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = -self.menuView.frame.size.width
+        }
+    }
+    
+    @IBAction func menuHerbsBtnPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = -self.menuView.frame.size.width
+        }
+    }
+    
+    @IBAction func menuRubsBtnPressed(_ sender: Any) {
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = -self.menuView.frame.size.width
+        }
+    }
+    //    menuView.frame.origin.x = -menuView.frame.size.width
+    
 }
