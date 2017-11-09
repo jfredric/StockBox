@@ -186,13 +186,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6562ADC51FB27962006E99E2 /* Vendor Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Vendor Controllers";
-			sourceTree = "<group>";
-		};
 		8EB56AE6E0D7B572BCD996D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,9 +303,7 @@
 		EF6688741FA020510003C569 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6562ADC51FB27962006E99E2 /* Vendor Controllers */,
 				EF9A48541FB225BE0038AE91 /* Cell Controllers */,
-				EF9A48531FB225880038AE91 /* Vendor Controllers */,
 				EF9A48521FB225790038AE91 /* Main Controllers */,
 				EF26A3191FAF96D300EF40AD /* Login Controllers */,
 				EF364BF51FA053AD00D9E881 /* RatingControl.swift */,
@@ -349,13 +340,6 @@
 				BF7B34E51FAA17B6008FCF7F /* UserProfileVC.swift */,
 			);
 			name = "Main Controllers";
-			sourceTree = "<group>";
-		};
-		EF9A48531FB225880038AE91 /* Vendor Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Vendor Controllers";
 			sourceTree = "<group>";
 		};
 		EF9A48541FB225BE0038AE91 /* Cell Controllers */ = {
