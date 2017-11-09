@@ -45,10 +45,10 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
             print(error.localizedDescription)
         }
         
-        if currentProduct.description == "" {
+        if currentProduct.description_ == "" {
             productDescriptionTextField.text = "There is no description for this product"
         } else {
-            productDescriptionTextField.text = currentProduct.description
+            productDescriptionTextField.text = currentProduct.description_
         }
         for image in currentProduct.images {
             let productImageURL = URL(string: image)

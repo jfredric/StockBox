@@ -38,6 +38,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         application.registerForRemoteNotifications()
         
+        let userDefaults = UserDefaults.standard
+        let firstOpenedKey = "appFirstTimeOpened"
+        if userDefaults.value(forKey: firstOpenedKey) == nil {
+            //if app is first time opened then it will be nil
+            userDefaults.setValue(true, forKey: firstOpenedKey)
+            // signOut from FIRAuth
+            do {
+                try Auth.auth().signOut()
+            }catch {
+                
+            }
+            // go to beginning of app
+        } else {
+            //go to where you want
+        }
+        
         return true
     }
 

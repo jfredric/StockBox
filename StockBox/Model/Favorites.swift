@@ -8,21 +8,32 @@
 
 import Foundation
 
-class Favorites: NSObject, NSCoding {
+// does not need to be NSCoding. This is a singleton.
+class Favorites { //: NSObject, NSCoding {
     
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(Favorites.favoritesArray, forKey: "Favorites")
-    }
+    // MARK: PROPERTIES
     
-    required init?(coder aDecoder: NSCoder) {
-//        if let FavoritesArray = aDecoder.decodeObject(forKey: Keys.name) as? String {
-//            
-//        }
-    }
+    var products = [Product]()
+    
+    // MARK: SINGLETON
     
     static let sharedInstance = Favorites()
-    static let favoritesArray = [Product]()
-    private override init() {
+    
+    private init() {
     }
+    
+//    // MARK: NSCODING DELEGATE FUNCTIONS
+//
+//    struct CodingKeys {
+//        static let favorites = "favorites"
+//    }
+//
+//    func encode(with aCoder: NSCoder) {
+//        aCoder.encode(products, forKey: CodingKeys.favorites)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//
+//    }
     
 }

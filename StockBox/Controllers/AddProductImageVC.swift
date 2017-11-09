@@ -168,7 +168,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     override func viewDidLayoutSubviews() {
         takePhotoBtn.layer.cornerRadius = BUTTONCORNERRADIUS
         photoLibraryBtn.layer.cornerRadius = BUTTONCORNERRADIUS
-        reviewsBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        //reviewsBtn.layer.cornerRadius = BUTTONCORNERRADIUS
     }
 
 //Delegates
@@ -230,6 +230,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                 errorAlert(message: "Not able to record description", from: self)
                 return
             }
+            let categoryChoice = segController.selectedSegmentIndex
             
             let image = #imageLiteral(resourceName: "quickadd")
             print(image, "THIS IS THE IMAGE I AM TALKING ABOUT")
@@ -244,7 +245,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
                 
             }
             
-             currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, imagesURLs: [])
+            currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, category: categoryChoice, imagesURLs: [])
             
             for image in pickedImages {
                 print(image, "This Got here")
