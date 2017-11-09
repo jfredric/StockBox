@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var colectionView: UICollectionView!
     
-    @IBOutlet var vendorLocation: UITextField!
-    @IBOutlet var vendorName: UITextField!
-    @IBOutlet weak var venderBtn: UIButton!
-    @IBOutlet weak var reviewsBtn: UIButton!
+
+    @IBOutlet weak var venderLocation: UILabel!
+    @IBOutlet weak var venderTitle: UILabel!
     @IBOutlet weak var addToCartBtn: UIButton!
     @IBOutlet weak var productTitleLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
@@ -32,8 +32,24 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidAppear(_ animated: Bool) {
         productTitleLbl.text = currentProduct.name
-        productPriceLbl.text = String(currentProduct.price)
-        productDescriptionTextField.text = currentProduct.description
+        productPriceLbl.text = "$\(currentProduct.price)"
+        AppDatabase.userInfoRootRef.child(currentProduct.vendorID).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let vendorTitle = value?["name"] as? String ?? "Empty"
+            self.venderTitle.text = vendorTitle
+            let venderLocation = value?["address"] as? String ?? "Empty"
+            self.venderLocation.text = venderLocation
+    
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        if currentProduct.description == "" {
+            productDescriptionTextField.text = "There is no description for this product"
+        } else {
+            productDescriptionTextField.text = currentProduct.description
+        }
         for image in currentProduct.images {
             let productImageURL = URL(string: image)
             let data = try? Data(contentsOf: productImageURL!)
@@ -68,7 +84,11 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return productImages.count
+        if productImages.count == 0 {
+            return 1
+        } else {
+            return productImages.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
