@@ -136,7 +136,7 @@ class Address {
         
         // unwrap data from snapshot into usable Dictionary
         guard let newAddressData = snapshot.value as? [String:Any] else {
-            fatalErrorAlert(message: "database return invalid data", from: nil)
+            fatalErrorAlert(message: "database returned invalid data", from: nil)
             return
         }
         

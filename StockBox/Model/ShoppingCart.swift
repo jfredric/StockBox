@@ -11,11 +11,11 @@ import Foundation
 class ShoppingCart: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
-        <#code#>
+        print("fix this")
     }
     
     required init?(coder aDecoder: NSCoder) {
-        <#code#>
+        print("fix this")
     }
     
     static let sharedInstance = ShoppingCart()

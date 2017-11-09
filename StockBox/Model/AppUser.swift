@@ -78,6 +78,9 @@ class AppUser {
     func appendAddress(newAddress: Address) {
         _addresses.append(newAddress)
         _addressIDs.append((newAddress.addressRef?.key)!)
+        if currentUser != nil {
+            userInfoRef?.child(FirebaseKeys.addresses).setValue(_addressIDs)
+        }
     }
     
     // MARK: CONSTANTS AND TYPES
@@ -230,7 +233,7 @@ class AppUser {
             for addressID in self._addressIDs {
                 let newAddressRef = AppDatabase.addressesRootRef.child(addressID)
                 newAddressRef.observeSingleEvent(of: .value, with: { (addressSnapshot) in
-                    self._addresses.append(Address(snapshot: snapshot))
+                    self._addresses.append(Address(snapshot: addressSnapshot))
                 })
             }
             
