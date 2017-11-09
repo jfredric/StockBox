@@ -41,6 +41,24 @@ class Product {
         
     }
     
+    func contains(text: String) -> Bool {
+        // Swift 4.0 == range(of: find, options: .caseInsensitive)
+        let find = text.lowercased()
+        
+        if name.lowercased().range(of: find) != nil {
+            return true
+        }
+        
+        if name.lowercased().range(of: find) != nil {
+            return true
+        }
+        
+        // categories here
+        
+        // reviews here
+        
+        return false
+    }
     
     init(snapShot: DataSnapshot) {
         productRef = snapShot.ref
