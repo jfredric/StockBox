@@ -33,6 +33,13 @@ class FavoritesVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTVCell-ID") as? ProductTVCell else {
             fatalError("The World Is Ending")
         }
+        if Favorites.sharedInstance.products[indexPath.row].imagesURLs.count > 0 {
+            let productImageURL = URL(string: Favorites.sharedInstance.products[indexPath.row].imagesURLs[0])
+            let data = try? Data(contentsOf: productImageURL!)
+            cell.productImage.image = UIImage(data: data!)
+        } else{
+            cell.productImage.image = #imageLiteral(resourceName: "quickadd")
+        }
         cell.productPrice.text = "$\(Favorites.sharedInstance.products[indexPath.row].price)"
         cell.productTitle.text = Favorites.sharedInstance.products[indexPath.row].name
         

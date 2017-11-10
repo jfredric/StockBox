@@ -41,7 +41,15 @@ class ShoppingCartVC: UIViewController, UICollectionViewDelegate, UICollectionVi
             })
         })
         
-        cell.numOfProducts.text = "$\(ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1)"
+        if ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.imagesURLs.count > 0 {
+            let productImageURL = URL(string: ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.imagesURLs[0])
+            let data = try? Data(contentsOf: productImageURL!)
+            cell.productImage.image = UIImage(data: data!)
+        } else{
+            cell.productImage.image = #imageLiteral(resourceName: "quickadd")
+        }
+        
+        cell.numOfProducts.text = String(ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1)
         let countOfProducts = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1
         let currentPrice = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.price
         cell.productPrice.text = "$\(currentPrice)"

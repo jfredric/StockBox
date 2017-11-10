@@ -13,6 +13,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var colectionView: UICollectionView!
     
 
+    @IBOutlet weak var favoritesBtn: UIButton!
     @IBOutlet weak var venderLocation: UILabel!
     @IBOutlet weak var venderTitle: UILabel!
     @IBOutlet weak var addToCartBtn: UIButton!
@@ -60,12 +61,14 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         } else {
             productDescriptionTextField.text = currentProduct.description_
         }
-        for image in currentProduct.images {
-            let productImageURL = URL(string: image)
+        
+        for imageUrl in currentProduct.imagesURLs {
+            let productImageURL = URL(string: imageUrl)
             let data = try? Data(contentsOf: productImageURL!)
             let currentImage = UIImage(data: data!)
             productImages.append(currentImage!)
         }
+        colectionView.reloadData()
         
     }
     
@@ -73,6 +76,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
 //        venderBtn.layer.cornerRadius = BUTTONCORNERRADIUS
 //        reviewsBtn.layer.cornerRadius = BUTTONCORNERRADIUS
         addToCartBtn.layer.cornerRadius = BUTTONCORNERRADIUS
+        favoritesBtn.layer.cornerRadius = BUTTONCORNERRADIUS
 //        reviewsBtn.layer.borderWidth = 1.0
 //        reviewsBtn.layer.borderColor = SECONDARYCOLOR.cgColor
 //        venderBtn.layer.borderWidth = 1.0
@@ -86,11 +90,28 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         // Dispose of any resources that can be recreated.
     }
 
-    
+    @IBAction func favoritesBtnClicked(_ sender: Any) {
+        for arrayProduct in Favorites.sharedInstance.products {
+            print(currentProduct.id, arrayProduct.id)
+            print("%%%%%%%%%%%%%%%%%%%%%%%%")
+            if currentProduct.name == arrayProduct.name && currentProduct.price == arrayProduct.price{return}
+        }
+        Favorites.sharedInstance.products.append(currentProduct)
+    }
+    //################################
+    //################################
+    //################################
+    //################################
+    //################################
+    //################################
+    //BUG! it adding an extra value too the quantity in the shopping cart. Must be something wrong with my logic"
     @IBAction func addToCartBtnPressed(_ sender: Any) {
         for (index,arrayProduct) in ShoppingCart.sharedInstance.shoppingCartArray.enumerated() {
-            if currentProduct.id == arrayProduct.0.id {
+            print(currentProduct.id, arrayProduct.0.id)
+            print("&&&&&&&&&&&&&&&&&&&&&&&")
+            if currentProduct.name == arrayProduct.0.name && currentProduct.price == arrayProduct.0.price{
                 ShoppingCart.sharedInstance.shoppingCartArray[index].1 += 1
+                print("Added")
                 return
             }
         }
@@ -112,7 +133,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         if productImages.count == 0 {
             cell.productImage.image = #imageLiteral(resourceName: "quickadd")
         } else {
-        cell.productImage.image = productImages[indexPath.row]
+            cell.productImage.image = productImages[indexPath.row]
         }
         return cell
     }

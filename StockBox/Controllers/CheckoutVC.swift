@@ -15,9 +15,7 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var taxLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
-    var productsToPurchase = [Product]()
-    var productCountArray = [Int]()
-    let productCount = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +29,12 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         var currentSubtotal = 0.0
         var currentTax = 0.0
         var currentTotal = 0.0
-        for Product in productsToPurchase {
-           currentSubtotal += Double(Product.price)
+        for Product in ShoppingCart.sharedInstance.shoppingCartArray {
+           currentSubtotal += Double(Product.0.price)
         }
        
         subTitleLbl.text = "$\(currentSubtotal)"
-        currentTax = currentSubtotal * 0.9
+        currentTax = currentSubtotal * 0.09
         taxLbl.text = "$\(currentTax)"
         currentTotal = currentTax + currentSubtotal
         totalLbl.text = "$ \(currentTotal)"
@@ -49,20 +47,49 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return ShoppingCart.sharedInstance.shoppingCartArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "checkOutCell") as? CheckOutTableViewCell else {
             fatalError("The World Is Ending")
         }
-        cell.productPrice.text = "10.89"
-        cell.productTitle.text = "Tumeric"
-        cell.totalLBl.text = "1"
+        let productPrice = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.price
+        let numOfProducts = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1
+        let totalPrice = (productPrice * Double(numOfProducts))
+        if ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.imagesURLs.count > 0 {
+            let productImageURL = URL(string: ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.imagesURLs[0])
+            let data = try? Data(contentsOf: productImageURL!)
+            cell.productImage.image = UIImage(data: data!)
+        } else{
+            cell.productImage.image = #imageLiteral(resourceName: "quickadd")
+        }
+        //################################
+        //################################
+        //################################
+        //################################
+        //################################
+        //################################
+        // Bug
+        // quantity's and totals are wrong in the cells
+        cell.productPrice.text = "$\(productPrice)"
+        cell.productTitle.text = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.name
+        cell.quantityNum.text = "\(totalPrice)"
+        cell.totalLBl.text = "$\(totalPrice)"
         return cell
     }
-    
+
     @IBAction func checkOutBtnPressed(_ sender: Any) {
+        //################################
+        //################################
+        //################################
+        //################################
+        //################################
+        //################################
+        // Crash
+        // FINDING NIL AND CRASHING... I think it is because it is failing to convert the totalLbl to a double. It seems like the string has a $ at the front. I don't know how it is getting in there.
+        print(AppUser.sharedInstance.balance)
+        print(Double(totalLbl.text!)!)
         AppUser.sharedInstance.balance -= Double(totalLbl.text!)!
     }
     

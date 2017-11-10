@@ -16,6 +16,9 @@
             <string>Thonburi</string>
             <string>Thonburi-Bold</string>
         </array>
+        <array key="TimesNewRomanBold.ttf">
+            <string>TimesNewRomanPS-BoldMT</string>
+        </array>
     </customFonts>
     <scenes>
         <!--UserProfileVC-->
@@ -651,11 +654,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uzu-Yt-NYK">
-                                <rect key="frame" x="0.0" y="164" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-UA-MDw">
-                                <rect key="frame" x="0.0" y="108" width="375" height="56"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <color key="barTintColor" red="1" green="0.58823529409999997" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -793,11 +796,24 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-jU-7o1">
+                                <rect key="frame" x="199" y="575" width="131" height="40"/>
+                                <color key="backgroundColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="18"/>
+                                <state key="normal" title="Favorite">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToCartBtnPressed:" destination="wQt-ds-vjr" eventType="touchUpInside" id="JE5-Zv-hKT"/>
+                                    <action selector="favoritesBtnClicked:" destination="wQt-ds-vjr" eventType="touchUpInside" id="eMK-yK-zLo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="bottom" secondItem="HIs-KO-sTn" secondAttribute="bottom" id="5Mu-PQ-UD6"/>
                             <constraint firstItem="4uM-OY-Efe" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="16" id="6vx-zv-Uw3"/>
+                            <constraint firstItem="Efj-jU-7o1" firstAttribute="top" secondItem="bNn-vM-KRg" secondAttribute="top" id="7bK-xM-tx6"/>
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="leading" secondItem="HIs-KO-sTn" secondAttribute="trailing" constant="5" id="7z8-CS-KmW"/>
                             <constraint firstItem="bNn-vM-KRg" firstAttribute="top" secondItem="38b-je-Xsh" secondAttribute="bottom" constant="20.5" id="DCz-QW-7QD"/>
                             <constraint firstItem="B7i-pU-mO4" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="5" id="DV1-0i-cPO"/>
@@ -806,12 +822,15 @@
                             <constraint firstItem="iVE-wT-EbM" firstAttribute="top" secondItem="HIs-KO-sTn" secondAttribute="top" id="HeI-tW-Jya"/>
                             <constraint firstItem="B7i-pU-mO4" firstAttribute="trailing" secondItem="iVE-wT-EbM" secondAttribute="trailing" id="NhD-44-9LY"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="4uM-OY-Efe" secondAttribute="trailing" constant="16" id="QNr-cK-aPG"/>
+                            <constraint firstItem="Efj-jU-7o1" firstAttribute="width" secondItem="bNn-vM-KRg" secondAttribute="width" id="Qdo-oY-96t"/>
                             <constraint firstItem="B7i-pU-mO4" firstAttribute="top" secondItem="HIs-KO-sTn" secondAttribute="bottom" constant="5" id="QmW-gR-5rs"/>
                             <constraint firstItem="HIs-KO-sTn" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="5" id="RSE-LY-esX"/>
+                            <constraint firstItem="Efj-jU-7o1" firstAttribute="height" secondItem="bNn-vM-KRg" secondAttribute="height" id="RSK-uq-2gY"/>
                             <constraint firstItem="bNn-vM-KRg" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="16" id="SyP-iC-sYb"/>
                             <constraint firstItem="4uM-OY-Efe" firstAttribute="bottom" secondItem="D2q-dr-mRD" secondAttribute="bottom" id="Zcs-qJ-nI6"/>
                             <constraint firstItem="4uM-OY-Efe" firstAttribute="top" secondItem="bNn-vM-KRg" secondAttribute="bottom" constant="3" id="e72-Vi-hpy"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="38b-je-Xsh" secondAttribute="trailing" constant="5" id="kE3-9y-pgp"/>
+                            <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="Efj-jU-7o1" secondAttribute="trailing" constant="45" id="lAR-R0-r9D"/>
                             <constraint firstItem="38b-je-Xsh" firstAttribute="leading" secondItem="D2q-dr-mRD" secondAttribute="leading" constant="5" id="o0B-nv-D7V"/>
                             <constraint firstItem="38b-je-Xsh" firstAttribute="top" secondItem="B7i-pU-mO4" secondAttribute="bottom" constant="8" id="v1g-Pf-WYk"/>
                             <constraint firstItem="D2q-dr-mRD" firstAttribute="trailing" secondItem="iVE-wT-EbM" secondAttribute="trailing" constant="5" id="vzb-kn-skF"/>
@@ -821,6 +840,7 @@
                     <connections>
                         <outlet property="addToCartBtn" destination="iVE-wT-EbM" id="Cpr-LA-tlY"/>
                         <outlet property="colectionView" destination="B7i-pU-mO4" id="3yP-HH-8q1"/>
+                        <outlet property="favoritesBtn" destination="Efj-jU-7o1" id="0jR-BJ-LO6"/>
                         <outlet property="productDescriptionTextField" destination="4uM-OY-Efe" id="9gb-lm-O8Y"/>
                         <outlet property="productPriceLbl" destination="49F-8z-Naq" id="grr-gZ-MB8"/>
                         <outlet property="productTitleLbl" destination="HIs-KO-sTn" id="mLF-K4-fH4"/>
@@ -1001,7 +1021,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A10-8U-Z13"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Checkout" id="elY-l5-XkN"/>
+                    <navigationItem key="navigationItem" title="Checkout" id="elY-l5-XkN">
+                        <barButtonItem key="backBarButtonItem" title="back" id="sYi-VF-xUu">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="billingAddressTextField" destination="WJc-1C-73m" id="qsF-dv-LnW"/>
                         <outlet property="shippingAddressTextField" destination="JLV-Ln-nML" id="E19-i0-VNc"/>
@@ -1246,8 +1270,11 @@
                                                                         </constraints>
                                                                     </imageView>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUW-c3-3cW">
-                                                                        <rect key="frame" x="5" y="5" width="30" height="30"/>
-                                                                        <state key="normal" title="Btn"/>
+                                                                        <rect key="frame" x="5" y="5" width="30" height="34"/>
+                                                                        <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="19"/>
+                                                                        <state key="normal" title="X">
+                                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
                                                                         <connections>
                                                                             <action selector="deleteBtnPressed:" destination="Gwc-gm-K2p" eventType="touchUpInside" id="D9E-qI-bY8"/>
                                                                         </connections>
