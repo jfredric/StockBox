@@ -8,11 +8,13 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class VendorProductsTVC: UITableViewController {
     
     let segueForDetails = "vendorProductDetailsSegue-ID"
     let segueForAdd = "addProductSegue-ID"
+    var vendorProducts = [Product]()
 
     @IBAction func addBarButton(_ sender: UIBarButtonItem) {
     }
@@ -22,7 +24,13 @@ class VendorProductsTVC: UITableViewController {
         
         // register table view cell xib
         tableView.register(UINib.init(nibName: ProductTVCell.xibName, bundle: nil), forCellReuseIdentifier: ProductTVCell.reuseIdentifier)
-        
+        AppDatabase.productsRootRef.observe(.value, with: { snapshot in
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let product = Product(snapShot: child)
+                self.vendorProducts.append(product)
+            }
+            self.tableView.reloadData()
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,16 +42,23 @@ class VendorProductsTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return vendorProducts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductTVCell.reuseIdentifier, for: indexPath) as! ProductTVCell
-
+        
         // Configure the cell...
-       // cell.ratingControl.rating = indexPath.row / 5 // to show varying ratting
-        cell.productPrice.text = "$" + String(Double(indexPath.row)) //needs text formating
-        //cell.productPrice.text = String(format: "$0.00",Double(indexPath.row))
+        // cell.ratingControl.rating = indexPath.row / 5 // to show varying ratting
+        cell.productPrice.text = doubleToCurrencyString(value: vendorProducts[indexPath.row].price)
+        cell.productTitle.text = vendorProducts[indexPath.row].name
+        if vendorProducts[indexPath.row].imagesURLs.count > 0 {
+            let productImageURL = URL(string: vendorProducts[indexPath.row].imagesURLs[0])
+            let data = try? Data(contentsOf: productImageURL!)
+            cell.productImage.image = UIImage(data: data!)
+        } else{
+            cell.productImage.image = #imageLiteral(resourceName: "quickadd")
+        }
         return cell
     }
     
