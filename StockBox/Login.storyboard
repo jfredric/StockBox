@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNI-t8-JEH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Thonburi.ttc">
+            <string>Thonburi-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="2Zb-7V-4d2">
+            <objects>
+                <viewController storyboardIdentifier="LoginVCStoryboardID" id="UNI-t8-JEH" customClass="LoginVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pqJ-BZ-RzE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YmP-Tf-fLO">
+                                <rect key="frame" x="112.5" y="120" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JSl-Je-53J"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="cUH-mR-JLF"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-9U-kHY">
+                                <rect key="frame" x="112.5" y="176" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7T7-Er-8Hx"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="IA8-be-ZJr">
+                                <rect key="frame" x="83" y="241" width="209" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PYA-fW-gUo">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginBtnPressed:" destination="UNI-t8-JEH" eventType="touchUpInside" id="yTd-VE-ZSk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PH4-QV-hYf">
+                                        <rect key="frame" x="109" y="0.0" width="100" height="37"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="YIp-bn-r0o"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="19"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="bn9-ny-hOc" kind="presentation" identifier="signUpSegue" id="5qg-Oy-wFV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StockBox" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDb-Ha-HbV">
+                                <rect key="frame" x="97" y="40" width="181.5" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="eKc-pl-AFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrd-LW-VQi">
+                                <rect key="frame" x="119" y="286" width="137" height="35"/>
+                                <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                <state key="normal" title="Browse as guest">
+                                    <color key="titleColor" red="0.51764705879999995" green="0.78039215689999997" blue="0.76470588240000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="browseButtonTapped:" destination="UNI-t8-JEH" eventType="touchUpInside" id="P8H-Er-mhQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rrd-LW-VQi" firstAttribute="centerX" secondItem="pqJ-BZ-RzE" secondAttribute="centerX" id="0lT-nS-cTp"/>
+                            <constraint firstItem="Rrd-LW-VQi" firstAttribute="top" secondItem="IA8-be-ZJr" secondAttribute="bottom" constant="8" id="L1l-4U-dHY"/>
+                            <constraint firstItem="YmP-Tf-fLO" firstAttribute="top" secondItem="LDb-Ha-HbV" secondAttribute="bottom" constant="23" id="MxZ-c6-LJ8"/>
+                            <constraint firstItem="bX9-9U-kHY" firstAttribute="centerX" secondItem="pqJ-BZ-RzE" secondAttribute="centerX" id="PYA-PI-1d8"/>
+                            <constraint firstItem="LDb-Ha-HbV" firstAttribute="centerX" secondItem="pqJ-BZ-RzE" secondAttribute="centerX" id="S9s-Sg-Gcy"/>
+                            <constraint firstItem="YmP-Tf-fLO" firstAttribute="centerX" secondItem="pqJ-BZ-RzE" secondAttribute="centerX" id="bsT-7s-kVh"/>
+                            <constraint firstItem="bX9-9U-kHY" firstAttribute="top" secondItem="YmP-Tf-fLO" secondAttribute="bottom" constant="6" id="e4L-9t-KcI"/>
+                            <constraint firstItem="bX9-9U-kHY" firstAttribute="width" secondItem="YmP-Tf-fLO" secondAttribute="width" id="e4q-CJ-Xag"/>
+                            <constraint firstItem="LDb-Ha-HbV" firstAttribute="top" secondItem="pqJ-BZ-RzE" secondAttribute="top" multiplier="1.5" constant="40" id="lf3-Ue-bV9"/>
+                            <constraint firstItem="IA8-be-ZJr" firstAttribute="top" secondItem="bX9-9U-kHY" secondAttribute="bottom" constant="15" id="rbI-p7-J8i"/>
+                            <constraint firstItem="IA8-be-ZJr" firstAttribute="centerX" secondItem="pqJ-BZ-RzE" secondAttribute="centerX" id="tfO-MS-cf3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kWT-SX-bHQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="browseButton" destination="Rrd-LW-VQi" id="11c-LV-cgg"/>
+                        <outlet property="emailTextField" destination="YmP-Tf-fLO" id="KKs-5d-HFj"/>
+                        <outlet property="loginBtn" destination="PYA-fW-gUo" id="GaC-Hu-4Fi"/>
+                        <outlet property="passwordTextField" destination="bX9-9U-kHY" id="frY-ui-7s1"/>
+                        <outlet property="signupBtn" destination="PH4-QV-hYf" id="LJW-iR-3vm"/>
+                        <segue destination="1hv-lO-Yr0" kind="presentation" identifier="loginToVendorSegue" modalTransitionStyle="flipHorizontal" id="ff5-j8-2Wx"/>
+                        <segue destination="6wT-WF-wjB" kind="presentation" identifier="loginToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="VKh-62-4E7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eK0-u9-dfO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--VendorTabBarControllerStoryboardID-->
+        <scene sceneID="Dh2-KL-IPF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Vendor" referencedIdentifier="VendorTabBarControllerStoryboardID" id="1hv-lO-Yr0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uHW-7y-dRe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="209"/>
+        </scene>
+        <!--UserTabBarStoryboardID-->
+        <scene sceneID="muo-Ef-S7L">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UserTabBarStoryboardID" id="6wT-WF-wjB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ix-mt-HAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="950" y="395"/>
+        </scene>
+        <!--SignUpVC-->
+        <scene sceneID="Qun-oU-GoB">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="bn9-ny-hOc" userLabel="SignUpVC" customClass="SignUpVC" customModule="StockBox" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2WP-RK-CZH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8R5-Cv-bZj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0VN-GQ-0AC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Kh-xh-zN9">
+                                <rect key="frame" x="57" y="167" width="262.5" height="333.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pej-xs-mEW">
+                                        <rect key="frame" x="8" y="8" width="39" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="46" id="9qv-Bg-6Ak"/>
+                                            <constraint firstAttribute="height" constant="30" id="Cv5-x4-pDB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="17"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backBtnPressed:" destination="bn9-ny-hOc" eventType="touchUpInside" id="KZo-Op-zvm"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-yc-xcQ">
+                                        <rect key="frame" x="59" y="58" width="145" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fM9-mA-gh7"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lgs-DX-fWV">
+                                        <rect key="frame" x="59" y="106" width="145" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iqS-N0-Mlh">
+                                        <rect key="frame" x="59" y="164" width="145" height="29"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="zgb-Rw-giY"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Merchant"/>
+                                            <segment title="User"/>
+                                        </segments>
+                                        <color key="tintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHg-HO-EML">
+                                        <rect key="frame" x="59" y="219" width="145" height="55"/>
+                                        <color key="backgroundColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="iv0-9u-VUw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Thonburi-Bold" family="Thonburi" pointSize="34"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signUpBtnPressed:" destination="bn9-ny-hOc" eventType="touchUpInside" id="sSs-bT-gEd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4aY-yc-xcQ" firstAttribute="centerX" secondItem="4Kh-xh-zN9" secondAttribute="centerX" id="19v-58-hRa"/>
+                                    <constraint firstItem="Lgs-DX-fWV" firstAttribute="width" secondItem="4aY-yc-xcQ" secondAttribute="width" id="2pd-JU-GJI"/>
+                                    <constraint firstAttribute="leading" secondItem="Pej-xs-mEW" secondAttribute="leading" constant="-8" id="6tf-o8-S4p"/>
+                                    <constraint firstItem="iqS-N0-Mlh" firstAttribute="centerX" secondItem="Lgs-DX-fWV" secondAttribute="centerX" id="71l-ob-lu0"/>
+                                    <constraint firstItem="iqS-N0-Mlh" firstAttribute="top" secondItem="Lgs-DX-fWV" secondAttribute="bottom" constant="18" id="7fu-za-g9t"/>
+                                    <constraint firstItem="XHg-HO-EML" firstAttribute="centerX" secondItem="4aY-yc-xcQ" secondAttribute="centerX" id="Jwo-tX-F4j"/>
+                                    <constraint firstItem="Lgs-DX-fWV" firstAttribute="top" secondItem="4aY-yc-xcQ" secondAttribute="bottom" constant="8" id="LUl-IB-Ty5"/>
+                                    <constraint firstItem="4aY-yc-xcQ" firstAttribute="top" secondItem="Pej-xs-mEW" secondAttribute="bottom" constant="20" id="RK4-CU-JKP"/>
+                                    <constraint firstItem="XHg-HO-EML" firstAttribute="width" secondItem="4aY-yc-xcQ" secondAttribute="width" id="f0v-Zh-2IB"/>
+                                    <constraint firstItem="iqS-N0-Mlh" firstAttribute="width" secondItem="Lgs-DX-fWV" secondAttribute="width" id="f5I-bv-6pJ"/>
+                                    <constraint firstItem="XHg-HO-EML" firstAttribute="top" secondItem="iqS-N0-Mlh" secondAttribute="bottom" constant="27" id="jyi-d0-37g"/>
+                                    <constraint firstItem="Lgs-DX-fWV" firstAttribute="height" secondItem="4aY-yc-xcQ" secondAttribute="height" id="mTG-il-Dwg"/>
+                                    <constraint firstItem="Lgs-DX-fWV" firstAttribute="centerX" secondItem="4Kh-xh-zN9" secondAttribute="centerX" id="me4-DH-Tz0"/>
+                                    <constraint firstItem="Pej-xs-mEW" firstAttribute="top" secondItem="4Kh-xh-zN9" secondAttribute="top" constant="8" id="oB6-gm-rJQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8R5-Cv-bZj" firstAttribute="leading" secondItem="mXT-hW-uWs" secondAttribute="leading" id="04m-Xf-pIp"/>
+                            <constraint firstItem="8R5-Cv-bZj" firstAttribute="top" secondItem="2WP-RK-CZH" secondAttribute="top" id="1z7-7H-3O4"/>
+                            <constraint firstItem="4Kh-xh-zN9" firstAttribute="centerY" secondItem="2WP-RK-CZH" secondAttribute="centerY" id="5UA-lG-ebL"/>
+                            <constraint firstItem="8R5-Cv-bZj" firstAttribute="trailing" secondItem="mXT-hW-uWs" secondAttribute="trailing" id="GNl-Aq-Mdf"/>
+                            <constraint firstItem="mXT-hW-uWs" firstAttribute="bottom" secondItem="8R5-Cv-bZj" secondAttribute="bottom" id="JGi-52-gjg"/>
+                            <constraint firstItem="4Kh-xh-zN9" firstAttribute="width" secondItem="2WP-RK-CZH" secondAttribute="width" multiplier="0.7" id="kG3-Za-I1D"/>
+                            <constraint firstItem="4Kh-xh-zN9" firstAttribute="centerX" secondItem="2WP-RK-CZH" secondAttribute="centerX" id="qiW-rA-bdM"/>
+                            <constraint firstItem="4Kh-xh-zN9" firstAttribute="height" secondItem="2WP-RK-CZH" secondAttribute="height" multiplier="0.5" id="xWX-t2-Kt2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mXT-hW-uWs"/>
+                    </view>
+                    <connections>
+                        <outlet property="UserMerchantSegmentControl" destination="iqS-N0-Mlh" id="wLq-wF-cd3"/>
+                        <outlet property="emailTextField" destination="4aY-yc-xcQ" id="VuU-U2-ayf"/>
+                        <outlet property="passwordTextField" destination="Lgs-DX-fWV" id="Hvj-VG-kXb"/>
+                        <outlet property="popUpView" destination="4Kh-xh-zN9" id="8B0-jd-5kZ"/>
+                        <outlet property="signUpBtn" destination="XHg-HO-EML" id="2or-Te-XgD"/>
+                        <segue destination="1hv-lO-Yr0" kind="presentation" identifier="signUpToVendorSegue" modalTransitionStyle="flipHorizontal" id="b4W-wq-hWd"/>
+                        <segue destination="6wT-WF-wjB" kind="presentation" identifier="signUpToUserHomeSegue" modalTransitionStyle="flipHorizontal" id="7lW-sO-Xg0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inF-mW-sZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="841.52923538230891"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VKh-62-4E7"/>
+        <segue reference="ff5-j8-2Wx"/>
+    </inferredMetricsTieBreakers>
+</document>
