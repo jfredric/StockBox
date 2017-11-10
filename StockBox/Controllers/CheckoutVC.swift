@@ -79,10 +79,21 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBAction func checkOutBtnPressed(_ sender: Any) {
         if ShoppingCart.sharedInstance.shoppingCartArray.count == 0 {
             messageAlert(title: "Empty Cart", message: "There are no items in your shopping cart. Please add product before checking out.", from: self)
-        } else if currentTotal >= AppUser.sharedInstance.balance && AppUser.sharedInstance.balance != 0.0 {
+        } else if currentTotal <= AppUser.sharedInstance.balance && AppUser.sharedInstance.balance != 0.0 {
             messageAlert(title: "Order Placed", message: doubleToCurrencyString(value: currentTotal) + " removed from account balance.", from: self)
             AppUser.sharedInstance.balance -= currentTotal
-            // TODO: clear cart
+            
+            // Clear cart
+            currentSubtotal = 0.0
+            currentTax = 0.0
+            currentTotal = 0.0
+            ShoppingCart.sharedInstance.shoppingCartArray = []
+            tableView.reloadData()
+            // Got to homepage
+            // this goes back quickly and maintains state. Detail view still shown on that tab.
+            var navController = self.parent as! UINavigationController
+            var tabBarController = navController.parent as! UITabBarController
+            tabBarController.selectedIndex = 0
         } else {
             messageAlert(title: "Not Enough Funds", message: "You account balance of " + doubleToCurrencyString(value: AppUser.sharedInstance.balance) + " is too low to place order.", from: self)
         }
