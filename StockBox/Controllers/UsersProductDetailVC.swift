@@ -116,6 +116,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         print("Log [U_ProductDetail]: Adding \(currentProduct.name) to cart. [\(currentProduct.id)]")
         ShoppingCart.sharedInstance.shoppingCartArray.append((currentProduct,1))
         messageAlert(title: "Added to Cart", message: "We have added \(currentProduct.name) to your cart.", from: self)
+        ShoppingCart.sharedInstance.saveData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

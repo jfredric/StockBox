@@ -88,6 +88,7 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             currentTax = 0.0
             currentTotal = 0.0
             ShoppingCart.sharedInstance.shoppingCartArray = []
+            ShoppingCart.sharedInstance.saveData()
             tableView.reloadData()
             // Got to homepage
             // this goes back quickly and maintains state. Detail view still shown on that tab.
