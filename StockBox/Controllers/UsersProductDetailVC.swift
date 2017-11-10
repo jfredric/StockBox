@@ -100,6 +100,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         
         messageAlert(title: "Added to Favorites", message: "We have added \(currentProduct.name) to your favorites list.", from: self)
         Favorites.sharedInstance.products.append(currentProduct)
+        Favorites.sharedInstance.saveData()
         print("Log [U_ProductDetail]: Adding \(currentProduct.name) to favorites. [\(currentProduct.id)]")
     }
 

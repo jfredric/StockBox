@@ -25,10 +25,15 @@ class Favorites {
     
     func saveData() {
         if !hasLoaded {
-            print("saving before data was loaded")
+            print("Log [Favorites]: Attempting to save before data was loaded")
         }
         if let path = filePath {
-            NSKeyedArchiver.archiveRootObject(products, toFile: path)
+            let success = NSKeyedArchiver.archiveRootObject(products, toFile: path)
+            if success {
+                print("Log [Favorites]: Saved favorites data.")
+            } else {
+                print("Error [Favorites]: Failed to save favorites data.")
+            }
         }
     }
     
@@ -38,20 +43,21 @@ class Favorites {
         let manager = FileManager.default
         
         guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            errorAlert(message: "Could not locate user defaults document directory. Cart may not be saved if app is closed.", from: nil)
+            errorAlert(message: "Could not locate user defaults document directory. Favorites may not be saved if app is closed.", from: nil)
             return
         }
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
+            self.hasLoaded = false
             if let user = user { // if not nil
-                self.filePath = url.appendingPathComponent(user.uid + "/favorites").path
+                self.filePath = url.appendingPathComponent(user.uid + "-favorites").path
             } else {
-                self.filePath = url.appendingPathComponent("Guest/favorites").path
+                self.filePath = url.appendingPathComponent("Guest-favorites").path
             }
             if let path = self.filePath {
-                if let cartData = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [Product] {
+                if let favoritesData = NSKeyedUnarchiver.unarchiveObject(withFile: path) as? [Product] {
                     // load the data
-                    self.products = cartData
+                    self.products = favoritesData
                     self.hasLoaded = true
                 } else {
                     print("Log [Favorites] No data to load")
