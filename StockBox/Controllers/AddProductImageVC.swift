@@ -245,6 +245,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         }
         if currentProduct == nil {
             currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, category: categoryChoice, imagesURLs: [])
+            // was supposed to add to userInfo.products[]
         } else {
             currentProduct?.name = title
             currentProduct?.price = priceAsDouble
