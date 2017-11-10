@@ -56,17 +56,19 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
         zipTextField.delegate = self
         countryTextField.delegate = self
         
-        if currentAppUser.name != "" {
-            nameTextField.text = currentAppUser.name
-        }
-        accountBalanceLabel.text = doubleToCurrencyString(value: currentAppUser.balance)
-        if let email = currentAppUser.currentUser?.email {
-            emailLabel.text = email
-        } else {
-            emailLabel.text = "none"
-        }
+        if currentAppUser.currentUser != nil {
+            if currentAppUser.name != "" {
+                nameTextField.text = currentAppUser.name
+            }
+            accountBalanceLabel.text = doubleToCurrencyString(value: currentAppUser.balance)
+            if let email = currentAppUser.currentUser?.email {
+                emailLabel.text = email
+            } else {
+                emailLabel.text = "none"
+            }
         
-        updateAddressViews()
+            updateAddressViews()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
