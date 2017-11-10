@@ -78,19 +78,23 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
 //        venderBtn.layer.borderWidth = 1.0
 //        venderBtn.layer.borderColor = SECONDARYCOLOR.cgColor
     }
+  
     
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func reviewsBtnPressed(_ sender: Any) {
-    }
+
     
     @IBAction func addToCartBtnPressed(_ sender: Any) {
-    }
-    
-    @IBAction func vendersBtnPresssed(_ sender: Any) {
+        for (index,arrayProduct) in ShoppingCart.sharedInstance.shoppingCartArray.enumerated() {
+            if currentProduct.id == arrayProduct.0.id {
+                ShoppingCart.sharedInstance.shoppingCartArray[index].1 += 1
+                return
+            }
+        }
+        ShoppingCart.sharedInstance.shoppingCartArray.append((currentProduct,1))
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
