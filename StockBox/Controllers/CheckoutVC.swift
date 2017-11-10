@@ -35,6 +35,16 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         for product in ShoppingCart.sharedInstance.shoppingCartArray {
            currentSubtotal += product.0.price * Double(product.1)
         }
+        
+        if AppUser.sharedInstance.addresses.count == 0 {
+            billingAddressTextField.placeholder = " Enter add your address"
+            shippingAddressTextField.placeholder = " Enter add your address"
+        } else {
+            let address = AppUser.sharedInstance.addresses[0].toText()
+            billingAddressTextField.text = address
+            shippingAddressTextField.text = address
+            
+        }
        
         subTitleLbl.text = doubleToCurrencyString(value: currentSubtotal)
         currentTax = currentSubtotal * 0.09
