@@ -19,19 +19,34 @@ class ShoppingCartVC: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return ShoppingCart.sharedInstance.shoppingCartArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "shoppingCartCell", for: indexPath) as? ShoppingCartCollectionViewCell else {
             fatalError("The World Is Ending")
         }
-        cell.productTitle.text = "Tumeric"
-        cell.verderName.text = "The Spice World"
-        cell.venderLocation.text = "Chennai, India"
-        cell.numOfProducts.text = "2"
-        cell.productPrice.text = "10.28"
-        cell.totalLbl.text = "20.56"
+        cell.productTitle.text = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.name
+        let vendorID = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.vendorID
+        AppDatabase.userInfoRootRef.child(vendorID).observeSingleEvent(of: .value, with: { (userSnapshot) in
+            let userValue = userSnapshot.value as? NSDictionary
+            let vendorName = userValue?[AppUser.FirebaseKeys.name] as? String ?? ""
+            let vendorAddress = userValue?[AppUser.FirebaseKeys.addresses] as? [String] ?? []
+            cell.verderName.text = vendorName
+            AppDatabase.addressesRootRef.child(vendorAddress[0]).observeSingleEvent(of: .value, with: { (addressSnapshot) in
+                let addressValue = addressSnapshot.value as? NSDictionary
+                let vendorCity = addressValue?[Address.FirebaseKeys.city] as? String ?? ""
+                let vendorCountry = addressValue?[Address.FirebaseKeys.country] as? String ?? ""
+                cell.venderLocation.text = "\(vendorCity), \(vendorCountry)"
+            })
+        })
+        
+        cell.numOfProducts.text = "$\(ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1)"
+        let countOfProducts = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].1
+        let currentPrice = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.price
+        cell.productPrice.text = "$\(currentPrice)"
+        let currentTotal = currentPrice * Double(countOfProducts)
+        cell.totalLbl.text = "$\(currentTotal)"
         return cell
     }
     
