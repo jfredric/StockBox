@@ -15,6 +15,9 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var taxLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
+    var productsToPurchase = [Product]()
+    var productCountArray = [Int]()
+    let productCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,22 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.register(UINib.init(nibName: "CheckOutTableViewCell", bundle: nil), forCellReuseIdentifier: "checkOutCell")
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        var currentSubtotal = 0.0
+        var currentTax = 0.0
+        var currentTotal = 0.0
+        for Product in productsToPurchase {
+           currentSubtotal += Double(Product.price)
+        }
+       
+        subTitleLbl.text = "$\(currentSubtotal)"
+        currentTax = currentSubtotal * 0.9
+        taxLbl.text = "$\(currentTax)"
+        currentTotal = currentTax + currentSubtotal
+        totalLbl.text = "$ \(currentTotal)"
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,7 +49,7 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,13 +58,13 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         }
         cell.productPrice.text = "10.89"
         cell.productTitle.text = "Tumeric"
-        cell.quantityNum.text = "1"
-        cell.totalLBl.text = "10.89"
+        cell.totalLBl.text = "1"
         return cell
     }
-
+    
     @IBAction func checkOutBtnPressed(_ sender: Any) {
-        
+        AppUser.sharedInstance.balance -= Double(totalLbl.text!)!
     }
+    
     
 }
