@@ -15,7 +15,10 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var subTitleLbl: UILabel!
     @IBOutlet weak var taxLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
-
+    
+    var currentSubtotal = 0.0
+    var currentTax = 0.0
+    var currentTotal = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +29,20 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        var currentSubtotal = 0.0
-        var currentTax = 0.0
-        var currentTotal = 0.0
-        for Product in ShoppingCart.sharedInstance.shoppingCartArray {
-           currentSubtotal += Double(Product.0.price)
+        currentSubtotal = 0.0
+        currentTax = 0.0
+        currentTotal = 0.0
+        for product in ShoppingCart.sharedInstance.shoppingCartArray {
+           currentSubtotal += product.0.price * Double(product.1)
         }
        
-        subTitleLbl.text = "$\(currentSubtotal)"
+        subTitleLbl.text = doubleToCurrencyString(value: currentSubtotal)
         currentTax = currentSubtotal * 0.09
-        taxLbl.text = "$\(currentTax)"
+        taxLbl.text = doubleToCurrencyString(value: currentTax)
         currentTotal = currentTax + currentSubtotal
-        totalLbl.text = "$ \(currentTotal)"
+        totalLbl.text = doubleToCurrencyString(value: currentTotal)
         
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,33 +68,25 @@ class CheckoutVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         } else{
             cell.productImage.image = #imageLiteral(resourceName: "quickadd")
         }
-        //################################
-        //################################
-        //################################
-        //################################
-        //################################
-        //################################
-        // Bug
-        // quantity's and totals are wrong in the cells
-        cell.productPrice.text = "$\(productPrice)"
+        
+        cell.productPrice.text = doubleToCurrencyString(value: productPrice)
         cell.productTitle.text = ShoppingCart.sharedInstance.shoppingCartArray[indexPath.row].0.name
-        cell.quantityNum.text = "\(totalPrice)"
-        cell.totalLBl.text = "$\(totalPrice)"
+        cell.quantityNum.text = String(numOfProducts)
+        cell.totalLBl.text = doubleToCurrencyString(value: totalPrice)
         return cell
     }
 
     @IBAction func checkOutBtnPressed(_ sender: Any) {
-        //################################
-        //################################
-        //################################
-        //################################
-        //################################
-        //################################
-        // Crash
-        // FINDING NIL AND CRASHING... I think it is because it is failing to convert the totalLbl to a double. It seems like the string has a $ at the front. I don't know how it is getting in there.
-        print(AppUser.sharedInstance.balance)
-        print(Double(totalLbl.text!)!)
-        AppUser.sharedInstance.balance -= Double(totalLbl.text!)!
+        if ShoppingCart.sharedInstance.shoppingCartArray.count == 0 {
+            messageAlert(title: "Empty Cart", message: "There are no items in your shopping cart. Please add product before checking out.", from: self)
+        } else if currentTotal >= AppUser.sharedInstance.balance && AppUser.sharedInstance.balance != 0.0 {
+            messageAlert(title: "Order Placed", message: doubleToCurrencyString(value: currentTotal) + " removed from account balance.", from: self)
+            AppUser.sharedInstance.balance -= currentTotal
+            // TODO: clear cart
+        } else {
+            messageAlert(title: "Not Enough Funds", message: "You account balance of " + doubleToCurrencyString(value: AppUser.sharedInstance.balance) + " is too low to place order.", from: self)
+        }
+        
     }
     
     

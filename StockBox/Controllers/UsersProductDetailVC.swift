@@ -20,6 +20,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var productTitleLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
     @IBOutlet weak var productDescriptionTextField: UITextView!
+    
     var currentProduct: Product!
     var productImages = [UIImage]()
     
@@ -50,8 +51,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
                     self.venderLocation.text = "\(vendorCity), \(vendorCountry)"
                 })
             }
-//            self.venderLocation.text = venderLocation
-    
+            // self.venderLocation.text = venderLocation
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -92,30 +92,26 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
 
     @IBAction func favoritesBtnClicked(_ sender: Any) {
         for arrayProduct in Favorites.sharedInstance.products {
-            print(currentProduct.id, arrayProduct.id)
-            print("%%%%%%%%%%%%%%%%%%%%%%%%")
-            if currentProduct.name == arrayProduct.name && currentProduct.price == arrayProduct.price{return}
-        }
-        Favorites.sharedInstance.products.append(currentProduct)
-    }
-    //################################
-    //################################
-    //################################
-    //################################
-    //################################
-    //################################
-    //BUG! it adding an extra value too the quantity in the shopping cart. Must be something wrong with my logic"
-    @IBAction func addToCartBtnPressed(_ sender: Any) {
-        for (index,arrayProduct) in ShoppingCart.sharedInstance.shoppingCartArray.enumerated() {
-            print(currentProduct.id, arrayProduct.0.id)
-            print("&&&&&&&&&&&&&&&&&&&&&&&")
-            if currentProduct.name == arrayProduct.0.name && currentProduct.price == arrayProduct.0.price{
-                ShoppingCart.sharedInstance.shoppingCartArray[index].1 += 1
-                print("Added")
+            if currentProduct.id == arrayProduct.id {
                 return
             }
         }
+        Favorites.sharedInstance.products.append(currentProduct)
+    }
+
+    @IBAction func addToCartBtnPressed(_ sender: Any) {
+        for (index,arrayProduct) in ShoppingCart.sharedInstance.shoppingCartArray.enumerated() {
+            //if currentProduct.name == arrayProduct.0.name && currentProduct.price == arrayProduct.0.price{ // why???
+            if currentProduct.id == arrayProduct.0.id {
+                ShoppingCart.sharedInstance.shoppingCartArray[index].1 += 1
+                print("Log [U_ProductDetail]: \(currentProduct.name) already in cart, increasing quantity to \(ShoppingCart.sharedInstance.shoppingCartArray[index].1). [\(currentProduct.id)]")
+                messageAlert(title: "Added to Cart", message: "We have added another \(currentProduct.name) to your cart.", from: self)
+                return
+            }
+        }
+        print("Log [U_ProductDetail]: Adding \(currentProduct.name) to cart. [\(currentProduct.id)]")
         ShoppingCart.sharedInstance.shoppingCartArray.append((currentProduct,1))
+        messageAlert(title: "Added to Cart", message: "We have added \(currentProduct.name) to your cart.", from: self)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

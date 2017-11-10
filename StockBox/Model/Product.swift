@@ -96,9 +96,10 @@ class Product: NSObject, NSCoding {
     
     init(snapShot: DataSnapshot) {
         productRef = snapShot.ref
+        id = productRef.key
         
         guard let data = snapShot.value as? [String:Any] else {
-            fatalErrorAlert(message: "database return invalid data", from: nil)
+            fatalErrorAlert(message: "database returned invalid data", from: nil)
             fatalError()
         }
         
