@@ -17,6 +17,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     
     var handle: AuthStateDidChangeListenerHandle?
     var userInfo: AppUser!
+    var favorites: Favorites!
+    var shoppingCart: ShoppingCart!
     var productsArray = [Product]()
     var searchResults = [Product]()
     var searchKey = ""
@@ -32,7 +34,11 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ProductTVCell", bundle: nil), forCellReuseIdentifier: "ProductTVCell-ID")
         // Do any additional setup after loading the view.
-        userInfo = AppUser.sharedInstance // this also forces the userInfo to load
+        
+        // ensure the Singletons load first
+        userInfo = AppUser.sharedInstance
+        favorites = Favorites.sharedInstance
+        shoppingCart = ShoppingCart.sharedInstance
         
         // set up the search controller
         searchBar.delegate = self
