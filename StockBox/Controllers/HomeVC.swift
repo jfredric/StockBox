@@ -19,6 +19,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     var userInfo: AppUser!
     var productsArray = [Product]()
     var searchResults = [Product]()
+    var searchKey = ""
+    var categoryFilter: Int?
     
     // MARK: VIEW CONTROLLER
     override func viewDidAppear(_ animated: Bool) {
@@ -40,8 +42,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
                 let product = Product(snapShot: child)
                 self.productsArray.append(product)
             }
-            self.searchResults = self.productsArray
-            self.tableView.reloadData()
+            self.updateFilter()
         })
     }
     
@@ -86,18 +87,36 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: SEARCH BAR FUNCTIONS
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text! == "" {
-            searchResults = productsArray
+    func updateFilter() {
+        var filtered: [Product]
+        
+        if categoryFilter != nil {
+            filtered = productsArray.filter(){
+                categoryFilter! == ($0 as Product).category
+            }
+        } else {
+            filtered = productsArray
+        }
+        
+        if searchKey == "" {
+            searchResults = filtered
         } else {
             print("Log [UserHome]: Searching: \(searchBar.text!)")
             // filter
-            searchResults = productsArray.filter() {
+            
+            searchResults = filtered.filter() {
                 ($0 as Product).contains(text: searchBar.text!)
             }
         }
         self.tableView.reloadData()
+    }
+    
+    // MARK: SEARCH BAR FUNCTIONS
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchKey = searchBar.text!
+        
+        updateFilter()
+        
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
@@ -107,6 +126,8 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchKey = ""
+        updateFilter()
         searchBar.showsCancelButton = false
         searchBar.text = ""
         searchBar.resignFirstResponder()
@@ -162,22 +183,35 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     }
     
     @IBAction func menuSpicesBtnPressed(_ sender: Any) {
+        categoryFilter = 0
+        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
     }
     
     @IBAction func menuHerbsBtnPressed(_ sender: Any) {
+        categoryFilter = 1
+        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
     }
     
     @IBAction func menuRubsBtnPressed(_ sender: Any) {
+        categoryFilter = 2
+        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
     }
-    //    menuView.frame.origin.x = -menuView.frame.size.width
+    
+    @IBAction func menuAllpressed(_ sender: Any) {
+        categoryFilter = nil
+        updateFilter()
+        UIView.animate(withDuration: 0.5) {
+            self.menuView.frame.origin.x = -self.menuView.frame.size.width
+        }
+    }
     
 }
