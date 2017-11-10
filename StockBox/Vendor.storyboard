@@ -56,7 +56,9 @@
         <scene sceneID="g3x-tS-3W1">
             <objects>
                 <navigationController title="Catelog Controller" id="dNQ-C3-pfF" userLabel="Vendor Products Nav Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Products" image="cart" selectedImage="cart" id="Or4-3n-snH" userLabel="Tab Bar Item"/>
+                    <tabBarItem key="tabBarItem" title="Products" image="vendorproducts" selectedImage="vendorproducts" id="Or4-3n-snH" userLabel="Tab Bar Item">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mY6-Dd-NPI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -404,7 +406,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.92941176469999998" green="0.3411764706" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="dNQ-C3-pfF" kind="relationship" relationship="viewControllers" id="Opb-bf-DNN"/>
@@ -441,7 +445,9 @@
         <scene sceneID="vyu-LN-Bmu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t8C-Br-xwF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile_btn" id="Yh3-Jk-bL9"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile-tab" selectedImage="profile-tab" id="Yh3-Jk-bL9">
+                        <color key="badgeColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="adI-Rr-fml">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -459,10 +465,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cart" width="24" height="20"/>
-        <image name="profile" width="15" height="15"/>
-        <image name="profile_btn" width="28" height="28"/>
+        <image name="profile-tab" width="22" height="20"/>
         <image name="quickadd" width="200" height="200"/>
+        <image name="vendorproducts" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Vz1-2m-EDt"/>
