@@ -170,7 +170,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToDetailSegue" {
             let indexPath = sender as! IndexPath
-            let productToPass = productsArray[(indexPath.row)]
+            let productToPass = searchResults[(indexPath.row)]
             let destinationVC = segue.destination as! UsersProductDetailVC
             destinationVC.currentProduct = productToPass
         }
