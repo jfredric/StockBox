@@ -155,7 +155,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         } else{
         cell.productImage.image = #imageLiteral(resourceName: "quickadd")
         }
-        cell.productPrice.text = String(searchResults[indexPath.row].price)
+        cell.productPrice.text = doubleToCurrencyString(value:searchResults[indexPath.row].price)
         cell.productTitle.text = searchResults[indexPath.row].name
         
         return cell
