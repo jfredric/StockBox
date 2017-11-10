@@ -41,7 +41,7 @@ class VendorProductsTVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductTVCell.reuseIdentifier, for: indexPath) as! ProductTVCell
 
         // Configure the cell...
-        cell.ratingControl.rating = indexPath.row / 5 // to show varying ratting
+       // cell.ratingControl.rating = indexPath.row / 5 // to show varying ratting
         cell.productPrice.text = "$" + String(Double(indexPath.row)) //needs text formating
         //cell.productPrice.text = String(format: "$0.00",Double(indexPath.row))
         return cell

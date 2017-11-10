@@ -100,6 +100,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         
         messageAlert(title: "Added to Favorites", message: "We have added \(currentProduct.name) to your favorites list.", from: self)
         Favorites.sharedInstance.products.append(currentProduct)
+        Favorites.sharedInstance.saveData()
         print("Log [U_ProductDetail]: Adding \(currentProduct.name) to favorites. [\(currentProduct.id)]")
     }
 
@@ -116,6 +117,7 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
         print("Log [U_ProductDetail]: Adding \(currentProduct.name) to cart. [\(currentProduct.id)]")
         ShoppingCart.sharedInstance.shoppingCartArray.append((currentProduct,1))
         messageAlert(title: "Added to Cart", message: "We have added \(currentProduct.name) to your cart.", from: self)
+        ShoppingCart.sharedInstance.saveData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -52,24 +52,24 @@ class Product: NSObject, NSCoding {
     // MARK: NSCODING
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(id, forKey: CodingKeys.id)
-        aCoder.encode(name, forKey: CodingKeys.name)
-        aCoder.encode(price, forKey: CodingKeys.price)
-        aCoder.encode(description_, forKey: CodingKeys.description)
-        aCoder.encode(vendorID, forKey: CodingKeys.vendorID)
-        aCoder.encode(category, forKey: CodingKeys.category)
-        aCoder.encode(reviewsIDs, forKey: CodingKeys.reviewsIDs)
-        aCoder.encode(imagesURLs, forKey: CodingKeys.imagesURLs)
+        aCoder.encode(self.id, forKey: CodingKeys.id)
+        aCoder.encode(self.name, forKey: CodingKeys.name)
+        aCoder.encode(self.price, forKey: CodingKeys.price)
+        aCoder.encode(self.description_, forKey: CodingKeys.description)
+        aCoder.encode(self.vendorID, forKey: CodingKeys.vendorID)
+        aCoder.encode(self.category, forKey: CodingKeys.category)
+        aCoder.encode(self.reviewsIDs, forKey: CodingKeys.reviewsIDs)
+        aCoder.encode(self.imagesURLs, forKey: CodingKeys.imagesURLs)
     }
 
     required init?(coder aDecoder: NSCoder) {
         id = aDecoder.decodeObject(forKey: CodingKeys.id) as! String
         productRef = AppDatabase.productsRootRef.child(id)
         name = aDecoder.decodeObject(forKey: CodingKeys.name) as! String
-        price = aDecoder.decodeObject(forKey: CodingKeys.price) as! Double
+        price = aDecoder.decodeDouble(forKey: CodingKeys.price) as! Double
         description_ = aDecoder.decodeObject(forKey: CodingKeys.description) as! String
         vendorID = aDecoder.decodeObject(forKey: CodingKeys.vendorID) as! String
-        category = aDecoder.decodeObject(forKey: CodingKeys.category) as! Int
+        category = aDecoder.decodeInteger(forKey: CodingKeys.category) as! Int
         reviewsIDs = aDecoder.decodeObject(forKey: CodingKeys.reviewsIDs) as? [String] ?? []
         imagesURLs = aDecoder.decodeObject(forKey: CodingKeys.imagesURLs) as? [String] ?? []
     }
