@@ -163,6 +163,7 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
         ref = Database.database().reference()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -211,67 +212,67 @@ UINavigationControllerDelegate, UITextFieldDelegate  {
     }
     
     @IBAction func SaveProductInfoBtn(_ sender: Any) {
+        guard let title = addProductTitle.text else {
+            errorAlert(message: "Not able to record title", from: self)
+            return
+        }
+        
+        guard let price = prodctPrice.text else {
+            errorAlert(message: "Not able to record price", from: self)
+            return
+        }
+        guard let priceAsDouble = Double(price) else {
+            errorAlert(message: "Please enter a number into price.", from: self)
+            return
+        }
+        guard let description = productDescription.text else {
+            errorAlert(message: "Not able to record description", from: self)
+            return
+        }
+        let categoryChoice = segController.selectedSegmentIndex
+        
+        let image = #imageLiteral(resourceName: "quickadd")
+        print(image, "THIS IS THE IMAGE I AM TALKING ABOUT")
+        if let imageData = UIImageJPEGRepresentation(image, 0.2){
+            let metaData = StorageMetadata()
+            metaData.contentType = "image/jpeg"
+            let storage = Storage.storage().reference()
+            let productPhotos = storage.child("productPhotos")
+            productPhotos.putData(imageData, metadata: metaData) { (metaData, error) in
+                print("I GOT HERE")
+            }
+            
+        }
         if currentProduct == nil {
-            
-            guard let title = addProductTitle.text else {
-                errorAlert(message: "Not able to record title", from: self)
-                return
-            }
-            
-            guard let price = prodctPrice.text else {
-                errorAlert(message: "Not able to record price", from: self)
-                return
-            }
-            guard let priceAsDouble = Double(price) else {
-                errorAlert(message: "Please enter a number into price.", from: self)
-                return
-            }
-            guard let description = productDescription.text else {
-                errorAlert(message: "Not able to record description", from: self)
-                return
-            }
-            let categoryChoice = segController.selectedSegmentIndex
-            
-            let image = #imageLiteral(resourceName: "quickadd")
-            print(image, "THIS IS THE IMAGE I AM TALKING ABOUT")
-            if let imageData = UIImageJPEGRepresentation(image, 0.2){
+            currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, category: categoryChoice, imagesURLs: [])
+        } else {
+            currentProduct?.name = title
+            currentProduct?.price = priceAsDouble
+            currentProduct?.description_ = description
+            currentProduct?.category = categoryChoice
+        }
+        
+        for image in pickedImages {
+            print(image, "This Got here")
+            if let imageData = UIImageJPEGRepresentation(image, 0.2) {
                 let metaData = StorageMetadata()
                 metaData.contentType = "image/jpeg"
                 let storage = Storage.storage().reference()
-                let productPhotos = storage.child("productPhotos")
-                productPhotos.putData(imageData, metadata: metaData) { (metaData, error) in
-                    print("I GOT HERE")
+                let randomNum = arc4random()
+                let photoID = storage.child("\(randomNum)")
+                photoID.putData(imageData, metadata: metaData) { (metaData, error) in
+                    if error != nil {
+                        print("Unable to upload image")
+                    } else {
+                        print("Successful download")
+                        let downloadUrl = metaData?.downloadURL()?.absoluteString
+                        self.currentProduct!.appendImage(url: downloadUrl!)
+                    }
                 }
                 
             }
-            
-            currentProduct = Product(name: title, price: priceAsDouble, description: description, vendorID: (AppUser.sharedInstance.currentUser?.uid)!, category: categoryChoice, imagesURLs: [])
-            
-            for image in pickedImages {
-                print(image, "This Got here")
-                if let imageData = UIImageJPEGRepresentation(image, 0.2) {
-                    let metaData = StorageMetadata()
-                    metaData.contentType = "image/jpeg"
-                    let storage = Storage.storage().reference()
-                    let randomNum = arc4random()
-                    let photoID = storage.child("\(randomNum)")
-                    photoID.putData(imageData, metadata: metaData) { (metaData, error) in
-                        if error != nil {
-                            print("Unable to upload image")
-                        } else {
-                            print("Successful download")
-                            let downloadUrl = metaData?.downloadURL()?.absoluteString
-                            self.currentProduct!.appendImage(url: downloadUrl!)
-                        }
-                    }
-                    
-                }
-            }
-            dismiss(animated: true, completion: nil)
         }
-        else {
-            //use current object id
-        }
+        dismiss(animated: true, completion: nil)
     }
 
 //Segemented Category Controller
