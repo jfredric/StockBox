@@ -194,6 +194,8 @@ class UserProfileVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func logInOutBtnPressed(_ sender: Any) {
+        ShoppingCart.sharedInstance.shoppingCartArray = []
+        Favorites.sharedInstance.products = []
         AppUser.sharedInstance.logOut()
     }
     
