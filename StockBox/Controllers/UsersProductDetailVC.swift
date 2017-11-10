@@ -38,8 +38,18 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
             let value = snapshot.value as? NSDictionary
             let vendorTitle = value?["name"] as? String ?? "Empty"
             self.venderTitle.text = vendorTitle
-            let venderLocation = value?["address"] as? String ?? "Empty"
-            self.venderLocation.text = venderLocation
+            let addressIDs = value?[AppUser.FirebaseKeys.addresses] as? [String] ?? []
+            if addressIDs.count == 0 {
+                self.venderLocation.text = "Unknown"
+            } else {
+                AppDatabase.addressesRootRef.child(addressIDs[0]).observeSingleEvent(of: .value, with: { (addressSnapshot) in
+                    let addressValue = addressSnapshot.value as? NSDictionary
+                    let vendorCity = addressValue?[Address.FirebaseKeys.city] as? String ?? ""
+                    let vendorCountry = addressValue?[Address.FirebaseKeys.country] as? String ?? ""
+                    self.venderLocation.text = "\(vendorCity), \(vendorCountry)"
+                })
+            }
+//            self.venderLocation.text = venderLocation
     
         }) { (error) in
             print(error.localizedDescription)

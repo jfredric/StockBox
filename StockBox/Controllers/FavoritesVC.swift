@@ -26,21 +26,30 @@ class FavoritesVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return Favorites.sharedInstance.products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProductTVCell-ID") as? ProductTVCell else {
             fatalError("The World Is Ending")
         }
-        cell.productPrice.text = "$1500.85"
-        cell.productTitle.text = "Samsung \"45\" Inch TV "
+        cell.productPrice.text = "$\(Favorites.sharedInstance.products[indexPath.row].price)"
+        cell.productTitle.text = Favorites.sharedInstance.products[indexPath.row].name
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "favoritesToDetailSegue", sender: nil)
+        performSegue(withIdentifier: "favoritesToDetailSegue", sender: indexPath)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "favoritesToDetailSegue" {
+            let indexPath = sender as! IndexPath
+            let productToPass = Favorites.sharedInstance.products[(indexPath.row)]
+            let destinationVC = segue.destination as! UsersProductDetailVC
+            destinationVC.currentProduct = productToPass
+        }
     }
 
 }
