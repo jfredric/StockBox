@@ -25,10 +25,20 @@ class VendorProductsTVC: UITableViewController {
         // register table view cell xib
         tableView.register(UINib.init(nibName: ProductTVCell.xibName, bundle: nil), forCellReuseIdentifier: ProductTVCell.reuseIdentifier)
         AppDatabase.productsRootRef.observe(.value, with: { snapshot in
+            var allProducts: [Product] = []
+            
+            // Get all Products
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 let product = Product(snapShot: child)
-                self.vendorProducts.append(product)
+                allProducts.append(product)
             }
+            
+            // filter by vendor
+            let vendorID = AppUser.sharedInstance.currentUser?.uid
+            self.vendorProducts = allProducts.filter(){
+                    vendorID == ($0 as Product).vendorID
+            }
+            
             self.tableView.reloadData()
         })
     }

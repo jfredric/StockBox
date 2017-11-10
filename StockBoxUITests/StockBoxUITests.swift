@@ -34,9 +34,10 @@ class StockBoxUITests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
         let tabBarsQuery = XCUIApplication().tabBars
-        tabBarsQuery.buttons["Favorties"].tap()
+        tabBarsQuery.buttons["Favorites"].tap()
         tabBarsQuery.buttons["Profile"].tap()
         tabBarsQuery.buttons["Home"].tap()
+        tabBarsQuery.buttons["Checkout"].tap()
         
     }
     
