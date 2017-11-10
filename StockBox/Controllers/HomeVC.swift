@@ -189,35 +189,35 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     }
     
     @IBAction func menuSpicesBtnPressed(_ sender: Any) {
-        categoryFilter = 0
-        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
+        categoryFilter = 0
+        updateFilter()
     }
     
     @IBAction func menuHerbsBtnPressed(_ sender: Any) {
-        categoryFilter = 1
-        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
+        categoryFilter = 1
+        updateFilter()
     }
     
     @IBAction func menuRubsBtnPressed(_ sender: Any) {
-        categoryFilter = 2
-        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
+        categoryFilter = 2
+        updateFilter()
     }
     
     @IBAction func menuAllpressed(_ sender: Any) {
-        categoryFilter = nil
-        updateFilter()
         UIView.animate(withDuration: 0.5) {
             self.menuView.frame.origin.x = -self.menuView.frame.size.width
         }
+        categoryFilter = nil
+        updateFilter()
     }
     
 }
