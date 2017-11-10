@@ -93,10 +93,14 @@ class UsersProductDetailVC: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func favoritesBtnClicked(_ sender: Any) {
         for arrayProduct in Favorites.sharedInstance.products {
             if currentProduct.id == arrayProduct.id {
+                messageAlert(title: "Already in Favorites", message: "You already have \(currentProduct.name) in your favorites list.", from: self)
                 return
             }
         }
+        
+        messageAlert(title: "Added to Favorites", message: "We have added \(currentProduct.name) to your favorites list.", from: self)
         Favorites.sharedInstance.products.append(currentProduct)
+        print("Log [U_ProductDetail]: Adding \(currentProduct.name) to favorites. [\(currentProduct.id)]")
     }
 
     @IBAction func addToCartBtnPressed(_ sender: Any) {
