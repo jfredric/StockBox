@@ -155,7 +155,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
         } else{
         cell.productImage.image = #imageLiteral(resourceName: "quickadd")
         }
-        cell.productPrice.text = String(searchResults[indexPath.row].price)
+        cell.productPrice.text = doubleToCurrencyString(value:searchResults[indexPath.row].price)
         cell.productTitle.text = searchResults[indexPath.row].name
         
         return cell
@@ -170,7 +170,7 @@ class HomeVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToDetailSegue" {
             let indexPath = sender as! IndexPath
-            let productToPass = productsArray[(indexPath.row)]
+            let productToPass = searchResults[(indexPath.row)]
             let destinationVC = segue.destination as! UsersProductDetailVC
             destinationVC.currentProduct = productToPass
         }
