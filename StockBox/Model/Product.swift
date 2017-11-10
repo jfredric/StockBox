@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class Product/*: NSObject, NSCoding*/ {
+class Product: NSObject, NSCoding {
     
     // MARK: PROPERTIES
     
@@ -18,8 +18,7 @@ class Product/*: NSObject, NSCoding*/ {
     var price: Double
     var description_: String
     var vendorID: String
-    var category: Int // 0..2 : Spices Herds, Rubs
-//    var categoriesIDs: [String] = []
+    var category: Int // 0..2 : Spices, Herds, Rubs
     var reviews: [Review] = [] // not nscoded or firebase
     var reviewsIDs: [String] = []
     var images: [String] = [] // not nscoded or firebase
@@ -46,31 +45,34 @@ class Product/*: NSObject, NSCoding*/ {
         static let description = "description"
         static let vendorID = "vendorID"
         static let category = "catergory"
-        static let reviews = "reviews"
-        static let images = "images"
+        static let reviewsIDs = "reviewsIDs"
+        static let imagesURLs = "imagesURLs"
     }
     
     // MARK: NSCODING
     
-//    func encode(with aCoder: NSCoder) {
-//        aCoder.encode(id, forKey: CodingKeys.id)
-//        aCoder.encode(name, forKey: CodingKeys.name)
-//        aCoder.encode(price, forKey: CodingKeys.price)
-//        aCoder.encode(description_, forKey: CodingKeys.description)
-//        aCoder.encode(vendorID, forKey: CodingKeys.vendorID)
-//        aCoder.encode(id, forKey: CodingKeys.id)
-//        aCoder.encode(id, forKey: CodingKeys.id)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        if let nameObject = aDecoder.decodeObject(forKey: CodingKeys.id) as? String {
-//            id = nameObject
-//            // load Product from ID
-//            productRef = AppDatabase.productsRootRef.child(id)
-//        } else {
-//            // could not find id?
-//        }
-//    }
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: CodingKeys.id)
+        aCoder.encode(name, forKey: CodingKeys.name)
+        aCoder.encode(price, forKey: CodingKeys.price)
+        aCoder.encode(description_, forKey: CodingKeys.description)
+        aCoder.encode(vendorID, forKey: CodingKeys.vendorID)
+        aCoder.encode(category, forKey: CodingKeys.category)
+        aCoder.encode(reviewsIDs, forKey: CodingKeys.reviewsIDs)
+        aCoder.encode(imagesURLs, forKey: CodingKeys.imagesURLs)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        id = aDecoder.decodeObject(forKey: CodingKeys.id) as! String
+        productRef = AppDatabase.productsRootRef.child(id)
+        name = aDecoder.decodeObject(forKey: CodingKeys.name) as! String
+        price = aDecoder.decodeObject(forKey: CodingKeys.price) as! Double
+        description_ = aDecoder.decodeObject(forKey: CodingKeys.description) as! String
+        vendorID = aDecoder.decodeObject(forKey: CodingKeys.vendorID) as! String
+        category = aDecoder.decodeObject(forKey: CodingKeys.category) as! Int
+        reviewsIDs = aDecoder.decodeObject(forKey: CodingKeys.reviewsIDs) as? [String] ?? []
+        imagesURLs = aDecoder.decodeObject(forKey: CodingKeys.imagesURLs) as? [String] ?? []
+    }
     
     // MARK: INITIALIZERS
     
@@ -86,6 +88,7 @@ class Product/*: NSObject, NSCoding*/ {
         self.imagesURLs = imagesURLs
         //note: images may need to be downloaded here
         
+        super.init()
         //write to firebase
         productRef.setValue(toAnyObject())
         

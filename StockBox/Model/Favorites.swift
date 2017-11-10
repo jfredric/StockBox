@@ -54,7 +54,7 @@ class Favorites {
                     self.products = cartData
                     self.hasLoaded = true
                 } else {
-                    errorAlert(message: "Failed to load cart data", from: nil)
+                    print("Log [Favorites] No data to load")
                 }
             } else {
                 errorAlert(message: "Error loading path", from: nil)
